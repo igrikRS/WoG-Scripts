@@ -7,7 +7,7 @@
 133003	{Living Scroll} 
  
 You find a Living Scroll, mystically 
-inscribed with the %Z1 spell. 
+inscribed with the %Z1 spell.
  
 When attacking monsters with no hero, there is a 20% chance (times the number of Living Scrolls equipped), that each round a Living Scroll will cast its spell on a random target.	String type = <!!Q>	08.06.2003
 133004	{Living Scroll} 

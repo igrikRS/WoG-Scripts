@@ -84,11 +84,8 @@ Dialogues Used in this script: 7-9
  (setup hint texts for JHV version)
 ; igrik's fix (не было проверки на включенность скрипта для описаний)
 !#UN:P107/?v1;
-!#UN:C8401436/4/?v2;  [проверка Руссификации]
-!#VRz356&v1=1/v2=0:S^Fishing Well^;
-!#VRz357&v1=1/v2=0:S^Fished-out Well^;
-!#VRz356&v1=1/v2=1:S^Рыболовный колодец^;
-!#VRz357&v1=1/v2=1:S^Выловленный колодец^;
+!#VRz356&v1=1:Sz107085;
+!#VRz357&v1=1:Sz107086;
 !#HT49/-1&v1=1:P0/356;  (use z356 for hint text before well fished)
 !#HT49/-1&v1=1:P1/356;
 !#HT49/-1&v1=1:P2/356;

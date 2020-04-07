@@ -1,4 +1,4 @@
-113000	There's a game of cards about to start with %$players$ players. Do you want to put down a stake and play?	String type = <!!Q>	07.06.2003
+113000	There's a game of cards about to start with %$players$ players. Do you want to put down a stake and play?	String type = <!!Q>	07.06.2003 
 113001	The bartender comes up to you and says "Sorry %$hname$, you've been winning too many games lately. I suggest you give the cards a rest for awhile."	String type = <!!S>	07.06.2003
 113002	You look around for a game but all the card players have gone home for the day.	String type = <!!M>	07.06.2003
 113003	Do you want to look around the tavern?	String type = <!!Q>	07.06.2003

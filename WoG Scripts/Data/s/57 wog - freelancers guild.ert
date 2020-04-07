@@ -4,7 +4,7 @@ Sorry, your versions of WoG and/or ERM
 are too old to use the 
 {Freelancer's Guild version 1.0 script.} 
  
-Please update your files.	String type = <!#M>	07.06.2003
+Please update your files.	String type = <!#M>	07.06.2003 
 121001	Sell Creatures	String type = <!!S>	07.06.2003
 121002	Trade creatures for resources.	String type = <!!S>	07.06.2003
 121003	Hire Freelancers	String type = <!!S>	07.06.2003

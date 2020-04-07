@@ -1,6 +1,6 @@
 128000	{School of Wizardry} 
  
-You arrive at a huge building, but the doors are locked and there's no one to be seen. You think you'd better try tomorrow instead.	String type = <!!M>	09/02/03
+You arrive at a huge building, but the doors are locked and there's no one to be seen. You think you'd better try tomorrow instead. 	String type = <!!M>	09/02/03
 128001	{School of Wizardry} 
  
 You come to a huge building. Outside it you find an old archmage waiting for you. "Welcome to my school of wizardry, hero. Here I have gathered many teachers who can teach you many different skills. Do you want to spend some time looking to see if there's any class you would like to join?"	String type = <!!Q>	09/02/03

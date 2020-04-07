@@ -12,7 +12,7 @@
 130011	This hero has some three-handed swords.	String type = <!#S>	08.06.2003
 130012	This hero has some wands that don't work.	String type = <!#S>	08.06.2003
 130013	Rogues stole one of your gold mines!	String type = <!!M>	08.06.2003
-130014	You find a tunnel leading down into the mountain... Do you explore it or leave?	String type = <!!S>	08.06.2003
+130014	You find a tunnel leading down into the mountain... Do you explore it or leave? 	String type = <!!S>	08.06.2003
 130015	Explore	String type = <!!S>	08.06.2003
 130016	Leave	String type = <!!S>	08.06.2003
 130017	Wary of confining tunnels, you stay outside, in the pleasant open countryside.	String type = <!!M>	08.06.2003

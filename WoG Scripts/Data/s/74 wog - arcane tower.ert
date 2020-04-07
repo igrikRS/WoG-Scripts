@@ -1,4 +1,4 @@
-104000	Arcane Tower	String type = <!#S>	07.06.2003
+104000	Arcane Tower	String type = <!#S>	07.06.2003 
 104001	A ghost floats down a staircase and glides up to you. It floats there, flickering, regarding you. At last it speaks. "It is well that you came here, traveller. I can help you."	String type = <!!M>	07.06.2003
 104002	The ghost continues. "I can make you strong, give you power - perhaps as much power as I have! But it will cost you dearly. I can give you skill at attack, defense, spellcasting, or knowledge... in return, I require the same. One for one. Are you interested?"	String type = <!!Q>	07.06.2003
 104003	"Ah, traveller, you will know one day that you have erred."	String type = <!!M>	07.06.2003
