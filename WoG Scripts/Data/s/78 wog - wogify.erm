@@ -249,14 +249,14 @@ Returned Values:
 !?FU7777;
 ; x1=min. level, x2=max. level, x3=type, x4=element, x5=banning
 ; x6=number of exclusions, x7..x15=specific exclusions
- 
+
 !!VRy-99:S-1; [Initialize y-99 to -1]
 
 ; Set y-99 to 99 for an invalid parameter: mast skip loop
 !!VRy-99|x1<0/x1>5/x2<0/x2>5/x3<0/x3>2/x4<0/x4>15/x5<0/x5>3/x6<0/x6>9:S99;
 
 ; Do up to 500 loops to find a valid spell number: y-99
-!!DO7778/1/500/1&y99<>99:Px1/x2/x3/x4/x5/x6/x7/x8/x9/x10/x11/x12/x13/x14/x15;
+!!DO7778/1/500/1&y-99<>99:Px1/x2/x3/x4/x5/x6/x7/x8/x9/x10/x11/x12/x13/x14/x15;
 
 ; igrik (fix to return no valid id spell)
 !!VRy-99&y-99=-1:S99;       [if not find spell]
