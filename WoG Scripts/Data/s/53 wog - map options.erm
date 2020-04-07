@@ -349,7 +349,7 @@ Dialogue Box numbers used: 17
 !!UN:U81/-1/-1/2; [Store coordinates of next Scholar in v2/v3/v4]
 !!SCv2/v3/v4:T?y1 L?y2; [Get type of Scholar (y1) and spell taught (y2), if any]
 !!VRy2:-1024; [Subtract 1024 to get spell number]
-!!VRy3:S0; [Clear y3]
+!!VRy3:S0;    [Clear y3]
 
 !!UN&y1=2/y2=0:P152/?y3; [Check for banned Summon Boat    - y3=1 if banned]
 !!UN&y1=2/y2=7:P153/?y3; [Check for banned Water Walk     - y3=1 if banned]
