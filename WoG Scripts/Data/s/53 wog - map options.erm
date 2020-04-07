@@ -364,7 +364,8 @@ Dialogue Box numbers used: 17
 
 !!FU7779&y3=1:Py2; [Check level of banned spell: y-96]
 !!FU$spell$&y3=1:Py-96/y-96/0/0/1/0; [Generate new non-banned spell of same level: y-99]
-!!SCv2/v3/v4&y3=1/y-99>=0:T2 Ly-99; [Give Scholar new Spell unless all are banned (y-99)]
+!!VRy5:Sy-99 |1024;                  [Add new non-banned spell of same level: y5]
+!!SCv2/v3/v4&y3=1/y-99>=0:T2 Ly5;    [Give Scholar new Spell unless all are banned (y5)]
 
  [If all spells of same level banned (y-99=-1), give a skill instead]
 !!VRy4&y3=1/y-99<0:S0 R27; [Random # from 1 to 27 for Secondary Skill replacement (y4)]
