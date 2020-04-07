@@ -1,7 +1,4 @@
 ZVSE
-ERMS_ScriptDate=30.10(October).2004
-_WARNING_#1=IMPORTANT! This file is not in a plain text format. NEVER use any editor except ERM_S for making any kind of changes!
-ERMS_PoweredBy=ERM Scripter v. 2004.10.5.945
 
 **  Map Options Script Version 2.4 created by Timothy E. Pulver
 **  Requires WoG version 3.58f or later using ERM version 2.7 or later.
@@ -331,7 +328,7 @@ Dialogue Box numbers used: 17
 !!SRv2/v3/v4:S?y1; [Read spell at shrine: y1]
 !!FU|y1<0/y1>69:E; [Exit if invalid spell]
 !!FU$ban$:Py1; [Check if spell is banned or disabled: y-94>0 if yes]
-!!FU$spell$&y-94>0:Px2/x2/0/0/1; [Random non-banned level x2 spell: y-99]
+!!FU$spell$&y-94>0:Px2/x2/0/0/1/0; [Random non-banned level x2 spell: y-99]
 !!SRv2/v3/v4&y-94>0:Sy-99; [Set a random spell (y-99) that isn't banned or disabled]
 
 -------------------------------------------------------------------------------
@@ -366,7 +363,7 @@ Dialogue Box numbers used: 17
 !!UN&y1=2/y2=3:P247/?y3; [Check for banned View Earth     - y3=1 if banned]
 
 !!FU7779&y3=1:Py2; [Check level of banned spell: y-96]
-!!FU$spell$&y3=1:Py-96/y-96/0/0/1; [Generate new non-banned spell of same level: y-99]
+!!FU$spell$&y3=1:Py-96/y-96/0/0/1/0; [Generate new non-banned spell of same level: y-99]
 !!SCv2/v3/v4&y3=1/y-99>=0:T2 Ly-99; [Give Scholar new Spell unless all are banned (y-99)]
 
  [If all spells of same level banned (y-99=-1), give a skill instead]
@@ -392,7 +389,7 @@ Dialogue Box numbers used: 17
 !!FU|y1<0/y1>69:E; [Exit if invalid spell]
 !!FU$ban$:Py1; [Check if spell is banned: y-94>0 if yes]
 !!FU7779&y-94>0:Py1; [Check level of spell on spell scroll: y-96]
-!!FU$spell$&y-94>0:Py-96/y-96/0/0/1; [Generate new non-banned spell of same level: y-99]
+!!FU$spell$&y-94>0:Py-96/y-96/0/0/1/0; [Generate new non-banned spell of same level: y-99]
 !!OBv2/v3/v4&y-94>0:Cy-99; [Give Spell Scroll new spell (y3)]
 
 -------------------------------------------------------------------------------

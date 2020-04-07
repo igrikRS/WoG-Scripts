@@ -224,7 +224,7 @@ Syntax:
  #1 = minimum spell level: 0=any, or 1..5
  #2 = maximum spell level: 0=any, or 1..5
  #3 = type: 0=any, 1=adventure, 2=combat
- #4 = element: 0=any, 1=air, 2=earth, 4=fire, 8=water. Add numbers for multiple elements.
+ #4 = element: 0=any, 1=air, 2=fire, 4=water, 8=earth. Add numbers for multiple elements.
  #5 = banning: 0=ignore spell banning, 1=skip banned spells
  #6 = exclusions: 0=no exclusions, 1..9=number of specific spell exclusions (#7..#15)
  #7..#15 = specific spell exclusions: 0..69 for spell number, anything else is ignored
@@ -242,22 +242,26 @@ Syntax:
 Returned Values:
  y-96 : Level (1..5)
  y-97 : Type (1=Adventure, 2=Combat)
- y-98 : Element (1=air, 2=earth, 4=fire, 8=water, 15=all elements)
+ y-98 : Element (1=air, 2=fire, 4=water, 8=earth, 15=all elements)
 
 --------------------------------------------------------------------------------
 
 !?FU7777;
- [x1=min. level, x2=max. level, x3=type, x4=element, x5=banning]
- [x6=number of exclusions, x7..x15=specific exclusions]
-
- [Set y-99 to 99 for an invalid parameter]
-!!VRy-99|x1<0/x1>5/x2<0/x2>5/x3<0/x3>2/x4<0/x4>15/x5<0/x5>3/x6<0/x6>9:S99;
-
-!!FU&y-99=99:E; [Exit if an invalid parameter is entered]
+; x1=min. level, x2=max. level, x3=type, x4=element, x5=banning
+; x6=number of exclusions, x7..x15=specific exclusions
+ 
 !!VRy-99:S-1; [Initialize y-99 to -1]
 
- [Do up to 500 loops to find a valid spell number: y-99]
-!!DO7778/1/500/1:Px1/x2/x3/x4/x5/x6/x7/x8/x9/x10/x11/x12/x13/x14/x15;
+; Set y-99 to 99 for an invalid parameter: mast skip loop
+!!VRy-99|x1<0/x1>5/x2<0/x2>5/x3<0/x3>2/x4<0/x4>15/x5<0/x5>3/x6<0/x6>9:S99;
+
+; Do up to 500 loops to find a valid spell number: y-99
+!!DO7778/1/500/1&y99<>99:Px1/x2/x3/x4/x5/x6/x7/x8/x9/x10/x11/x12/x13/x14/x15;
+
+; igrik (fix to return no valid id spell)
+!!VRy-99&y-99=-1:S99;       [if not find spell]
+!!VRy-99&y-99=99/x3<>1:S15; [x3=0: to any spells: return 15 Magic Arrow]
+!!VRy-99&y-99=99/x3=1:S2;   [x3=1: if adventure spells return 2 Visions]
 
 --------------------------------------------------------------------------------
 
@@ -274,35 +278,35 @@ Returned Values:
 !!VRy2&x2<>0/y-96>x2:S1; [If level too high, set y2 to 1]
 !!VRy2&x3<>0/x3<>y-97:S1; [If invalid type, set y2 to 1]
 !!VRy3:Sx4; [Copy x4 (elements) to y3]
-!!VRy3:&1; [Check for Air Element]
+!!VRy3:&1;  [Check for Air Element]
 !!VRy2&x4<>0/x4<>15/y-98<>15/y-98=1/y3<>1:S1; [If Air Spell and invalid, set y2 to 1]
 !!VRy3:Sx4; [Copy x4 (elements) to y3]
-!!VRy3:&2; [Check for Earth Element]
-!!VRy2&x4<>0/x4<>15/y-98<>15/y-98=2/y3<>2:S1; [If Earth Spell and invalid, set y2 to 1]
+!!VRy3:&2;  [Check for Fire Element]
+!!VRy2&x4<>0/x4<>15/y-98<>15/y-98=2/y3<>2:S1; [If Fire Spell and invalid, set y2 to 1]
 !!VRy3:Sx4; [Copy x4 (elements) to y3]
-!!VRy3:&4; [Check for Fire Element]
-!!VRy2&x4<>0/x4<>15/y-98<>15/y-98=4/y3<>4:S1; [If Fire Spell and invalid, set y2 to 1]
+!!VRy3:&4;  [Check for Water Element]
+!!VRy2&x4<>0/x4<>15/y-98<>15/y-98=4/y3<>4:S1; [If Water Spell and invalid, set y2 to 1]
 !!VRy3:Sx4; [Copy x4 (elements) to y3]
-!!VRy3:&8; [Check for Water Element]
-!!VRy2&x4<>0/x4<>15/y-98<>15/y-98=8/y3<>8:S1; [If Water Spell and invalid, set y2 to 1]
+!!VRy3:&8;  [Check for Earth Element]
+!!VRy2&x4<>0/x4<>15/y-98<>15/y-98=8/y3<>8:S1; [If Earth Spell and invalid, set y2 to 1]
 !!UN:J0/y1/?y4; [Check if spell is enabled (0) or disabled (1): y4]
 !!VRy2&y4=1/x5=1:S1; [If spell is disabled and banning is selected, set y2 to 1]
 !!VRy5:S0; [Initialize y5 to 0]
-!!UN&y1=0:P152/?y5; [Check for banned Summon Boat    - y5=1 if banned]
-!!UN&y1=7:P153/?y5; [Check for banned Water Walk     - y5=1 if banned]
-!!UN&y1=9:P154/?y5; [Check for banned Town Portal    - y5=1 if banned]
-!!UN&y1=8:P155/?y5; [Check for banned Dimension Door - y5=1 if banned]
-!!UN&y1=6:P156/?y5; [Check for banned Fly            - y5=1 if banned]
-!!UN&y1=1:P221/?y5; [Check for banned Scuttle Boat   - y5=1 if banned]
-!!UN&y1=2:P222/?y5; [Check for banned Visions        - y5=1 if banned]
+!!UN&y1=0:P152/?y5;  [Check for banned Summon Boat    - y5=1 if banned]
+!!UN&y1=7:P153/?y5;  [Check for banned Water Walk     - y5=1 if banned]
+!!UN&y1=9:P154/?y5;  [Check for banned Town Portal    - y5=1 if banned]
+!!UN&y1=8:P155/?y5;  [Check for banned Dimension Door - y5=1 if banned]
+!!UN&y1=6:P156/?y5;  [Check for banned Fly            - y5=1 if banned]
+!!UN&y1=1:P221/?y5;  [Check for banned Scuttle Boat   - y5=1 if banned]
+!!UN&y1=2:P222/?y5;  [Check for banned Visions        - y5=1 if banned]
 !!UN&y1=26:P223/?y5; [Check for banned Armageddon    - y5=1 if banned]
-!!UN&y1=5:P246/?y5; [Check for banned View Air       - y5=1 if banned]
-!!UN&y1=3:P247/?y5; [Check for banned View Earth     - y5=1 if banned]
+!!UN&y1=5:P246/?y5;  [Check for banned View Air       - y5=1 if banned]
+!!UN&y1=3:P247/?y5;  [Check for banned View Earth     - y5=1 if banned]
 !!VRy2&y5=1/x5=1:S1; [If spell is banned and banning is selected, set y2 to 1]
 !!VRy2&y1=57:S1; [If spell is Titan's Lightning Bolt is selected, set y2 to 1]
-!!VRy2&x6>=1/x7=y1:S1; [If spell is 1st excluded spell, set y1 to 1]
-!!VRy2&x6>=2/x8=y1:S1; [If spell is 2nd excluded spell, set y1 to 1]
-!!VRy2&x6>=3/x9=y1:S1; [If spell is 3rd excluded spell, set y1 to 1]
+!!VRy2&x6>=1/x7=y1:S1;  [If spell is 1st excluded spell, set y1 to 1]
+!!VRy2&x6>=2/x8=y1:S1;  [If spell is 2nd excluded spell, set y1 to 1]
+!!VRy2&x6>=3/x9=y1:S1;  [If spell is 3rd excluded spell, set y1 to 1]
 !!VRy2&x6>=4/x10=y1:S1; [If spell is 4th excluded spell, set y1 to 1]
 !!VRy2&x6>=5/x11=y1:S1; [If spell is 5th excluded spell, set y1 to 1]
 !!VRy2&x6>=6/x12=y1:S1; [If spell is 6th excluded spell, set y1 to 1]
@@ -310,21 +314,21 @@ Returned Values:
 !!VRy2&x6>=8/x14=y1:S1; [If spell is 8th excluded spell, set y1 to 1]
 !!VRy2&x6>=9/x15=y1:S1; [If spell is 9th excluded spell, set y1 to 1]
 
-!!VRy-99&y2=0:Sy1; [If spell is valid, set y-99 to spell number: y-99]
-!!VRx16&y2=0:S999; [If spell is valid, set x16 to 999 to exit loop: x16]
+!!VRy-99&y2=0:Sy1;  [If spell is valid, set y-99 to spell number: y-99]
+!!VRx16&y2=0:S999;  [If spell is valid, set x16 to 999 to exit loop: x16]
 
 --------------------------------------------------------------------------------
 
  [Determine Spell Level, Type, Element]
 !?FU7779&x1>=0/x1<=69;
  [x1=spell number, y-96 returns level, y-97 returns type, y-98 returns element]
- 
+
 !!SSx1:L?y-96 S?y-98 F?y-97; [y-96 - spell level, y-98 - spell elements, y-97 spell flags]
 !!VRy-97:&1 +1; [y-97=1 for adventure spells, y-97=2 for combat spells]
 
 !!UN:C4474587/4/?y1 Cy1/4/?y2;  [© igrik]
-!!VRy3:Sx1 *136 +y2;            [Air=1, Fire=2, Water=4, Earth=8]
-!!UN:Cy3/28/4/?y-98;            [y-98 - spell magic school]
+!!VRy3:Sx1 *136 +y2 +28;        [Air=1, Fire=2, Water=4, Earth=8]
+!!UN:Cy3/4/?y-98;               [y-98 - spell magic school]
 
 ********************************************************************************
 
