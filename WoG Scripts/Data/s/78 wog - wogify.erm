@@ -255,11 +255,15 @@ Returned Values:
 ; Set y-99 to 99 for an invalid parameter: mast skip loop
 !!VRy-99|x1<0/x1>5/x2<0/x2>5/x3<0/x3>2/x4<0/x4>15/x5<0/x5>3/x6<0/x6>9:S99;
 
-; Do up to 500 loops to find a valid spell number: y-99
-!!DO7778/1/500/1&y-99<>99:Px1/x2/x3/x4/x5/x6/x7/x8/x9/x10/x11/x12/x13/x14/x15;
+; Do up to 500 loops to find a valid spell number: return in y-99
+!!DO7778/1/500/1&y-99=-1:Px1/x2/x3/x4/x5/x6/x7/x8/x9/x10/x11/x12/x13/x14/x15;
 
-; igrik (fix to return no valid id spell)
-!!VRy-99&y-99=-1:S99;       [if not find spell]
+; generate ERA debug information in folder Debag/Era if y-99 no valid spell id
+!!SN&y-99<0|y-99>69:L^era.dll^?y1 Ay1/^GenerateDebugInfo^/?y2 Ey2/0/0;
+; Attention: y-99 mast be 0...69
+
+; igrik (fix - always return valid id spell)
+!!VRy-99&y-99<0|y-99>69:S99;[check to invalid spell id]
 !!VRy-99&y-99=99/x3<>1:S15; [x3=0: to any spells: return 15 Magic Arrow]
 !!VRy-99&y-99=99/x3=1:S2;   [x3=1: if adventure spells return 2 Visions]
 
