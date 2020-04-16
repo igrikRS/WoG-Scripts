@@ -162,6 +162,8 @@ ZVSE
 !!VRy2:Sv1 *30 :100 +v1; [calculate interest]
 !!VRvy1:Sy2; [set payback value]
 
+!!UN&1000:R4; redraw town screen
+
 ** End of function for borrowing gold **
 
 
@@ -219,6 +221,8 @@ ZVSE
 !!VRvy1&y2=3:Sy3 +3000;
 !!VRvy1&y2=4:Sy3 +4000;
 !!VRvy1&y2=5:Sy3 +5000;
+
+!!UN&1000:R4; redraw town screen
 
 ** End of function for borrowing gold **
 
