@@ -96,7 +96,7 @@ Dialogues: 88
 !!TRx16/x1/x2:T?y1/d/d/d/d/d/d/d; [Check for water or rock]
 !!OBx16/x1/x2:T?y2; [Check for clear spot]
 
-!!FU10852&y1<8/y2=0:Px1/x2;
+!!FU10852&y1<8/y2=0:Px1/x2/x16;
 
 --------------------------------------------------------------------------
 
@@ -104,7 +104,7 @@ Dialogues: 88
 
 !?FU10852;
  [x1=y coordinate, x16=x coordinate, x2=level]
-
+!!VRx16:Sx3;
  [Initialize y2-y5]
 !!VRy2:S-1;
 !!VRy3:S-1;
@@ -139,12 +139,10 @@ Dialogues: 88
 !!OBx16/y6/x2&y5=0/y10<8:T?y5; [Check for object: y5=0 if empty]
 
 !!VRv3&v3>1:-1; [Subtract 1 from v3]
-
 !!FU10854&y5=0/y10<8/v3=0:Py1/x1/x2/0; [Place a horizontal garrison if a valid space is found]
-
 !!VRv3&y5=0/y10<8/v3=0:S3; [Note that a horizontal garrison was placed]
 
-!!FU10853&v3<>3:Px1/x2; [Call vertical garrison function if no horizontal garrison]
+!!FU10853&v3<>3:Px1/x2/x3; [Call vertical garrison function if no horizontal garrison]
 
 --------------------------------------------------------------------------
 
@@ -152,7 +150,7 @@ Dialogues: 88
 
 !?FU10853;
  [x1=y coordinate, x16=x coordinate, x2=level]
-
+!!VRx16:Sx3;
  [Initialize y2-y5]
 !!VRy2:S-1;
 !!VRy3:S-1;
