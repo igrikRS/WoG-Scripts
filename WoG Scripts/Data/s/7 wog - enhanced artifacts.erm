@@ -1,7 +1,5 @@
 ZVSE
-ERMS_ScriptDate=16.9(September).2004
-_WARNING_#1=IMPORTANT! This file is not in a plain text format. NEVER use any editor except ERM_S for making any kind of changes!
-ERMS_PoweredBy=ERM Scripter v. 2004.9.2.1048
+
 ** ENHANCED ARTIFACTS  -  ERM script 71
 
 ** By Arstahd
@@ -303,8 +301,8 @@ ERMS_PoweredBy=ERM Scripter v. 2004.9.2.1048
 !?BA0&v7182=1/-998;
 !!OB7130:T?y-1;                         [check for monster stack at position]
 !!MO7130&76/y-1=54:G?y-2;               [check for monsters at position]
-!!MO7130&76/y-2>0:Rv7059/1;             [reset monster aggression level if flag 76 is set (for diplo arts)]
-!!IF:V76/0;                                          [reset flag 76]
+!!MO7130&76/y-1=54/y-2>0:Rv7059/1;             [reset monster aggression level if flag 76 is set (for diplo arts)]
+!!IF:V76/0;                                    [reset flag 76]
 
 !!BA:H0/?y-3;                                  [get attacking hero #]
 !!HEy-3&y-3>-1:A2/76/?y-4/?y-5 A2/77/?y-4/?y-6 A2/78/?y-4/?y-7 A2/139/?y-4/?y-8;  [see if attacker has Conjuring items or Ring of the Magi]
