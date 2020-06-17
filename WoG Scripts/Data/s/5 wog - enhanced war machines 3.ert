@@ -1,4 +1,4 @@
-#	Text resource for "script73.erm" document 		
+#	Text resource for "script73.erm" document		
 173000	%Z4's war machines	<!!Q>	01.08.2004
 173001	War Machine Factory
 
@@ -116,8 +116,8 @@ This one will cost {750} gold	<!!S>	01.08.2004
 173109	2 first aid tents to buy, will cost 1500 gold	<!!S>	01.08.2004
 173110	Don't buy first aid tent	<!!S>	01.08.2004
 173111	How many ballistas to buy?	<!!S>	01.08.2004
-173112	1 ballista to buy, will cost 750 gold	<!!S>	01.08.2004
-173113	2 ballistas to buy, will cost 1500 gold	<!!S>	01.08.2004
+173112	1 ballista to buy, will cost 2500 gold	<!!S>	28.05.2020
+173113	2 ballistas to buy, will cost 5000 gold	<!!S>	28.05.2020
 173114	Don't buy ballista	<!!S>	01.08.2004
 173115	How many ammo carts to buy?	<!!S>	01.08.2004
 173116	1 ammo cart to buy, will cost 750 gold	<!!S>	01.08.2004
@@ -140,5 +140,5 @@ This one will cost {750} gold	<!!S>	01.08.2004
 173133	ammo cart	<!!S>	01.08.2004
 173134	ammo carts	<!!S>	01.08.2004
 173135	first aid tent	<!!S>	01.08.2004
-173136	first aid tents	<!!S>	01.08.2004
-173137	%Z1 has %Z2 %Z3	<!!Q>	01.08.2004
+173136	Currently available: %Y1 
+This one will cost {2500} gold	<!!S>	26.05.2020

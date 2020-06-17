@@ -1,19 +1,16 @@
 ZVSE
-ERMS_ScriptDate=20.2(Febrary).2012
-_WARNING_#1=IMPORTANT! This file is not in a plain text format. NEVER use any editor except ERM_S for making any kind of changes!
-ERMS_PoweredBy=ERM Scripter v. 2004.9.2.1048
 
 ** Enhanced War Machines III by Bonizag
 ** Wogify Name: script73.erm
 ** Updated: Febrary 20, 2012 by rennyo
 
 ** variables used:        v847, v850-v859, v862-v880, v883 for long term
-                          v1-v3,v7800-v7956 temporarily
+**                        v1-v3,v7800-v7956 temporarily
 
 ** string variables used: z1-z4, z78-z90 temporarily
 
 ** flags used:            781, 783-790 for long term
-                          2,3,4 temporarily
+**                        2,3,4 temporarily
 
 ** timer used:            41
 
@@ -24,7 +21,7 @@ ERMS_PoweredBy=ERM Scripter v. 2004.9.2.1048
 ** object variables used: H (at towns and war machine factories), O for owner at war machine factory, T at towns
 
 !#UN:P73/?v847;                            //v847=1;                                                                  check if option is enabled
-//init
+** //init
 
 !#VRv863&v847=1:S0;                       //    if v847=1 then { v863=0;                                set v863 to 0 so on the first day will also execute refresh
 !#TM41&v847=1:S1/999/1/255;               //   SET TIMER41 from 1 to 999 step 1 ALL PLAYERS;            init timer 41
@@ -39,7 +36,7 @@ ERMS_PoweredBy=ERM Scripter v. 2004.9.2.1048
 !#VRv859&v847=1:S0;
 
 !#MA&v847=1:C147/6/750;                   //   SET WAR MACHINE COST 750;                                 all war machines cost 750 gold
-!#MA&v847=1:C146/6/750;
+!#MA&v847=1:C146/6/2500;                  //   set ballista cost 2500[upd rennyo 02.2012]
 !#MA&v847=1:C148/6/750;
 
 !?TM41&v847=1;                            //   if v847=1 then ****TIMER41-> {                                                    timer trigger
@@ -281,12 +278,18 @@ ERMS_PoweredBy=ERM Scripter v. 2004.9.2.1048
 !!CM&f=12/g=22/h<>-1/t=6/q=1:R0; //disable for ballista yard in stronghold town
 !!CM&f=12/g=14/h<>-1/m>464/m<536/n>204/n<256/t=8/q=1:R0; //if town is conflux and building 14 then x: 465-535 y: 205-255
 !!CM&f=12/g=14/h<>-1/m>496/m<613/n>216/n<353/t=2/q=1:R0; //if town is tower and building 14 then x: 497-612 y: 217-352
-!!FU7803&f=12/g=16/h<>-1/o=p/q=1:Ph/i/j/k/0; //call buying function for visiting hero
-!!FU7803&f=12/g=23/h<>-1/m>404/m<471/n>251/n<296/t=4/o=p/q=1:Ph/i/j/k/0;
-!!FU7803&f=12/g>=10/g<=15/h<>-1/m>360/m<454/n>159/n<239/t=7/o=p/1/q=1:Ph/i/j/k/0;
-!!FU7803&f=12/g=22/h<>-1/t=6/o=p/q=1:Ph/i/j/k/1; //we buy ballistas at the ballista yard in stronghold town
-!!FU7803&f=12/g=14/h<>-1/m>464/m<536/n>204/n<256/t=8/o=p/q=1:Ph/i/j/k/0;
-!!FU7803&f=12/g=14/h<>-1/m>496/m<613/n>216/n<353/t=2/o=p/q=1:Ph/i/j/k/0;
+
+**[start updated by rennyo 26.05.2020 for balista cost]
+!!FU7803&f=12/g=16/h<>-1/o=p/q=1/t=0:Ph/i/j/k/0/1; //call buying function for visiting hero (ballista)
+!!FU7803&f=12/g=16/h<>-1/o=p/q=1/t=5:Ph/i/j/k/0/1; //call buying function for visiting hero (ballista)
+!!FU7803&f=12/g=16/h<>-1/o=p/q=1/t=8:Ph/i/j/k/0/1; //call buying function for visiting hero (ballista)
+!!FU7803&f=12/g=16/h<>-1/o=p/q=1/t<>5/t<>0/t<>8:Ph/i/j/k/0/0; //call buying function for visiting hero  (NOT ballista)
+!!FU7803&f=12/g=23/h<>-1/m>404/m<471/n>251/n<296/t=4/o=p/q=1:Ph/i/j/k/0/0;                      [updated by rennyo 26.05.2020]
+!!FU7803&f=12/g>=10/g<=15/h<>-1/m>360/m<454/n>159/n<239/t=7/o=p/1/q=1:Ph/i/j/k/0/1;             [updated by rennyo 26.05.2020]
+!!FU7803&f=12/g=22/h<>-1/t=6/o=p/q=1:Ph/i/j/k/1/0; //we buy ballistas at the ballista yard in stronghold town  [updated by rennyo 26.05.2020]
+!!FU7803&f=12/g=14/h<>-1/m>464/m<536/n>204/n<256/t=8/o=p/q=1:Ph/i/j/k/0/1;                  [updated by rennyo 26.05.2020]
+!!FU7803&f=12/g=14/h<>-1/m>496/m<613/n>216/n<353/t=2/o=p/q=1:Ph/i/j/k/0/0;                  [updated by rennyo 26.05.2020]
+**[end updated by rennyo 26.05.2020 for balista cost]
 
 !?CM4&v847=1; //trigger for click on first aid tent, player can heal the tent this way
 !!CM:D?o; //get positon of right click during battle
@@ -505,7 +508,16 @@ ERMS_PoweredBy=ERM Scripter v. 2004.9.2.1048
 
 !?BG0&v847=1;
 !!BG:N?v867 A?v868 D?p; //get stack number attack type and destination
-!!VRy1:Sv997+v867 R0/y1; reset RG to current turn+current stack number (modified but identical at both sides)
+
+**RNG init.Now it depends not only from stack but x,y,z of battle[upd rennyo 26.05.2020]
+!!BA:P?y2/?y3/?y4;//get battle coordinates for RNG
+!!VRy4:+v867 *256 *256 *256;//(y4 + current stack number[max 41 <= 2^31]) << 24
+!!VRy1:Sv997 *256 *256;//y1 = v997(current turn) << 16
+!!VRy3:*256;//y3 << 8
+!!VRy1:+y2 +y3 +y4;//y1 = y1 + y2 + y3 + y4
+!!VRy1:R0/y1; reset RNG to random number (modified but identical at both side)
+
+
 !!BMv867:T?v872 I?v851; //get type of monster and side index
 !!BMv867&v872=147:N?v850; //v850 number of first aid tents
 !!BHv851&v872=147:N?f; //get hero number
@@ -520,7 +532,7 @@ ERMS_PoweredBy=ERM Scripter v. 2004.9.2.1048
 !!BHv851&v872=147/v874>0/788:M0; //enable spellcasting
 !!BU&v872=147/v874>0/788:Ep/?v875; //v875 is the stack that is healed
 !!VRv869&v872=147/v874>0/788:S0; //initialize v869
-!!DO7810/1/v850/1&v872=147/v874>0/788/v868=11:Pv874/v851; //make a random cure value, vl contains the sum
+!!DO7810/1/v850/1&v872=147/v874>0/788/v868=11:Pv874/v851/y1; //make a random cure value, vl contains the sum  [upd rennyo 26.05.2020]
 !!VRl&v872=147/v874>0/788/v868=11:Sv869 +1; //vl set to v869, +1 is needed because we won't give the removed 1 hp to this stack
 !!BMv875&v872=147/v874>0/788/v868=11:H?f L?g B?h N?i; //store parameters of the stack to heal
 
@@ -558,7 +570,15 @@ ERMS_PoweredBy=ERM Scripter v. 2004.9.2.1048
 !!BH1:N?f; //get defender hero
 
 !!BG:N?v867; //get stack number attack type and destination
-!!VRy1:Sv997+v867 R0/y1;[upd rennyo 02.2012]  reset RG to current turn+current stack number (modified but identical at both sides)
+
+**RNG init.Now it depends not only from stack but x,y,z of battle[upd rennyo 26.05.2020]
+!!BA:P?y2/?y3/?y4;//get battle coordinates for RNG
+!!VRy4:+v867 *256 *256 *256;//(y4 + current stack number[max 41 <= 2^31]) << 24
+!!VRy1:Sv997 *256 *256;//y1 = v997(current turn) << 16
+!!VRy3:*256;//y3 << 8
+!!VRy1:+y2 +y3 +y4;//y1 = y1 + y2 + y3 + y4
+!!VRy1:R0/y1; reset RNG to random number (modified but identical at both side)
+
 !!BMv867:T?v872 I?v851; //get type of monster and side index
 !!BMv867&v872=147:N?v850; //v850 number of tents
 !!BHv851&v872=147:N?f; //get hero number
@@ -579,7 +599,7 @@ ERMS_PoweredBy=ERM Scripter v. 2004.9.2.1048
 !!DO7809/0/41/1&v872=147/v874=0/788:Pf/v851; //get the stack number, returned in v875
 
 !!VRv869&v872=147/v874=0/788:S0; //initialize v869
-!!DO7810/1/v850/1&v872=147/v874=0/788:Pv874/v851; //make a random cure value for tents, v869 contains the sum
+!!DO7810/1/v850/1&v872=147/v874=0/788:Pv874/v851/y1; //make a random cure value for tents, v869 contains the sum [upd rennyo 26.05.2020]
 
 !!BMv875&v872=147/v874=0/788:H?f L?g B?h N?i; //store parameters of the stack
 !!VRl&v872=147/v874=0/788:Sv869; //vl set to v869
@@ -699,7 +719,7 @@ ERMS_PoweredBy=ERM Scripter v. 2004.9.2.1048
 !!HEx1&w81=0/y2=1:A3/6/1/1; //remove first aid tent that was bought right now
 !!OW&w81=0/y2=1:Ry1/6/d750; //give back gold spent on first aid tent
 !!HEx1&w82=0/y3=1:A3/4/1/1; //remove ballista that was bought right now
-!!OW&w82=0/y3=1:Ry1/6/d750; //give back gold spent on ballista
+!!OW&w82=0/y3=1:Ry1/6/d2500; //give back gold spent on ballista    [upd rennyo 26.05.20 balista cost]
 !!HEx1&w83=0/y4=1:A3/5/1/1; //remove ammo cart that was bought right now
 !!OW&w83=0/y4=1:Ry1/6/d750; //give back gold spent on ammo cart
 
@@ -756,6 +776,7 @@ ERMS_PoweredBy=ERM Scripter v. 2004.9.2.1048
 //uses flag 2 for question
 //x1 hero number x2 x3 x4 position of object that stores number of available machines
 //x5:0 hero buys machine at blacksimth x5:1 hero buys ballista at ballista yard
+//x6:1 town sells balistas [x5 is doing something other. do not want to know what it does]  [upd rennyo 26.05.20 balista cost]
 
 !!POx2/x3/x4:H?y5 T?y6; //get number of H attribute in y5 and T in y6
 
@@ -770,7 +791,8 @@ ERMS_PoweredBy=ERM Scripter v. 2004.9.2.1048
 
 !!VRz-1&x5=1:Sz173013;
 
-!!VRz1:Sz173014;
+!!VRz1&x6=0:Sz173014;  //  [upd rennyo 26.05.20 balista cost]
+!!VRz1&x6=1:Sz173136;  //  [upd rennyo 26.05.20 balista cost]
 !!UN:A6/9/1; //the name is changed to numbers
 !!UN:A4/9/1;
 !!UN:A5/9/1;
@@ -798,9 +820,17 @@ ERMS_PoweredBy=ERM Scripter v. 2004.9.2.1048
 
 !!HEx1&2:O?y3;
 !!OW&2:Ry3/6/?y4; //get gold in y4
-!!IF&2/y4<750:M1/z173026;
-!!IF&2/y4<750:V2/0; //set 2 to false if not enough gold
-!!OW&2:Ry3/6/d-750; //remove 750 from gold pool
+
+**[start upd rennyo 26.05.20 balista cost]
+!!IF&2/y4<750/x6=0:M1/z173026;
+!!IF&2/y4<750/x6=0:V2/0; //set 2 to false if not enough gold
+!!OW&2/x6=0:Ry3/6/d-750; //remove 750 from gold pool
+
+
+!!IF&2/y4<2500/x6=1:M1/z173026;
+!!IF&2/y4<2500/x6=1:V2/0; //set 2 to false if not enough gold
+!!OW&2/x6=1:Ry3/6/d-2500; //remove 750 from gold pool
+**[end upd rennyo 26.05.20 balista cost]
 
 !!VRw81&2/y2=1:+1; //increment w vars if clicked yes according to town subtype
 !!VRw81&2/y2=4:+1;
@@ -821,7 +851,7 @@ ERMS_PoweredBy=ERM Scripter v. 2004.9.2.1048
 !!IF&2/y1=0:V2/0; //we bought the last machine
 
 !!POx2/x3/x4:Hy5 Ty6; //set object H and T attribute to store updated value
-!!FU7803&2:Px1/x2/x3/x4/x5; //ask longer if clicked yes, had enough gold and there is something to buy
+!!FU7803&2:Px1/x2/x3/x4/x5/x6; //[upd rennyo 26.05.2020]ask longer if clicked yes, had enough gold and there is something to buy
 
 !?FU7804;
 //removes equipped war machines
@@ -901,13 +931,13 @@ ERMS_PoweredBy=ERM Scripter v. 2004.9.2.1048
 //town selling ballistas
 !!POv1/v2/v3&x2=98/y2=0/-1:H1; //refresh H variable if blacksmith is not built
 !!POv1/v2/v3&x2=98/y2=0/-783:H1; //refresh H variable if town is burned down
-!!POv1/v2/v3&x2=98/y2=0/1/y3<=148/783:Hd2; //add 2 war machines/week
+!!POv1/v2/v3&x2=98/y2=0/1/y3<=148/783:Hd1; //add 1 war machines/week[upd rennyo 26.05.20]
 !!POv1/v2/v3&x2=98/y2=5/-1:H1; //refresh H variable if blacksmith is not built
 !!POv1/v2/v3&x2=98/y2=5/-783:H1; //refresh H variable if town is burned down
-!!POv1/v2/v3&x2=98/y2=5/1/y3<=148/783:Hd2; //add 2 war machines/week
+!!POv1/v2/v3&x2=98/y2=5/1/y3<=148/783:Hd1; //add 1 war machines/week[upd rennyo 26.05.20]
 !!POv1/v2/v3&x2=98/y2=8/-1:H1; //refresh H variable if blacksmith is not built
 !!POv1/v2/v3&x2=98/y2=8/-783:H1; //refresh H variable if town is burned down
-!!POv1/v2/v3&x2=98/y2=8/1/y3<=148/783:Hd2; //add 2 war machines/week
+!!POv1/v2/v3&x2=98/y2=8/1/y3<=148/783:Hd1; //add 1 war machines/week[upd rennyo 26.05.20]
 
 //town selling ammo carts
 !!POv1/v2/v3&x2=98/y2=2/-1:H1; //refresh H variable if blacksmith is not built
@@ -985,18 +1015,18 @@ ERMS_PoweredBy=ERM Scripter v. 2004.9.2.1048
 !!VRv875&x1=v856:Sx16; //we found the stack
 !!VRx16&x1=v856:S41; //avoid calling fu7809 longer
 
+**fixed bugs, balanced specialization[upd rennyo 26.05.2020]
 !?FU7810;
 //calculates random heal value (first aid skill and specialists are taken into count)
 //x1: first skill level
 //x2: side index
-
-!!VRy1:S25 *x1 +25 -1; //y1 max limit for random heal
- !!VRy2:R0/y1; reset RG to current turn+current stack number (modified but identical at both sides)
-!!VRy2:S0 Ry1 +1; //y2 1-25/1-50/1-75/1-100 random
+//x3: random init number
+!!VRy1:S25 *x1 +25; //y1+1 max limit for random heal
+!!VRy2:S1 Ry1; //y2 1-25/1-50/1-75/1-100 random
 !!BHx2:N?y5; //get hero number in y5
 !!HEy5|y5=8/y5=27/y5=123:E?y3/?y4; //get hero level if he/she is specialist of first aid skill
-!!VRy4|y5=8/y5=27/y5=123:*5 +100;
-!!VRy2|y5=8/y5=27/y5=123:*y4 :100; //calculate increased heal value
+!!VRy4|y5=8/y5=27/y5=123:*2;
+!!VRy2|y5=8/y5=27/y5=123:+y4; //calculate increased heal value
 !!VRv869:+y2; //add to 469
 
 !?FU7811;
@@ -1331,8 +1361,9 @@ ERMS_PoweredBy=ERM Scripter v. 2004.9.2.1048
 !!VRy4:-x4;
 
 !!HEx7:O?y5;
-!!VRy6:S0;
-!!VRy6:+x4 +x5 +x6 *750; //y6: money to spend
+!!VRy6:S0 +x5 *2500; //[upd rennyo 26.05.20 ballista cost 2500]
+!!VRy7:S0 +x4 +x6 *750; //[upd rennyo 26.05.20 ballista cost 2500]
+!!VRy6:+y7;             //y6: money to spend
 !!OW:Ry5/6/?y7;
 !!VRy7:-y6;
 
