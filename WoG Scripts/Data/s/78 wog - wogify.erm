@@ -159,6 +159,11 @@ UNIVERSAL START TRIGGER by igrik
 !!FU&y1=0:E;   !!SN:Ay1/^SetHook^/?y2;
 !!FU(CreateERMHook):Py2;
 
+!?FU(CreateERMHook);
+!!SN:Ex1/1/5013149/(OnNewDay);
+!!SN:Ex1/1/5014608/(OnNewWeek);
+!!SN:Ex1/1/5016587/(OnNewMonth);
+
 ********************************************************************************
 
   UNIVERSAL TIMER INIT by Tobyn   (see script64.erm for longer description)
@@ -1818,4 +1823,3 @@ Number replaced with Mithril: %V6^;
 !!EAx16&y1>=6:M500; [Set 50% Exp. Multiplier if Level 7+]
 
 ** end of function
-

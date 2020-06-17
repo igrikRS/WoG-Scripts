@@ -21,7 +21,7 @@ This works even if your hero has all eight skill slots filled.
 Uses timer 10 and Functions 10-12
 Uses v1-v2-v3 just for local use
 Uses w20-w27 to track hero visits to mushrooms and previous skill levels
-Uses z11-z17 and z159 for hint texts
+Uses z180-z188 for hint texts
 
 !#UN:P110/?v1; check if Magic Mushrooms are enabled
 
@@ -29,25 +29,25 @@ Uses z11-z17 and z159 for hint texts
 !#TM10&v1=1:S1/999/7/255; launch timer every 7 days launch timer every 7 days for all players
 
 *** Init for Magic Water Mushroom
-!#VRz159&v1=1:Sz110000;
-!#VRz11&v1=1:Sz110001;
-!#HT63/18&v1=1:W21/0/159;  Rename all Magic Water mushrooms
-!#HT63/18&v1=1:W21/1/11;  call z11 string if mushroom was visited
+!#VRz180&v1=1:Sz110000;
+!#VRz181&v1=1:Sz110001;
+!#HT63/18&v1=1:W21/0/180;  Rename all Magic Water mushrooms
+!#HT63/18&v1=1:W21/1/181;  call z181 string if mushroom was visited
 *** Init for Magic Fire Mushroom
-!#VRz12&v1=1:Sz110002;
-!#VRz13&v1=1:Sz110003;
-!#HT63/29&v1=1:W23/0/12;  Rename all Magic Fire mushrooms
-!#HT63/29&v1=1:W23/1/13;  call z13 string if mushroom was visited
+!#VRz182&v1=1:Sz110002;
+!#VRz183&v1=1:Sz110003;
+!#HT63/29&v1=1:W23/0/182;  Rename all Magic Fire mushrooms
+!#HT63/29&v1=1:W23/1/183;  call z183 string if mushroom was visited
 *** Init for Magic Earth Mushroom
-!#VRz14&v1=1:Sz110004;
-!#VRz15&v1=1:Sz110005;
-!#HT63/23&v1=1:W25/0/14;  Rename all Magic Earth mushrooms
-!#HT63/23&v1=1:W25/1/15;  call z15 string if mushroom was visited
+!#VRz184&v1=1:Sz110004;
+!#VRz185&v1=1:Sz110005;
+!#HT63/23&v1=1:W25/0/184;  Rename all Magic Earth mushrooms
+!#HT63/23&v1=1:W25/1/185;  call z185 string if mushroom was visited
 *** Init for Magic Air Mushroom
-!#VRz16&v1=1:Sz110006;
-!#VRz17&v1=1:Sz110007;
-!#HT63/14&v1=1:W27/0/16;  Rename all Magic Air mushrooms
-!#HT63/14&v1=1:W27/1/17;  call z17 string if mushroom was visited
+!#VRz186&v1=1:Sz110006;
+!#VRz187&v1=1:Sz110007;
+!#HT63/14&v1=1:W27/0/186;  Rename all Magic Air mushrooms
+!#HT63/14&v1=1:W27/1/187;  call z187 string if mushroom was visited
 
 *** Timer
 !?TM10;

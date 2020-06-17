@@ -1,11 +1,10 @@
 ZVSE
-ERMS_ScriptDate=19.10(October).2004
-_WARNING_#1=IMPORTANT! This file is not in a plain text format. NEVER use any editor except ERM_S for making any kind of changes!
-ERMS_PoweredBy=ERM Scripter v. 2004.10.5.945
-[script: Forgotten shrine v1.3]
+
+[script: Forgotten shrine v1.4]
 [author: Petyo P. Georgiev]
-[version: WoG 3.58]
-[last changed: 19 October 2004]
+[version: ERA 2.9.x]
+[last changed: 17.06.2020 by igrik]
+
 **=================================DESCRIPTION==================================
 **   This script makes the black shrine (object 63/22) a building named "Forgotten
 ** shrine".
@@ -21,36 +20,36 @@ ERMS_PoweredBy=ERM Scripter v. 2004.10.5.945
 **   The badge of courage "bug" effect (protection from mind spells) is not used.
 **==============================================================================
 
-***what's new:
-** ver 1.21:
+*** what's new:
+**  ver 1.21:
 ** 1) Picture added;
 ** 2) New dialogue - 15, and new var - z4 - temp usage
 
 ** ver. 1.2:
 ** 1) Added hint text at the battle startup;
-** 2) New fu - FU16;
+** 2) New FU - FU16;
 ** 3) new vars - z2-3 - temporary usage.
 
 ** ver. 1.1:
 ** 1) new variables - v18-v23.
 
-****v vars used: v15-23,v1100-1108,v1110-1118
-****z vars used: (z2-4), z167-168
-****std vars used: m-o
-****hero vars: w18
-****flags used: 37
-****fu used: fu12-16
-****dialogue used: 15
-****object used: 63/22
-****tm used: NONE
+**** v vars used: v15-23,v1100-1108,v1110-1118
+**** z vars used: (z2-4), z194-z195
+**** std vars used: m-o
+**** hero vars: w18
+**** flags used: 37
+**** FU used: NONE
+**** dialogue used: 15
+**** object used: 63/22
+**** tm used: NONE
 
 !#UN:P60/?v1109;
 
-!#VRz167:Sz160000;
-!#VRz168:Sz160001;
+!#VRz194:Sz160000;
+!#VRz195:Sz160001;
 
-!#HT63/22&v1109=1:W18/0/167;
-!#HT63/22&v1109=1:T168;
+!#HT63/22&v1109=1:W18/0/194;
+!#HT63/22&v1109=1:T195;
 
 !?CM2;
 !!CM:I?y-1F?y-3;
@@ -62,7 +61,7 @@ ERMS_PoweredBy=ERM Scripter v. 2004.10.5.945
 !!VRz2:Sz160003;
 !!VRz3:Sz160004;
 !!VRz4:S^../Data/s/pic/f_shrine.jpg^;
-!!HE-1:N?nW?m;
+!!HE-1:N?n W?m;
 !!IF:Wn;
 !!IF&1000:D15/2/0/0/4/0/0/0/3/0/0/0/0/0/0/0;
 !!IF&1000:E1/15;
@@ -71,7 +70,7 @@ ERMS_PoweredBy=ERM Scripter v. 2004.10.5.945
 !!IF&37/m>200/w18=0/1000:M1/z160006;
 !!IF&37/w18<>0/1000:M1/z160007;
 !!HEn&37/m>200/w18=0:W0;
-!!FU12&37/m>200/w18=0:P;
+!!FU(WOG18_Func1)&37/m>200/w18=0:P;
 !!IF&37/m<201/w18=0/1000:M1/z160008;
 !!IF&-37/1000:M1/z160009;
 
@@ -79,31 +78,31 @@ ERMS_PoweredBy=ERM Scripter v. 2004.10.5.945
 !!TRv998/v999/v1000:G?v17;
 
 !!BA:H0/?v15;             attacker
-!!DO13/0/6/1&v15>-1:Pv15/0; chk creatures
-!!FU14&v15>-1:Pv15/0;       chk artifacts
+!!DO(WOG18_Func2)/0/6/1&v15>-1:Pv15/0; chk creatures
+!!FU(WOG18_Func3)&v15>-1:Pv15/0;       chk artifacts
 
 !!BA:H1/?v16;             defender
-!!DO13/0/6/1&v16>-1:Pv16/1; chk creatures
-!!FU14&v16>-1:Pv16/1;       chk artifacts
+!!DO(WOG18_Func2)/0/6/1&v16>-1:Pv16/1; chk creatures
+!!FU(WOG18_Func3)&v16>-1:Pv16/1;       chk artifacts
 
-!!FU16:Pv15/v16;             display hint text
+!!FU(WOG18_Func5):Pv15/v16;             display hint text
 ---------------------------------BA50-------------------------------------------
 !?BA50&v1109=1;
 !!TRv998/v999/v1000:G?v17;
 
 !!BA:H0/?v15;             attacker
-!!DO13/0/6/1&v15>-1:Pv15/0; chk creatures
-!!FU14&v15>-1:Pv15/0;       chk artifacts
+!!DO(WOG18_Func2)/0/6/1&v15>-1:Pv15/0; chk creatures
+!!FU(WOG18_Func3)&v15>-1:Pv15/0;       chk artifacts
 
 !!BA:H1/?v16;             defender
-!!DO13/0/6/1&v16>-1:Pv16/1; chk creatures
-!!FU14&v16>-1:Pv16/1;       chk artifacts
+!!DO(WOG18_Func2)/0/6/1&v16>-1:Pv16/1; chk creatures
+!!FU(WOG18_Func3)&v16>-1:Pv16/1;       chk artifacts
 
-!!FU16:Pv15/v16;             display hint text
+!!FU(WOG18_Func5):Pv15/v16;             display hint text
 --------------------------------------------------------------------------------
 !?BF&v1109=1;
-!!DO15/0/10/1&v15>-1:Pv15/0;
-!!DO15/0/10/1&v16>-1:Pv16/1;
+!!DO(WOG18_Func4)/0/10/1&v15>-1:Pv15/0;
+!!DO(WOG18_Func4)/0/10/1&v16>-1:Pv16/1;
 
 !?BA1&v1109=1;
 !!BA:H0/?v15;
@@ -121,8 +120,8 @@ ERMS_PoweredBy=ERM Scripter v. 2004.10.5.945
 !!IF&v16>-1:Wv16;
 !!VRw18:S0;
 ======================================FUs=======================================
-!?FU12;
-!!VRy1:S0R19;       generate random value for effect
+!?FU(WOG18_Func1);
+!!VRy1:S0 R19;       generate random value for effect
 !!VRw18&y1=0:S27;   shield
 !!VRw18&y1=1:S28;   air shield
 !!VRw18&y1=2:S29;   fire shield
@@ -144,7 +143,7 @@ ERMS_PoweredBy=ERM Scripter v. 2004.10.5.945
 !!VRw18&y1=18:S58;  counterstrike
 !!VRw18&y1=19:S36;  magic mirror
 
-!?FU13;
+!?FU(WOG18_Func2);
 !!VRy2&x2=0:S0;
 !!VRy2&x2=1:S10;
 !!HEx1:C0/x16/?y1/d;
@@ -162,7 +161,7 @@ ERMS_PoweredBy=ERM Scripter v. 2004.10.5.945
 !!VRvy3|y1=52/y1=53/y1=130/y1=131/y1=158:S6;
 !!VRvy3|y1=114/y1=129/y1=159/y1=164/y1=165/y1=166/y1=167:S7;
 
-!?FU14;
+!?FU(WOG18_Func3);
 !!VRy2&x2=0:S0;
 !!VRy2&x2=1:S10;
 !!VRy2:+1100;
@@ -177,7 +176,7 @@ ERMS_PoweredBy=ERM Scripter v. 2004.10.5.945
 !!VRv1117&y4>0/x2=1:S2;
 !!VRvy2&y3>0:C5/5/5/5/5/5/5/5;
 
-!?FU15;
+!?FU(WOG18_Func4);
 !!VRy5:S0; !!VRy6:S0; !!VRy7:S0;
 !!VRy1&x2=0:S0;
 !!VRy1&x2=1:S21;
@@ -204,7 +203,7 @@ ERMS_PoweredBy=ERM Scripter v. 2004.10.5.945
 !!BMy2&w18>0/vy4=6/w18<>29/w18<>31/w18<>43/w18<>55/w18<>56:Mw18/50/3;
 !!BMy2&w18>0/vy4=7/w18<>29/w18<>31/w18<>43/w18<>44/w18<>49/w18<>55/w18<>56:Mw18/50/3;
 
-!?FU16;
+!?FU(WOG18_Func5);
 !!VRy1:S0; !!VRy2:S0; !!VRy3:S0; !!VRz-3:S^^;
 !!HEx1&x1>-1:B0/?z-1;
 !!HEx2&x2>-1:B0/?z-2;
