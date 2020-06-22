@@ -163,6 +163,7 @@ UNIVERSAL START TRIGGER by igrik
 !!SN:Ex1/1/5013149/(OnNewDay);
 !!SN:Ex1/1/5014608/(OnNewWeek);
 !!SN:Ex1/1/5016587/(OnNewMonth);
+!!SN:Ex1/1/7710213/(StartBattle);
 
 ********************************************************************************
 
@@ -1823,3 +1824,4 @@ Number replaced with Mithril: %V6^;
 !!EAx16&y1>=6:M500; [Set 50% Exp. Multiplier if Level 7+]
 
 ** end of function
+
