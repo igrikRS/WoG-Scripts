@@ -1,7 +1,4 @@
 ZVSE
-ERMS_ScriptDate=24.9(September).2004
-_WARNING_#1=IMPORTANT! This file is not in a plain text format. NEVER use any editor except ERM_S for making any kind of changes!
-ERMS_PoweredBy=ERM Scripter v. 2004.6.29.918
 
 ** Emerald Tower Script Version 1.0 Created by Timothy Pulver
 ** with thanks to Steve Hanna for extra naming ideas
@@ -45,11 +42,10 @@ Dialogues: 3
 -----------------------------------------------------------------------
 
  [Setup]
-
 !#UN:P44/?v1; [Check if script is enabled: v1]
 
   [Bit table, also in Adventure Cave, Map Rules and Monster Mutterings]
-!#VRv550&v1=1:C1/2/4/8/16/32/64/128/256/512; 
+!#VRv550&v1=1:C1/2/4/8/16/32/64/128/256/512;
 
 !#UN&v1=1:B0/1; [Enable Mithril]
 
@@ -62,19 +58,18 @@ Dialogues: 3
 !#HT63/65&v1=1:P0/816;
 !#HT63/65&v1=1:P1/817;
 
-!#TM38&v1=1:S8/999/7/255;
-
 -----------------------------------------------------------------------
 
- [Timer resets the Emerald Towers' non-visited status each week]
+ [Timer resets the Emerald Towers' non-visited status each month]
 
-!?TM38;
-!!UN:P44/?y-1; [Check if script is enabled: y-1]
-!!FU&y-1<>1:E; [Exit if script isn't enabled]
+!?FU(OnNewMonth);  [© igrik: hook in 78 wog - wogify]
 
-!!UN:U63/65/?v1; [Number of Emerald Towers: v1]
+!!UN:P44/?y1; [Check if script is enabled: y-1]
+!!FU&y1<>1:E; [Exit if script isn't enabled]
+
+!!UN:U63/65/?y1; [Number of Emerald Towers: v1]
 !!VRv1:S-1; [Initialize v1 to -1 to work with new faster UN:U syntax]
-!!DO10910/1/v1/1&v1>0:P; [Loop through all Emerald Towers]
+!!DO10910/1/y1/1&y1>0:P; [Loop through all Emerald Towers]
 
 -----------------------------------------------------------------------
 
@@ -96,22 +91,22 @@ Dialogues: 3
  [Initialize Flag 5 to False]
 !!IF:V5/0;
 
- [Store current player in v2 and convert to player bit number] 
-!!OW:C?v2; 
-!!VRv2:+550; 
-!!VRv2:Svv2; 
- 
- [Check if current AI player has already gotten an improved creature] 
+ [Store current player in v2 and convert to player bit number]
+!!OW:C?v2;
+!!VRv2:+550;
+!!VRv2:Svv2;
+
+ [Check if current AI player has already gotten an improved creature]
  [v3=v2 if AI has already gotten an improved creature]
-!!VRv3:Sv1271 &v2; 
+!!VRv3:Sv1271 &v2;
 
 !!VRv1270:S0; [Initialize bonus bought variable to 0]
-!!PO998:N?v1; [Check if tower has been visited this week: v1=1 if visited]
+!!PO998:N?v1; [Check if tower has been visited this month: v1=1 if visited]
 
 !!IF&v1=1/1000:M1/z144002;
 
  [Exit trigger if Tower has already been visited this]
- [week or AI has already gotten an improved creature]
+ [month or AI has already gotten an improved creature]
 !!FU|v1=1/v2=v3:E;
 
 !!IF&1000:Q2/5/7/2/z144003;
@@ -148,7 +143,7 @@ Dialogues: 3
 !!VRz1:Sz144009;
 !!VRz2:Sz144010;
 !!VRv367:S0; [Initialize v367 to 0]
-!!IF&v1>0/1000:G1/367/0/1/480/481/482/483/484/485/486/2/0/0/0/0;
+!!IF&v1>0/1000:G1/367/128/1/480/481/482/483/484/485/486/2/0/0/0/0;
 
 !!IF&v1=0/1000:M1/z144011;
 
@@ -348,7 +343,7 @@ Dialogues: 3
 !!VRz487|y10<1/y10>12:S^^;
 !!VRz488:Sz144027;
 
-!!IF&1000:G1/368/0/1/480/481/482/483/484/485/486/487/488/2/0/0;
+!!IF&1000:G1/368/512/1/480/481/482/483/484/485/486/487/488/2/0/0;
 
  [Determine which box was checked (bonus type) - store result in v3]
 !!VRv3:S0;
@@ -387,8 +382,8 @@ Dialogues: 3
 !!VRv3&v3>1/v4=0/-4/1000:S-1; [Set v3 to -1 if player can't pay but doesn't leave]
 !!FU10900&v3=-1/-4/1000:P; [Choose another species to improve]
 
-!!OW:C?y11;        [Store current player in y11] 
-!!VRy12:S550 +y11; [y12 is index for v variable with bit number for current player] 
+!!OW:C?y11;        [Store current player in y11]
+!!VRy12:S550 +y11; [y12 is index for v variable with bit number for current player]
 !!VRv1271&-1000/v3>0:+vy12; [Add AI player number to v1271 so it won't get another bonus]
 
 -----------------------------------------------------------------------
@@ -589,7 +584,7 @@ Dialogues: 3
 !!VRz1:Sz144052;
 !!VRz2:Sz144053;
 
-!!IF&1000:G1/368/0/1/480/481/482/483/484/485/486/487/488/489/2/0;
+!!IF&1000:G1/368/1024/1/480/481/482/483/484/485/486/487/488/489/2/0;
 
  [Determine which box was checked - store result in v5]
 !!VRv5:S0;
