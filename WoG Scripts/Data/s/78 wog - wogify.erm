@@ -165,7 +165,6 @@ UNIVERSAL START TRIGGER by igrik
 !!SN:Ex1/1/5016587/(WOG_OnNewMonth);
 !!SN:Ex1/1/7710213/(WOG_PreBeforeBattle);
 !!SN:Ex1/1/5008601/(WOG_EndOfTurn);
-!!SN:Ex1/1/6027880/(WOG_Town_GetGoldIncome);
 
 ********************************************************************************
 

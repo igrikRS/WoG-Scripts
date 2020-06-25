@@ -419,5 +419,7 @@ IF:M^v434 = %V434^;
 !!UN:Cy2/4/y1;                  [обновление дохода]
 !!SN:W^tmp.y1^/?y1 W^tmp.y2^/?y2 W^tmp.y3^/?y3 W^tmp.y4^/?y4; [восстановление значений y-переменных]
 
+!?FU(WOG_CreateERMHook)&432;
+!!SN:Ex1/1/6027880/(WOG_Town_GetGoldIncome);
 ** end
 
