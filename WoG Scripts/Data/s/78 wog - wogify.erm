@@ -151,19 +151,21 @@ ZVSE
 
 UNIVERSAL START TRIGGER by igrik
 
-!?PI;   !!FU(StartGame):P0;
-!?GM0;  !!FU(StartGame):P1;
+!?PI;   !!FU(WOG_StartGame):P0;
+!?GM0;  !!FU(WOG_StartGame):P1;
 
-!?FU(StartGame);
+!?FU(WOG_StartGame);
 !!SN:L^EraPlugins\erm_hooker.era^/?y1;
 !!FU&y1=0:E;   !!SN:Ay1/^SetHook^/?y2;
-!!FU(CreateERMHook):Py2;
+!!FU(WOG_CreateERMHook):Py2;
 
-!?FU(CreateERMHook);
-!!SN:Ex1/1/5013149/(OnNewDay);
-!!SN:Ex1/1/5014608/(OnNewWeek);
-!!SN:Ex1/1/5016587/(OnNewMonth);
-!!SN:Ex1/1/7710213/(PreBeforeBattle);
+!?FU(WOG_CreateERMHook);
+!!SN:Ex1/1/5013149/(WOG_OnNewDay);
+!!SN:Ex1/1/5014608/(WOG_OnNewWeek);
+!!SN:Ex1/1/5016587/(WOG_OnNewMonth);
+!!SN:Ex1/1/7710213/(WOG_PreBeforeBattle);
+!!SN:Ex1/1/5008601/(WOG_EndOfTurn);
+!!SN:Ex1/1/6027880/(WOG_Town_GetGoldIncome);
 
 ********************************************************************************
 

@@ -62,7 +62,7 @@ Dialogues: 3
 
  [Timer resets the Emerald Towers' non-visited status each month]
 
-!?FU(OnNewMonth);  [© igrik: hook in 78 wog - wogify]
+!?FU(WOG_OnNewMonth);  [© igrik: hook in 78 wog - wogify]
 
 !!UN:P44/?y1; [Check if script is enabled: y-1]
 !!FU&y1<>1:E; [Exit if script isn't enabled]
