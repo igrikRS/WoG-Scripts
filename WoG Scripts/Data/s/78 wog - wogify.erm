@@ -1292,17 +1292,9 @@ Number replaced with Mithril: %V6^;
 
 !!VRz1:Sz100003;
 !!VRz2:Sz100004;
-!!VRy-2:S0 R8;
-!!VRz3&y-2=0:S^0^;
-!!VRz3&y-2=1:S^1^;
-!!VRz3&y-2=2:S^2^;
-!!VRz3&y-2=3:S^3^;
-!!VRz3&y-2=4:S^4^;
-!!VRz3&y-2=5:S^5^;
-!!VRz3&y-2=6:S^6^;
-!!VRz3&y-2=7:S^7^;
-!!VRz3&y-2=8:S^8^;
-!!VRz4:S^../data/zvs/lib1.res/npc%Z3.gif^;
+!!VRy2:S0 R8;
+*!VRz4:S^../data/zvs/lib1.res/npc%Y2.gif^;
+!!VRz4:S^../data/zvs/lib1.res/wogoption.bmp^;
 !!VRz5:Sz100005;
 !!IF:D1/1/0/2/4/0/0/0/5/0/0/0/0/0/0/0;
 !!IF:F1/0/0/0/0/0; [remove cancel button]
