@@ -1,16 +1,4 @@
 ZVSE
-ERMS_ScriptName=script26
-ERMS_ScriptAuthor=Perfecto (idea by Dieter Averbeck)
-ERMS_ScriptVersion=2.2.3
-ERMS_ScriptDate=14.9(September).2004
-ERMS_ScriptERMVersion=2.70
-ERMS_ScriptLanguage=English
-ERMS_ScriptUsedVariables=v157-v164;v4101-v4136
-ERMS_ScriptUsedFlags=160
-ERMS_ScriptUsedTimers=26
-ERMS_ScriptUsedFunctions=160-175
-_WARNING_#1=IMPORTANT! This file is not in a plain text format. NEVER use any editor except ERM_S for making any kind of changes!
-ERMS_PoweredBy=ERM Scripter v. 2004.6.29.918
 
 ********************************************************************************
 ** The Artificer upgrades artifacts a hero has equiped                        **

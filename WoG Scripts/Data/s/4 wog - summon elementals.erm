@@ -1,16 +1,13 @@
 ZVSE
-ERMS_ScriptDate=21.8(August).2004
-_WARNING_#1=IMPORTANT! This file is not in a plain text format. NEVER use any editor except ERM_S for making any kind of changes!
-ERMS_PoweredBy=ERM Scripter v. 2004.6.29.918
 
-** Summon elemental by Bonizag  
-** Wogify Name: script74.erm  
+** Summon elemental by Bonizag
+** Wogify Name: script74.erm
 ** Updated: August 21, 2004
 
 ** string variables used: z1-z5 temporarily
 
 ** variables used:        v848, v860-v861, v881-v882, v7600-v7756
-                          v1 temporarily
+**                        v1 temporarily
 
 ** hero variables used:   w84
 
@@ -48,7 +45,7 @@ ERMS_PoweredBy=ERM Scripter v. 2004.6.29.918
 !!CM&f=8/g>=0/q=1:R0; //don't show original message
 
 !!IF:V791/1; // init
-!!IF&f=8/g>=0/q=1:V791/0; 
+!!IF&f=8/g>=0/q=1:V791/0;
 
 !?CM0&-791/v848=1; //conitnue trigger if basic conditions are fulfilled
 
@@ -82,11 +79,11 @@ ERMS_PoweredBy=ERM Scripter v. 2004.6.29.918
 !!VRz4:S^^;
 !!VRz4&k>0:Sz174008;
 !!VRz5:Sz174009;
-!!VRv1:S0; //init v1 
+!!VRv1:S0; //init v1
 !!IF:G1/1/16/78/1/2/3/4/5/0/0/0/0/0/0/0;
 
 !!HEg&v1=1:S14/?l I?m/1; //get fire magic skill and spell points
-!!VRr&v1=1/l=0:S250; //basic level 
+!!VRr&v1=1/l=0:S250; //basic level
 !!VRr&v1=1/l>0:S200; //above basic level
 !!HEg&v1=1/m<r:B0/?z1; //get hero name
 !!IF&v1=1/m<r:M1/z174010;
@@ -98,7 +95,7 @@ ERMS_PoweredBy=ERM Scripter v. 2004.6.29.918
 !!HEg&v1=1/791:Im; //update hero's spell points
 
 !!HEg&v1=2:S17/?l I?m/1; //get earth magic skill and spell points
-!!VRr&v1=2/l=0:S250; //basic level 
+!!VRr&v1=2/l=0:S250; //basic level
 !!VRr&v1=2/l>0:S200; //above basic level
 !!HEg&v1=2/m<r:B0/?z1; //get hero name
 !!IF&v1=2/m<r:M1/z174012;
@@ -110,7 +107,7 @@ ERMS_PoweredBy=ERM Scripter v. 2004.6.29.918
 !!HEg&v1=2/791:Im; //update hero's spell points
 
 !!HEg&v1=4:S16/?l I?m/1; //get water magic skill and spell points
-!!VRr&v1=4/l=0:S250; //basic level 
+!!VRr&v1=4/l=0:S250; //basic level
 !!VRr&v1=4/l>0:S200; //above basic level
 !!HEg&v1=4/m<r:B0/?z1; //get hero name
 !!IF&v1=4/m<r:M1/z174014;
@@ -122,7 +119,7 @@ ERMS_PoweredBy=ERM Scripter v. 2004.6.29.918
 !!HEg&v1=4/791:Im; //update hero's spell points
 
 !!HEg&v1=8:S15/?l I?m/1; //get air magic skill and spell points
-!!VRr&v1=8/l=0:S250; //basic level 
+!!VRr&v1=8/l=0:S250; //basic level
 !!VRr&v1=8/l>0:S200; //above basic level
 !!HEg&v1=8/m<r:B0/?z1; //get hero name
 !!IF&v1=8/m<r:M1/z174016;
@@ -139,18 +136,18 @@ ERMS_PoweredBy=ERM Scripter v. 2004.6.29.918
 !?FU7821;
 //finds an empty hero slot or existing elemental stack and fills it up with elementals
 //x1 hero number
-//x2 elemental type 
+//x2 elemental type
 //x3 skill level according to elemental type
 //x16 hero slot
 
 !!HEx1:F?y1/?y2/?y3/?y4; //get spell power in y3
 !!VRy7:Sy3 *2; //count number of elementals to summon in y7
-!!VRy7&x3=2:*150 :100; //advanced level 
-!!VRy7&x3=3:*200 :100; //expert level 
+!!VRy7&x3=2:*150 :100; //advanced level
+!!VRy7&x3=3:*200 :100; //expert level
 !!HEx1:C0/x16/?y5/?y6; //get number of monsters in slot in y6
 !!HEx1&y6=0/-791:C0/x16/x2/y7; //if slot is empty fill it
 !!VRy7&y5=x2/-791:+y6; //add elementals to existing stack
-!!HEx1&y5=x2/-791:C0/x16/x2/y7; 
+!!HEx1&y5=x2/-791:C0/x16/x2/y7;
 !!IF|y6=0/y5=x2:V791/1; //don't give more elementals for this spellcast
 
 !?FU7822;
@@ -181,7 +178,7 @@ ERMS_PoweredBy=ERM Scripter v. 2004.6.29.918
 !!VRy11&y15>0/y5>y4:S113;
 !!VRy11&y15>0/y14=0/y13=0/y12=0:S113;
 
-!!IF&y11=0:V791/1; 
+!!IF&y11=0:V791/1;
 
 !?FU7822&-791;  //continue if there is en elemental type hero can summon
 
@@ -203,7 +200,7 @@ ERMS_PoweredBy=ERM Scripter v. 2004.6.29.918
 !?FU7822&-791; //continue if hero has spell points to cast
 
 //calculate number of monsters to summon
-!!VRy17:Sy8 *2; 
+!!VRy17:Sy8 *2;
 
 !!VRy17&y11=112/y2=2:*150 :100;
 !!VRy17&y11=112/y2=3:*200 :100;
@@ -255,7 +252,7 @@ ERMS_PoweredBy=ERM Scripter v. 2004.6.29.918
 !!VRy11&y15>0/y5>y4:S113;
 !!VRy11&y15>0/y14=0/y13=0:S113;
 
-!!IF&y11=0:V791/1; 
+!!IF&y11=0:V791/1;
 
 !?FU7822&-791;  //continue if there is en elemental type hero can summon
 
@@ -275,7 +272,7 @@ ERMS_PoweredBy=ERM Scripter v. 2004.6.29.918
 !?FU7822&-791; //continue if hero has spell points to cast
 
 //calculate number of monsters to summon
-!!VRy17:Sy8 *2; 
+!!VRy17:Sy8 *2;
 
 !!VRy17&y11=115/y3=2:*150 :100;
 !!VRy17&y11=115/y3=3:*200 :100;
@@ -321,7 +318,7 @@ ERMS_PoweredBy=ERM Scripter v. 2004.6.29.918
 !!VRy11&y15>0/y5>y4:S113;
 !!VRy11&y15>0/y14=0:S113;
 
-!!IF&y11=0:V791/1; 
+!!IF&y11=0:V791/1;
 
 !?FU7822&-791;  //continue if there is en elemental type hero can summon
 
@@ -338,7 +335,7 @@ ERMS_PoweredBy=ERM Scripter v. 2004.6.29.918
 !?FU7822&-791; //continue if hero has spell points to cast
 
 //calculate number of monsters to summon
-!!VRy17:Sy8 *2; 
+!!VRy17:Sy8 *2;
 
 !!VRy17&y11=114/y4=2:*150 :100;
 !!VRy17&y11=114/y4=3:*200 :100;
@@ -378,7 +375,7 @@ ERMS_PoweredBy=ERM Scripter v. 2004.6.29.918
 
 !!VRy11&y15>0:S113;
 
-!!IF&y11=0:V791/1; 
+!!IF&y11=0:V791/1;
 
 !?FU7822&-791;  //continue if there is en elemental type hero can summon
 
@@ -392,7 +389,7 @@ ERMS_PoweredBy=ERM Scripter v. 2004.6.29.918
 !?FU7822&-791; //continue if hero has spell points to cast
 
 //calculate number of monsters to summon
-!!VRy17:Sy8 *2; 
+!!VRy17:Sy8 *2;
 
 !!VRy17&y11=113/y5=2:*150 :100;
 !!VRy17&y11=113/y5=3:*200 :100;

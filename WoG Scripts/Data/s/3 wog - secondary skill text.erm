@@ -1,7 +1,4 @@
 ZVSE
-ERMS_ScriptDate=18.7(July).2004
-_WARNING_#1=IMPORTANT! This file is not in a plain text format. NEVER use any editor except ERM_S for making any kind of changes!
-ERMS_PoweredBy=ERM Scripter v. 2004.6.29.918
 
 ** Secondary Skill texts v1.0 by Hermann the Weird
 ** Additions by Tobyn from June 29. 2004
@@ -14,7 +11,7 @@ ERMS_PoweredBy=ERM Scripter v. 2004.6.29.918
 
 ** Functions used: FU17, 19, 34-36
 
-** z vars used: 
+** z vars used:
 
 ** Eagle Eye: z318, z270-z272
 ** Scouting: z319, z273-z275
@@ -83,16 +80,16 @@ ERMS_PoweredBy=ERM Scripter v. 2004.6.29.918
 
 !!VRz318|y1=1/y2=1:Sz175000;     [Set yellow skill name if one of them is enabled]
 
-!!VRz270&y1=1/y2=0:Sz175001;     [Set z vars for EE I] 
-!!VRz271&y1=1/y2=0:Sz175002; 
+!!VRz270&y1=1/y2=0:Sz175001;     [Set z vars for EE I]
+!!VRz271&y1=1/y2=0:Sz175002;
 !!VRz272&y1=1/y2=0:Sz175003;
 
-!!VRz270&y1=0/y2=1:Sz175004;     [Set z vars for EE II] 
-!!VRz271&y1=0/y2=1:Sz175005; 
+!!VRz270&y1=0/y2=1:Sz175004;     [Set z vars for EE II]
+!!VRz271&y1=0/y2=1:Sz175005;
 !!VRz272&y1=0/y2=1:Sz175006;
 
-!!VRz270&y1=1/y2=1:Sz175007;     [Set z vars for EE I and EE II] 
-!!VRz271&y1=1/y2=1:Sz175008; 
+!!VRz270&y1=1/y2=1:Sz175007;     [Set z vars for EE I and EE II]
+!!VRz271&y1=1/y2=1:Sz175008;
 !!VRz272&y1=1/y2=1:Sz175009;
 
 !!UN|y1=1/y2=1:G0/11/1/270 G0/11/2/271 G0/11/3/272;     [Set skill texts for EE]
@@ -104,18 +101,18 @@ ERMS_PoweredBy=ERM Scripter v. 2004.6.29.918
 !!UN:P212/?y4;  [Check for Scouting II]
 !!UN:P58/?y24;  [Check for Scouting III]
 
-!!VRz319|y3=1/y4=1/y24=1:Sz175010;     [Set yellow skill name if one of them is enabled] 
+!!VRz319|y3=1/y4=1/y24=1:Sz175010;     [Set yellow skill name if one of them is enabled]
 
-!!VRz273&y3=1/y4=0:Sz175011;     [Set z vars for Scouting I] 
-!!VRz274&y3=1/y4=0:Sz175012; 
+!!VRz273&y3=1/y4=0:Sz175011;     [Set z vars for Scouting I]
+!!VRz274&y3=1/y4=0:Sz175012;
 !!VRz275&y3=1/y4=0:Sz175013;
 
-!!VRz273&y3=0/y4=1:Sz175014;     [Set z vars for Scouting II] 
-!!VRz274&y3=0/y4=1:Sz175015; 
+!!VRz273&y3=0/y4=1:Sz175014;     [Set z vars for Scouting II]
+!!VRz274&y3=0/y4=1:Sz175015;
 !!VRz275&y3=0/y4=1:Sz175016;
 
-!!VRz273&y3=1/y4=1:Sz175017;     [Set z vars for Scouting I and II] 
-!!VRz274&y3=1/y4=1:Sz175018; 
+!!VRz273&y3=1/y4=1:Sz175017;     [Set z vars for Scouting I and II]
+!!VRz274&y3=1/y4=1:Sz175018;
 !!VRz275&y3=1/y4=1:Sz175019;
 
 !!VRz273&y24=1|y3=1/y4=1:+z175108;     [Set +text for Espionage]
@@ -132,16 +129,16 @@ ERMS_PoweredBy=ERM Scripter v. 2004.6.29.918
 
 !!VRz390|y5=1/y6=1:Sz175020;     [Set yellow skill name if one of them is enabled]
 
-!!VRz276&y5=1/y6=0:Sz175021;     [Set z vars for Resistance I] 
-!!VRz277&y5=1/y6=0:Sz175022; 
+!!VRz276&y5=1/y6=0:Sz175021;     [Set z vars for Resistance I]
+!!VRz277&y5=1/y6=0:Sz175022;
 !!VRz278&y5=1/y6=0:Sz175023;
 
-!!VRz276&y5=0/y6=1:Sz175024;     [Set z vars for Resistance II] 
-!!VRz277&y5=0/y6=1:Sz175025; 
+!!VRz276&y5=0/y6=1:Sz175024;     [Set z vars for Resistance II]
+!!VRz277&y5=0/y6=1:Sz175025;
 !!VRz278&y5=0/y6=1:Sz175026;
 
-!!VRz276&y5=1/y6=1:Sz175027;     [Set z vars for Resistance I and II] 
-!!VRz277&y5=1/y6=1:Sz175028; 
+!!VRz276&y5=1/y6=1:Sz175027;     [Set z vars for Resistance I and II]
+!!VRz277&y5=1/y6=1:Sz175028;
 !!VRz278&y5=1/y6=1:Sz175029;
 
 !!UN|y5=1/y6=1:G0/26/1/276 G0/26/2/277 G0/26/3/278;     [Set skill texts for Resistance]
@@ -152,18 +149,18 @@ ERMS_PoweredBy=ERM Scripter v. 2004.6.29.918
 !!UN:P217/?y7;  [Check for Learning I]
 !!UN:P205/?y8;  [Check for Learning II]
 
-!!VRz391|y7=1/y8=1:Sz175030;     [Set yellow skill name if one of them is enabled] 
+!!VRz391|y7=1/y8=1:Sz175030;     [Set yellow skill name if one of them is enabled]
 
-!!VRz279&y7=1/y8=0:Sz175031;     [Set z vars for Learning I] 
-!!VRz310&y7=1/y8=0:Sz175032; 
+!!VRz279&y7=1/y8=0:Sz175031;     [Set z vars for Learning I]
+!!VRz310&y7=1/y8=0:Sz175032;
 !!VRz311&y7=1/y8=0:Sz175033;
 
-!!VRz279&y7=0/y8=1:Sz175034;     [Set z vars for Learning II] 
-!!VRz310&y7=0/y8=1:Sz175035; 
+!!VRz279&y7=0/y8=1:Sz175034;     [Set z vars for Learning II]
+!!VRz310&y7=0/y8=1:Sz175035;
 !!VRz311&y7=0/y8=1:Sz175036;
 
-!!VRz279&y7=1/y8=1:Sz175037;     [Set z vars for Learning I and II] 
-!!VRz310&y7=1/y8=1:Sz175038; 
+!!VRz279&y7=1/y8=1:Sz175037;     [Set z vars for Learning I and II]
+!!VRz310&y7=1/y8=1:Sz175038;
 !!VRz311&y7=1/y8=1:Sz175039;
 
 !!UN|y7=1/y8=1:G0/21/1/279 G0/21/2/310 G0/21/3/311;     [Set skill texts for Learning]
@@ -447,7 +444,7 @@ ERMS_PoweredBy=ERM Scripter v. 2004.6.29.918
 !!UN:P212/?y3;  [Check for Scouting II]
 !!UN:P58/?y4;  [Check for Scouting III]
 
-!!VRz319|y2=1/y3=1/y4=1:Sz175010;     [Set yellow skill name if one of them is enabled] 
+!!VRz319|y2=1/y3=1/y4=1:Sz175010;     [Set yellow skill name if one of them is enabled]
 
 !!VRz273&y2=1:+^%Z175124^;     [+ short description for Scouting I]
 !!VRz274&y2=1:+^%Z175125^;
@@ -728,7 +725,7 @@ ERMS_PoweredBy=ERM Scripter v. 2004.6.29.918
 !!UN:P217/?y16;  [Check for Learning I]
 !!UN:P205/?y17;  [Check for Learning II]
 
-!!VRz391|y16=1/y17=1:Sz175030;     [Set yellow skill name if one of them is enabled] 
+!!VRz391|y16=1/y17=1:Sz175030;     [Set yellow skill name if one of them is enabled]
 
 !!VRz279&y16=1:+^%Z175218^;     [+ short description for Learning I]
 !!VRz310&y16=1:+^%Z175219^;

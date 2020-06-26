@@ -1,12 +1,5 @@
 ZVSE
 
-ERMS_ScriptDate=19.9(September).2004
-
-ERMS_PoweredBy=ERM Scripter v. 2005.9.7.814
-
-_WARNING_#1=IMPORTANT! This file is not in a plain text format. NEVER use any editor except ERM_S for making any kind of changes!
-
-
 ** Secondary Skills Boost ERM script v1.6 - Donald X. Vaccarino. Right-click hint text added by Timothy Pulver for v1.6.
 ** Requires WOG version 3.58
 ** Updated Sep. 19. 2004 by Hermann the Weird
@@ -172,7 +165,7 @@ _WARNING_#1=IMPORTANT! This file is not in a plain text format. NEVER use any ed
 !!VRz73&y-1=1:Sz103045;
 
 ; [igrik: isGameNotYetStarted]
-!!UN:C6915152/4/?y7;          
+!!UN:C6915152/4/?y7;
 !!VRv910&y7=1:S0;
 
 !!HE-1:O?v908;     [get owner of this hero]
@@ -266,7 +259,7 @@ _WARNING_#1=IMPORTANT! This file is not in a plain text format. NEVER use any ed
 !!VRv910&v908<>-1/v909=0:S1;     [human if has owner and that owner is human]
 
 ; [igrik: is show dialog? (if is start game -> not show dlg)]
-!!UN:C6915152/4/?y1; 
+!!UN:C6915152/4/?y1;
 !!IF&v910=1/y1<>1:Q2/v903/1/1/z103034;
 
 ** End of function to give learning bonus to hero -1
@@ -509,3 +502,4 @@ _WARNING_#1=IMPORTANT! This file is not in a plain text format. NEVER use any ed
 !!IF&y1>0:V270/1;     [Set flag 270 to true if network battle]
 
 ** End of function to set flag 270 if this is a human vs. human network battle
+

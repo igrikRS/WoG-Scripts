@@ -1,7 +1,4 @@
 ZVSE
-ERMS_ScriptDate=10.5(May).2012
-_WARNING_#1=IMPORTANT! This file is not in a plain text format. NEVER use any editor except ERM_S for making any kind of changes!
-ERMS_PoweredBy=ERM Scripter v. 2004.10.5.945
 
 ** TownC ERM script v1.2 - Donald X. Vaccarino, Jonas Gustafsson and Timothy Pulver,
 ** with some balancing suggestions from Kerill Kennedy.
@@ -464,3 +461,4 @@ ERMS_PoweredBy=ERM Scripter v. 2004.10.5.945
 
 !#UN:P67/?v1;                       [Algor]
 !#FU(NeutralTown1)&v1>0:P;          [Algor]
+

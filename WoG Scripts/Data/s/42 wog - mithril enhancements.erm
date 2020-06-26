@@ -1,7 +1,5 @@
 ZVSE
-ERMS_ScriptDate=18.8(August).2004
-_WARNING_#1=IMPORTANT! This file is not in a plain text format. NEVER use any editor except ERM_S for making any kind of changes!
-ERMS_PoweredBy=ERM Scripter v. 2003.7.28.920
+
 Mithril Enhancements Script v1.4 by Anders Jonsson
 Updated September 14, 2004
 
@@ -13,7 +11,6 @@ Advanced University part by Dieter and Tobyn
 *** Important: ***
 If you take this script out of the data/s folder to use in your map, you HAVE to remove the d in
 the following line in order for it to work!
-!d#UN:P36/1;
 
 The Mithril Script lets a player enhance certain buildings the player owns, and some others, by
 right-clicking on their yellow entrance square and paying some Mithril.

@@ -1,12 +1,4 @@
 ZVSE
-ERMS_ScriptDate=9.10(October).2004
-_WARNING_#1=IMPORTANT! This file is not in a plain text format. NEVER use any editor except ERM_S for making any kind of changes!
-ERMS_PoweredBy=ERM Scripter v. 2004.10.5.945
-[script: Enhanced Protection From the Elements ver.2.11]
-[author: Petyo P. Georgiev (petronius)]
-[WoG version: 3.58]
-[last changed: 07 october 2004]
-[Disabled in network battles by Fnord August 25, 2004]
 
 *** NOTE: The previous version of the script uses different way of simulating resistance -
 *** transforms the units to dwarf/battle dwarf prior the spell casting and then changes

@@ -1,7 +1,4 @@
 ZVSE
-ERMS_ScriptDate=21.10(October).2004
-_WARNING_#1=IMPORTANT! This file is not in a plain text format. NEVER use any editor except ERM_S for making any kind of changes!
-ERMS_PoweredBy=ERM Scripter v. 2004.6.29.918
 
 ** Living Scrolls Script Version 1.7 Created by Timothy Pulver
 ** Requires WoG version 3.58 or later using ERM version 2.7 or later.
@@ -589,3 +586,4 @@ Functions Used: FU5244-FU5426, FU5248-FU5255, FU5260-FU5262
 !!IF&y1>0:V270/1; [Set flag 270 to true if network battle]
 
 ** End of Script **
+

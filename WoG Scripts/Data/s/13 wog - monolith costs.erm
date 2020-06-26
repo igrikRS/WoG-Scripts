@@ -1,13 +1,4 @@
 ZVSE
-_WARNING_#1=IMPORTANT! This file is not in a plain text format. NEVER use any editor except ERM_S for making any kind of changes!
-ERMS_PoweredBy=ERM Scripter v. 2004.5.12.945
-Monolith Costs v1.1 by Steven Lynch
-Puts a cost for using a two-way monolith
-WoGify Name: script65.erm
-
-Variables used: v7313
-Flags used: 1 (temporary)
-Last Updated: September 19, 2003
 
 !#UN:P65/?v7313;
 

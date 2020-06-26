@@ -1,16 +1,5 @@
 ZVSE
-ERMS_ScriptName=Creature relationships
-ERMS_ScriptAuthor=Matthew Charlap
-ERMS_ScriptVersion=1.3.1
-ERMS_ScriptDate=3/17/04
-ERMS_ScriptERMVersion=2.70
-ERMS_ScriptLanguage=English (United States) or English (native)
-ERMS_ScriptUsedVariables=v1340-1366
-ERMS_ScriptUsedFlags=130-131
-ERMS_ScriptUsedTimers=tm13
-ERMS_ScriptUsedFunctions=13520-13528
-_WARNING_#1=IMPORTANT! This file is not in a plain text format. NEVER use any editor except ERM_S for making any kind of changes!
-ERMS_PoweredBy=ERM Scripter v. 2004.6.29.918
+
 ** Note: this script requires a WoG version that supports the "e"(floating point) variables.
 ** If one army contains troops that hate each-other, this script creates a chance that
 ** each day a fight may break out. The chance is ((14-2D)*M)%, where D is the hero's
@@ -22,6 +11,7 @@ ERMS_PoweredBy=ERM Scripter v. 2004.6.29.918
 ** in one army, they may improve.
 ** version 1.3: explicit messages for lost and upgraded troops added.
 ** version 1.3.1: creature experience accounted for in HE:C commands
+
 !#UN:P47/?v1340; [check for active script]
 !#TM13&v1340=1:S1/999/1/255; [set timer 12 to trigger every day, for all players]
 
@@ -155,7 +145,7 @@ ERMS_PoweredBy=ERM Scripter v. 2004.6.29.918
 **end of 13523- preparation
 
 !?FU13524;
- 
+
 !!VRy5:S0; [reset damage counter]
 !!VRy1:Sx16+1350; [set number for indirect variable reference]
 !!VRy9:Sx16+1360; [set another number for indirect reference]

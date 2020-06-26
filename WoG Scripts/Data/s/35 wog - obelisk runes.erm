@@ -1,16 +1,13 @@
 ZVSE
-ERMS_ScriptDate=12.9(September).2004
-_WARNING_#1=IMPORTANT! This file is not in a plain text format. NEVER use any editor except ERM_S for making any kind of changes!
-ERMS_PoweredBy=ERM Scripter v. 2004.6.29.918
 
 ** Obelisk Runes version 1.0 by Timothy Pulver
 ** WoGify Name: script43.erm
 ** Updated: September 12, 2004
 
-** This script inscribes a random Adventure Spell on every obelisk. Human played 
+** This script inscribes a random Adventure Spell on every obelisk. Human played
 ** Heroes may cast this spell at no cost when they visit the Obelisk. The AI
 ** can only use Fly or Water Walk and gets 10 bonus spell points for any other
-** Obelisk visited instead. Once visited, an Obelisk's spell will remain the 
+** Obelisk visited instead. Once visited, an Obelisk's spell will remain the
 ** same for the rest of the game. Some spells like Summon Boat will usually
 ** be useless but may appear anyway. Banned movement spells will not appear on
 ** Obelisks.

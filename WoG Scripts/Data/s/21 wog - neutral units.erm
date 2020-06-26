@@ -1,13 +1,4 @@
 ZVSE
-ERMS_ScriptName=Script57
-ERMS_ScriptAuthor=BAD The Archangel; BAD means Alexandru Ducu Balahura not evil.
-ERMS_ScriptVersion=1.1
-ERMS_ScriptDate=25.10(October).2004
-ERMS_ScriptERMVersion=2.80
-ERMS_ScriptLanguage=English (United States) or English (native)
-
-ERMS_PoweredBy=ERM Scripter v. 2004.9.15.1323
-_WARNING_#1=IMPORTANT! This file is not in a plain text format. NEVER use any editor except ERM_S for making any kind of changes!
 
 ** Neutral Units v2.3 by Alexandru Balahura (Neutral Units, Neutral Stack Size, All Monsters are always Savage)
 ** and Timothy Pulver (Neutral Stack Experience, Neutral Town and Creature Bank Growth)
@@ -15,7 +6,7 @@ _WARNING_#1=IMPORTANT! This file is not in a plain text format. NEVER use any ed
 
 ** Modified by Thomas Franz (samot)
 ** - no monster growth if the No-Growth-Option in the map editor is set (FU5402)
-##- no monster growth if the creatures are friendly (always join) - (FU5402)- this option is disable momentanly
+** ##- no monster growth if the creatures are friendly (always join) - (FU5402)- this option is disable momentanly
 ** - abandonded mines are guarded by ghosts (as HoMM 1), at least 7 stacks á 50 ghosts
 **   their number increase daily by 101-103% + 1-3 ghosts (if there are 100 ghosts in
 **   a stack it will growth by 2 (101% of 100 are 1 + 1 random ghost) until 6 ghosts

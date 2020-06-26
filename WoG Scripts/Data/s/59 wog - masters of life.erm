@@ -1,14 +1,4 @@
 ZVSE
-ERMS_ScriptName=script19
-ERMS_ScriptAuthor=Sir Four
-ERMS_ScriptVersion=1.1.0
-ERMS_ScriptDate=20.10(October).2004
-ERMS_ScriptERMVersion=2.70
-ERMS_ScriptUsedTimers=TM2(defined in script00)
-ERMS_ScriptUsedFunctions=FU100
-ERMS_ScriptUsedMacroNames=$once$(defined in script00)
-_WARNING_#1=IMPORTANT! This file is not in a plain text format. NEVER use any editor except ERM_S for making any kind of changes!
-ERMS_PoweredBy=ERM Scripter v. 2004.10.5.945
 
 **  Updated to support experience system: 25 august 2004
 
