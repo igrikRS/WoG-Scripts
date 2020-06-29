@@ -1,47 +1,32 @@
 ZVSE
 
-** Berserker Fly script by Timothy Pulver
-** Version 2.1 for WoG 3.58
-** Variables used: v295-v296,
-** Updated: May 1, 2004
+** BERSERKER FLIES
+** ЗМИИ-БЕРСЕРКЕРЫ
 
---------------------------------------------------------------------------------
+** Option 046 by Timothy Pulver (script46)
 
-!#UN:P46/?v295; [Check if Berserker Fly script is active: v295]
-!?PI&v295=1;
-!!SN:H^monname^/105/0/z146000;   [Set Dragon Fly name (singular) to "Berserker Fly"]
-!!SN:H^monname^/105/1/z146001;   [Set Dragon Fly name (plural) to "Berserker Flies"]
-!!SN:H^monname^/105/2/z146002;   [Set new description for Berserker Flies ]
-!#UN&v295=1:P900/?v296; [Check if Stack Experience is enabled: v296]
-!#UN&v295=1:P900/1; [Enable Stack Experience]
-!#EA105&v295=1:F102/82/?v2; [Check for No Retaliation/next available bonus line: v2]
-!#EA105&v295=1/v2>=0:Bv2/1/102/82/1/1/1/1/1/1/1/1/1/1/1; [Give Dragon Flies No Retaliation]
-!#EA105&v295=1:F102/98/?v2; [Check for Strike & Return/next available bonus line: v2]
-!#EA105&v295=1/v2>=0:Bv2/1/102/98/1/1/1/1/1/1/1/1/1/1/1; [Give Dragon Flies Strike & Return]
-!#EA105&v295=1:F99/59/?v2; [Check for Berserk casting/next available bonus line: v2]
-!#EA105&v295=1/v2>=0:Bv2/1/99/59/20/25/30/35/40/45/50/55/60/65/70; [Give Dragon Flies Berserk Casting]
-!#UN&v295=1:P900/v296; [Restore Stack Experience status: v296]
-!#UN&v295=1/v296=0:P906/1; [Disable gaining of Stack Experience from battles if Stack Experience is disabled]
+* Dragon Flies gain the ability to attack without retaliation,
+* cast Berserk on their target, and return after attacking.
 
---------------------------------------------------------------------------------
+** Внимание! Скрипт работает только, если включен опыт армий
 
- [Start of Battle]
-!?BA0&v295=1;
-!!UN:P900/1; [Enable Stack Experience]
+** -----------------------------------------------------------------------------
 
-!?BA50&v295=1;
-!!UN:P900/1; [Enable Stack Experience]
+!?PI;                         [start map]
+!!UN:P46/?y1 P900/?y2;            [check is scripts are enableds]
+!!FU|y1<>1/y2<>1:E;               [exit, if script or Stack Experience is disabled]
+!!SN:H^monname^/105/0/z146000;    [Set Dragon Fly name (singular) to "Berserker Fly"]
+!!SN:H^monname^/105/1/z146001;    [Set Dragon Fly name (plural) to "Berserker Flies"]
+!!SN:H^monname^/105/2/z146002;    [Set new description for Berserker Flies]
 
---------------------------------------------------------------------------------
+!!MA:X105/?y2;                    [get monster flags]
+!!VRy2:|65536;                    [set NO RETALIATION]
+!!MA:X105/y2;                     [set monster new flags]
 
- [End of Battle]
-!?BA1&v295=1;
-!!UN:P900/v296; [Restore Stack Experience status]
-
-!?BA51&v295=1;
-!!UN:P900/v296; [Restore Stack Experience status]
-
---------------------------------------------------------------------------------
+!!EA105:F102/98/?y2; [Check for Strike & Return/next available bonus line: y2]
+!!EA105&y2>=0:By2/1/102/98/1/1/1/1/1/1/1/1/1/1/1; [Give Dragon Flies Strike & Return]
+!!EA105:F99/59/?y2;  [Check for Berserk casting/next available bonus line: y2]
+!!EA105&y2>=0:By2/1/99/59/20/25/30/35/40/45/50/55/60/65/70; [Give Dragon Flies Berserk Casting]
 
 ** End of Script **
 

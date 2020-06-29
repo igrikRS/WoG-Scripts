@@ -54,8 +54,6 @@ ZVSE
 **    sapphire - gives either +1 to Defense skill or Hit Points skill
 **    emerald - gives either +1 to Magic skill or Speed skill
 
-!#UN:P51/1;
-
 ** initialization
 !#UN:P51/?v7185;                                 [check if Enhanced Commanders is enabled in WoGify Options]
 !#UN:P3/?v1;                                     [check if Commanders are enabled]
@@ -158,8 +156,8 @@ ZVSE
 !!FU(WOG27_NPC_CastPoison)&y-3>=174/y-3<=191/v7081=6/v7084=4096/v7087>0/y-4=0/y-10<50/y-6>-1/y-9=0:Py-7/y-8;  [50% cast poison if commander with death stare retaliates - attacker]
 !!FU(WOG27_NPC_CastPoison)&y-3>=174/y-3<=191/v7081=6/v7086=4096/v7087>0/y-4=1/y-11<50/y-6>-1/y-9=0:Py-7/y-8;  [50% cast poison if commander with death stare retaliates - defender]
 
-!!BA:H0/?y1 H1/?y2;                              [get heroes (commanders) number] 
-!!BU:C?y3;                                       [check for end of battle]                                   
+!!BA:H0/?y1 H1/?y2;                              [get heroes (commanders) number]
+!!BU:C?y3;                                       [check for end of battle]
 !!COy1&y1>-1/v7084=4096/y3=1:B1/12/1;            [restore death stare - attacker]
 !!COy2&y2>-1/v7086=4096/y3=1:B1/12/1;            [restore death stare - defender]
 !!COy1&y1>-1/v7090=128/y3=1:B1/7/1;              [restore fire shield - attacker]
@@ -177,7 +175,7 @@ ZVSE
 ** end of post-buy commander trigger **
 
 ** function to edit commander stats
-!?FU(WOG27_NPC_EditStats);         
+!?FU(WOG27_NPC_EditStats);
 * x1 - hero number
 !!COx1:X2/?y2 T?y5;                              [get commander level & type]
 ** attack - base 5 + 1/2 x level - skill adds +25%,+50%,+75%,+100%,+125%
@@ -314,13 +312,13 @@ ZVSE
 * x2 - second sskill
 * x3 - ert string id
 !!HE-1:N?y1;
-!!COy1:Sx1/?y2 Sx2/?y3 D?y6 E?y7 N?z1;                      
-!!OB998&y6=0/y7=1:T101 U6;                                  
-!!COy1&y6=0/y7=1/y2>y3:Sx2/d1;                               
-!!COy1&y6=0/y7=1/y2<y3:Sx1/d1;                               
-!!VRy4&y6=0/y7=1/y2=y3/y2<5:S0 T99;                        
-!!COy1&y6=0/y7=1/y2=y3/y2<5/y4<50:Sx2/d1;                    
-!!COy1&y6=0/y7=1/y2=y3/y2<5/y4>49:Sx1/d1;                    
+!!COy1:Sx1/?y2 Sx2/?y3 D?y6 E?y7 N?z1;
+!!OB998&y6=0/y7=1:T101 U6;
+!!COy1&y6=0/y7=1/y2>y3:Sx2/d1;
+!!COy1&y6=0/y7=1/y2<y3:Sx1/d1;
+!!VRy4&y6=0/y7=1/y2=y3/y2<5:S0 T99;
+!!COy1&y6=0/y7=1/y2=y3/y2<5/y4<50:Sx2/d1;
+!!COy1&y6=0/y7=1/y2=y3/y2<5/y4>49:Sx1/d1;
 
 !!IF&1000/y6=0/y2>y3:M1/zx3;
 !!IF&1000/y6=0/y2<y3:M1/zx4;
@@ -328,3 +326,4 @@ ZVSE
 !!IF&1000/y6=0/y2=y3/y2<5/y4>49:M1/zx6;
 !!IF&1000/y6=0/y2=y3/y2>4:M1/zx7;
 ** end of object trigger
+
