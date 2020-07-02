@@ -11,7 +11,7 @@ ZVSE
 
 ** Variables used: i-m
 ** V variables:    v7000-v7015 v7183 v7184
-** Z variables:    z2  z500-z679
+** Z variables:    z2  
 ** Y variables:    y1-y12
 ** Flags used:     75,77,78   74
 ** Functions used: 7050-7053 7060-7069     FU7075
@@ -43,12 +43,7 @@ ZVSE
 **   Conflux     -  Messengers
 
 
-
-
 !#UN:P50/?v7183;         [Check if Enhanced Monsters is enabled in WoGify Options]
-*#VRv7183:S1;             [enable for stand-alone use]
-*#VRv7184:S1;             [enable enable spell attack for Messengers]
-
 
 *** CASTLE CREATURES ***
 !#MA&v7183=1:A2/7;        Archer Att 7
@@ -70,13 +65,6 @@ ZVSE
 !#MA&v7183=1:C150/5/15;   Supreme Archangel Cost 15 Gems
 
 *** RAMPART CREATURES ***
-*#MA&v7183=1:X14/?i;      Centaur Shoot
-*#VRi&v7183=1:|4;
-*#MA&v7183=1:X14/i;
-*#MA&v7183=1:X15/?i;      Centaur Captain shoot
-*#VRi&v7183=1:|4;
-*#MA&v7183=1:X15/i;
-
 !#MA&v7183=1:M16/3;       Dwarf Dam Min 3
 !#MA&v7183=1:D17/8;       Battle Dwarf Def 8
 !#MA&v7183=1:M17/3;       Battle Dwarf Dam Min 3
@@ -141,7 +129,6 @@ ZVSE
 !#MA&v7183=1:X50/?i;
 !#VRi&v7183=1:|32768;     Pit Fiend Attack Twice
 !#MA&v7183=1:X50/i;
-*#MA&v7183=1:C50/6/400;   Pit Fiend Cost 400
 !#MA&v7183=1:P51/50;      Pit Lord HP 50
 !#MA&v7183=1:A51/14;      Pit Lord Att 14
 !#MA&v7183=1:D51/14;      Pit Lord Def 14
@@ -171,15 +158,11 @@ ZVSE
 !#MA&v7183=1:C68/6/2000;  Bone Dragon Cost 2000
 !#MA&v7183=1:A69/22;      Ghost Dragon Att 22
 !#MA&v7183=1:D69/20;      Ghost Dragon Def 20
-*#MA&v7183=1:D69/28;      Ghost Dragon Def 28
 !#MA&v7183=1:C69/6/3500;  Ghost Dragon Cost 3500
 !#MA&v7183=1:M154/50;     Blood Dragon Dam Low 40
 !#MA&v7183=1:A154/32;     Blood Dragon Att 32
 !#MA&v7183=1:D154/38;     Blood Dragon Def 38
 !#MA&v7183=1:S154/15;     Blood Dragon Speed 15
-*#MA&v7183=1:X154/?i;
-*#VRi&v7183=1:|8;         Blood Dragon Breath Weapon
-*#MA&v7183=1:X154/i;
 !#MA&v7183=1:C154/6/14000;Blood Dragon Cost 14000
 !#MA&v7183=1:C154/1/10;   Blood Dragon Cost 10 Mercury
 
@@ -205,9 +188,6 @@ ZVSE
 !#MA&v7183=1:A155/35;     Darkness Dragon Att 35
 !#MA&v7183=1:D155/35;     Darkness Dragon Def 35
 !#MA&v7183=1:S155/16;     Darkness Dragon Speed 16
-*#MA&v7183=1:X155/?i;
-*#VRi&v7183=1:|65536;     Darkness Dragon No Retaliation
-*#MA&v7183=1:X155/i;
 !#MA&v7183=1:C155/6/16000;Darkness Dragon Cost 16000
 !#MA&v7183=1:C155/3/15;   Darkness Dragon Cost 15 Sulfur
 
@@ -253,8 +233,6 @@ ZVSE
 !#MA&v7183=1:P108/75;     Wyvern HP 75
 !#MA&v7183=1:P109/90;     Wyvern Monarch HP 90
 !#MA&v7183=1:C109/6/1200; Wyvern Monarch Cost 1200
-*#MA&v7183=1:A111/19;     Chaos Hydra Att 19
-*#MA&v7183=1:D111/21;     Chaos Hydra Def 21
 !#MA&v7183=1:A157/28;     Hell Hydra Att 28
 !#MA&v7183=1:D157/30;     Hell Hydra Def 30
 !#MA&v7183=1:M157/40;     Hell Hydra Dam Low 40
@@ -306,7 +284,6 @@ ZVSE
 !#MA&v7183=1:C131/6/3000; Phoenix Cost 3000
 !#MA&v7183=1:A158/33;     Sacred Phoenix Att 33
 !#MA&v7183=1:D158/33;     Sacred Phoenix Def 33
-*#MA&v7183=1:S158/22;     Sacred Phoenix Speed 22
 !#MA&v7183=1:C158/6/10000;Sacred Phoenix Cost 10000
 !#MA&v7183=1:C158/1/10;   Sacred Phoenix Cost 10 Mercury
 
@@ -346,10 +323,8 @@ ZVSE
 !#MA&v7183=1:C142/6/250;  Nomad Cost 250
 !#MA&v7183=1:P143/15;     Rogue HP 15
 !#MA&v7183=1:C143/6/125;  Rogue Cost 125
-*#MA&v7183=1:P144/55;     Troll HP 55
 !#MA&v7183=1:C144/6/550;  Troll Cost 550
 !#MA&v7183=1:O144/7;      Troll > Fortress
-
 !#MA&v7183=1:P159/10;     Ghost HP 10
 !#MA&v7183=1:A159/6;      Ghost Att 6
 !#MA&v7183=1:D159/6;      Ghost Def 6
@@ -384,16 +359,13 @@ ZVSE
 !#MA&v7183=1:P171/25;     Lava Sharpshooter HP 25
 !#MA&v7183=1:A171/16;     Lava Sharpshooter Att 16
 !#MA&v7183=1:D171/12;     Lava Sharpshooter Def 12
-*#MA&v7183=1:M171/8;      Lava Sharpshooter Dam Low 8
 !#MA&v7183=1:E171/12;     Lava Sharpshooter Dam High 12
 !#MA&v7183=1:N171/12;     Lava Sharpshooter Shots 12
 !#MA&v7183=1:L171/4;      Lava Sharpshooter Level 5
 !#MA&v7183=1:O171/5;      Lava Sharpshooter > Dungeon
-*#MA&v7183=1:X171/?i;
 !#VRi&v7183=1:S36;        Lava Sharpshooter Set Flags - Shooter, Catapult
 !#MA&v7183=1:X171/i;
 !#MA&v7183=1:C171/6/800;  Lava Sharpshooter Cost 800
-*#MA&v7183=1:P172/120;    Nightmare HP 120
 !#MA&v7183=1:A172/18;     Nightmare Att 18
 !#MA&v7183=1:D172/16;     Nightmare Def 16
 !#MA&v7183=1:M172/20;     Nightmare Dam Low 20
@@ -402,13 +374,6 @@ ZVSE
 !#VRi&v7183=1:|16;        Nightmare make alive
 !#MA&v7183=1:X172/i;
 !#MA&v7183=1:O172/3;      Nightmare > Inferno
-
-*#MA&v7183=1:E146/5;      Ballista Dam High 5
-*#MA&v7183=1:C146/6/1250; Ballista Cost 1250
-*#MA&v7183=1:P147/150;    First Aid Tent HP 150
-*#MA&v7183=1:C147/6/750;  First Aid Tent Cost 750
-*#MA&v7183=1:C148/6/500;  Ammo Cart Cost 500
-
 !#MA&v7183=1:P164/80;     Fire Messenger HP 80
 !#MA&v7183=1:A164/16;     Fire Messenger Att 16
 !#MA&v7183=1:D164/11;     Fire Messenger Def 11
@@ -459,14 +424,7 @@ ZVSE
 !#MA&v7183=1:X192/i;
 !#MA&v7183=1:C192/6/300;  Sylvan Centaur Cost 300
 !#MA&v7183=1:E193/13;     Sorceress Dam High 13
-*#MA&v7183=1:A194/14;     Werewolf Att 14
-*#MA&v7183=1:X194/?i;
-*#VRi&v7183=1:|32768;     Werewolf Attack Twice
-*#MA&v7183=1:X194/i;
 
-
-*#EA150:F98/?y-5;                  [SAA get bonus line index]
-*#EA150:By-5/1/98/61/80/80/80/80/80/80/80/80/80/80/80;
 !#EA97&v7183=1:F98/?y-5;                                           [ancient behemoth - get bonus line index]
 !#EA97&v7183=1:By-5/1/98/61/40/40/40/40/40/40/40/40/40/40/40;      [set ignore defense to 40%]
 !#EA156&v7183=1:F98/?y-5;                                          [ghost behemoth - get bonus line index]
@@ -474,14 +432,6 @@ ZVSE
 
 !#EA142&v7183=1:F119/?y-5;                                          [nomad - get bonus line index]
 !#EA142&v7183=1:By-5/1/119/83/1/1/1/1/1/1/1/1/1/1/1;               [set immune to slow]
-
-*#EA110&v7183=1:F114/?y-5;                                         [hydra - get bonus line index]
-*#EA110&v7183=1:B13/1/114/100/10/10/10/10/10/10/10/10/10/10/10;   [set regenerate to 100%, 10 points]
-*#EA111&v7183=1:F114/?y-5;                                         [chaos hydra - get bonus line index]
-*#EA111&v7183=1:B13/1/114/100/20/20/20/20/20/20/20/20/20/20/20;   [set regenerate to 100%, 20 points]
-*#EA157&v7183=1:F114/?y-5;                                         [hell hydra - get bonus line index]
-*#EA157&v7183=1:By-5/1/114/100/40/40/40/40/40/40/40/40/40/40/40;   [set regenerate to 100%, 40 points]
-
 
 !#EA154:B6/1/99/75/0/0/0/0/5/5/5/10/10/15/20;
 !#EA69:B6/1/99/75/0/0/0/0/5/5/5/10/10/15/20;
@@ -539,8 +489,6 @@ ZVSE
 !?FU7068;
 !!DO7060/0/41/1&78:P2;                     [prepare to give retaliations]
 
-*!BMv7010|v7001=54/v7001=55/v7001=153:F?i;       [get last acting monster flags if devil]
-*!VRi|v7001=54/v7001=55/v7001=153:&16777216;     [check for morale]
 !!FU7066&v7001=54/v7011=0/v7014<>1/i<>16777216:P0/v7010;        [restore speed - devils]
 !!FU7066&v7001=55/v7011=0/v7014<>1/i<>16777216:P0/v7010;        [restore speed - arch devils]
 !!FU7066&v7001=153/v7011=0/v7014<>1/i<>16777216:P0/v7010;       [restore speed - hell barons]
@@ -564,7 +512,6 @@ ZVSE
 !!FU7061&v7000<10/v7002>-1/v7001=60:P74////2/4/2/v7008/0/v7002;          [10% resistance check - paralysis if wight attacked]
 !!FU7061&v7000<20/v7002>-1/v7001=61:P74////2/4/2/v7008/0/v7002;          [20% resistance check - paralysis if wraith attacked]
 !!FU7061&v7000<20/v7002>-1/v7001=80:P54////2/2/2/v7008/0/v7002;          [20% resistance check - slow if manticore attacked]
-*!FU7061&v7000<20/v7002>-1/v7001=156:P18////2/5/0/v7008/0/v7002;         [20% resistance check - implosion if ghost behemoth attacked]
 !!FU7061&v7000<20/v7002>-1/v7001=26:P71////2/6/2/v7008/0/v7002;          [20% resistance check - poison if green dragon attacked]
 !!FU7061&v7000<20/v7002>-1/v7001=27:P70////2/3/0/v7008/0/v7002;          [20% resistance check - petrify if gold dragon attacked]
 !!FU7061&v7000<20/v7002>-1/v7001=82:P21////2/3/5/v7008/0/v7002;          [20% resistance check - fireball if red dragon attacked]
@@ -577,7 +524,6 @@ ZVSE
 !!BMv7002&v7000<10/v7002>-1/v7001=60/-77:R?v7004 R0;          [10% remove target creature's retaliations if wight attacked]
 !!BMv7002&v7000<20/v7002>-1/v7001=61/-77:R?v7004 R0;          [20% remove target creature's retaliations if wraith attacked]
 !!BMv7002&v7000<20/v7002>-1/v7001=80/-77:R?v7004 R0;          [20% remove target creature's retaliations if manticore attacked]
-*!BMv7002&v7000<20/v7002>-1/v7001=156/-77:R?v7004 R0;         [20% remove target creature's retaliations if ghost behemoth attacked]
 !!BMv7002&v7000<20/v7002>-1/v7001=26/-77:R?v7004 R0;          [20% remove target creature's retaliations if green dragon attacked]
 !!BMv7002&v7000<20/v7002>-1/v7001=27/-77:R?v7004 R0;          [20% remove target creature's retaliations if gold dragon attacked]
 !!BMv7002&v7000<20/v7002>-1/v7001=82/-77:R?v7004 R0;          [20% remove target creature's retaliations if red dragon attacked]
@@ -596,7 +542,6 @@ ZVSE
 !!FU7062&v7184=1/v7002>-1/v7001>=164/v7001<=167:Pv7007/v7010/y-1/1;                 [check for adjacent enemies - messengers]
 
 !!FU7061&v7184=1/v7002>-1/v7001=164/-77:P31/v7007/1/2/0/3/5/v7008/0/v7002;      [cast prot. from fire if fire messenger attacked]
-*!FU7061&v7184=1/v7002>-1/v7001=164/-77:P80/v7003/1/1/0/3/5/v7008/0/v7002;      [cast acid breath if fire messenger attacked]
 !!VRv7005&v7184=1/v7002>-1/v7001=164:+1 *2 -1;                                  [calculate fireball power if fire messenger attacked]
 !!FU7061&v7184=1/v7002>-1/v7001=164/-77:P21/v7003/1/v7005/0/3/5/v7008/0/v7002;  [cast fireball if fire messenger attacked]
 !!FU7061&v7184=1/v7002>-1/v7001=165/-77:P33/v7007/1/2/0/4/6/v7008/0/v7002;      [cast prot.from earth if earth messenger attacked]
@@ -629,32 +574,10 @@ ZVSE
 !!BMy-1:T?y-3 N?y-7 H?y-8 L?y-9;                                  [get target's type, health, quantity, health lost]
 !!VRy-7:*y-8 -y-9;                                                [calculate total health]
 
-
-*!BMv7010&v7000<20/v7002>-1/v7001=150/v7010<>y-1:T150;           [20% revert type if SAA attacked]
-*!FU7075&v7000<20/v7002>-1/v7001=150/v7010<>y-1:Pv7010;          [20% cleaving blow if SAA attacked]
-
-*!BMv7002&v7015<20/v7002>-1/v7008=150/v7014=6/v7004>0/y-2<y-7/v7002=y-1:T156;[20% change type to ghost behemoth if SAA was attacked - for retaliation]
-*!BMv7002&v7015<20/v7002>-1/v7008=150/v7002<>y-1:T?y-10;         [20% check type if SAA retaliates]
-*!BMv7002&v7015<20/v7002>-1/v7008=150/v7002<>y-1/y-10=156:T150;  [20% if type is ghost behemoth, revert type]
-*!FU7075&v7015<20/v7002>-1/v7008=150/v7002<>y-1/y-10=156:Pv7002; [20% cleaving blow if SAA retaliates]
-
-
-*!BMv7010&v7000<20/v7002>-1/v7001=142/v7010<>y-1:T142;           [20% revert type if nomad attacked]
-*!FU7075&v7000<20/v7002>-1/v7001=142/v7010<>y-1:Pv7010;          [20% cleaving blow if nomad attacked]
-
-*!BMv7002&v7015<20/v7002>-1/v7008=142/v7014=6/v7004>0/y-2<y-7/v7002=y-1:T156;[20% change type to ghost behemoth if nomad was attacked - for retaliation]
-*!BMv7002&v7015<20/v7002>-1/v7008=142/v7002<>y-1:T?y-10;         [20% check type if nomad retaliates]
-*!BMv7002&v7015<20/v7002>-1/v7008=142/v7002<>y-1/y-10=156:T142;  [20% if type is ghost behemoth, revert type]
-*!FU7075&v7015<20/v7002>-1/v7008=142/v7002<>y-1/y-10=156:Pv7002; [20% cleaving blow if nomad retaliates]
-
-
-
 ** ethereal
 *!BMy-1:T?y-3;                                                    [get target type]
 !!BMv7010&v7010>-1/v7010<>y-1:T?y-4;                              [get attacker type]
 !!BMv7002&v7002>-1/v7002<>y-1:T?y-4;                              [get retaliator type]
-*!VRy-5|y-3=69/y-3=159:S1;                                        [set if target is ghost dragon, ghost]
-*!VRy-6|y-4=69/y-4=159:S1;                                        [set if attacker is ghost dragon, ghost]
 !!VRy-5&y-3=69:S1;                                                [set if target is ghost dragon]
 !!VRy-6&y-4=69:S1;                                                [set if attacker is ghost dragon]
 
@@ -708,8 +631,6 @@ ZVSE
 !!FU7061&v7000<10/v7002>-1/v7001=60:P74/v7003/1/3/1/4/2/v7008/0/v7002;              [10% cast paralysis if wight attacked]
 !!FU7061&v7000<20/v7002>-1/v7001=61:P74/v7003/1/3/1/4/2/v7008/0/v7002;              [20% cast paralysis if wraith attacked]
 !!FU7061&v7000<20/v7002>-1/v7001=80:P54/v7003/1/3/1/2/2/v7008/0/v7002;              [20% cast slow if manticore attacked]
-*!FU7061&v7000<20/v7002>-1/v7001=108:P71/v7003/1/3/0/6/2/v7008/0/v7002;             [20% cast poison if wyvern attacked]
-*!FU7061&v7000<20/v7002>-1/v7001=156:P18/v7003/1/v7005/1/5/0/v7008/0/v7002;         [20% cast implosion if ghost behemoth attacked]
 !!FU7061&v7000<20/v7002>-1/v7001=26:P71/v7003/1/3/0/6/2/v7008/0/v7002;              [20% cast poison if green dragon attacked]
 !!FU7061&v7000<20/v7002>-1/v7001=27:P70/v7003/1/3/1/3/0/v7008/0/v7002;              [20% cast petrify if gold dragon attacked]
 !!FU7061&v7000<20/v7002>-1/v7001=82:P21/v7003/1/v7005/1/3/5/v7008/0/v7002;          [20% cast fireball if red dragon attacked]
@@ -752,8 +673,6 @@ ZVSE
 !!FU7061&y-9<10/y-4=0/v7002>-1/v7008=60/v7014=6/v7012>0/y-1>-1:P74/y-2/1/3/0/4/2/v7001/0/v7010;      [10% cast paralysis if wight retaliated]
 !!FU7061&y-9<20/y-4=0/v7002>-1/v7008=61/v7014=6/v7012>0/y-1>-1:P74/y-2/1/3/0/4/2/v7001/0/v7010;      [20% cast paralysis if wraith retaliated]
 !!FU7061&y-9<20/y-4=0/v7002>-1/v7008=80/v7014=6/v7012>0/y-1>-1:P54/y-2/1/3/0/2/2/v7001/0/v7010;      [20% cast slow if manticore retaliated]
-*!FU7061&y-9<20/y-4=0/v7002>-1/v7008=108/v7014=6/v7012>0/y-1>-1:P71/y-2/1/3/0/6/2/v7001/0/v7010;     [20% cast poison if wyvern retaliated]
-*!FU7061&y-9<20/y-4=0/v7002>-1/v7008=156/v7014=6/v7012>0/y-1>-1:P18/y-2/1/y-3/0/5/0/v7001/0/v7010;   [20% cast implosion if ghost behemoth retaliated]
 !!FU7061&y-9<20/y-4=0/v7002>-1/v7008=26/v7014=6/v7012>0/y-1>-1:P71/y-2/1/3/0/6/2/v7001/0/v7010;      [20% cast poison if green dragon retaliated]
 !!FU7061&y-9<20/y-4=0/v7002>-1/v7008=27/v7014=6/v7012>0/y-1>-1:P70/y-2/1/3/0/3/0/v7001/0/v7010;      [20% cast petrify if gold dragon retaliated]
 !!FU7061&y-9<20/y-4=0/v7002>-1/v7008=82/v7014=6/v7012>0/y-1>-1:P21/y-2/1/y-3/0/3/5/v7001/0/v7010;    [20% cast fireball if red dragon attacked]
@@ -785,16 +704,9 @@ ZVSE
 !!BMv7010&y-9<20/y-4=0/v7002>-1/v7008=68/v7014=6/v7012>0/y-1>-1/-77:V30;                             [shown animation]
 
 !!FU7061&v7002>-1/v7008=141/v7014>=6/v7014<=7:P42/y-2/1/3/0/1/5/v7001/3/v7010;  [apply curse if mummy was attacked or shot]
-*!IF&v7002>-1/v7008=141/v7014>=6/v7014<=7:V75/0;                                [reset flag 75 to false]
 !!VRz2&v7002>-1/v7008=141/v7014>=6/v7014<=7:Sz150008;
 !!MM&v7002>-1/v7008=141/v7014>=6/v7014<=7:Sz2;
 !!BMv7010&v7002>-1/v7008=141/v7014>=6/v7014<=7:V40;                             [shown animation]
-
-
-*FU7061&y-9<20/v7002>-1/v7008=194/v7014=6:P59/v7003/1/3/0/1/5/v7008/3/v7002;  [10% apply berserk if werewolf was attacked]
-*!VRz2&y-9<20/v7002>-1/v7008=194/v7014=6:S^The wounds of battle have incited a Berserk rage.^;
-*!MM&y-9<20/v7002>-1/v7008=194/v7014=6:Sz2;
-*!BMv7002&y-9<20/v7002>-1/v7008=194/v7014=6:V35;                             [shown animation]
 
 !!BMv7010|v7001=54/v7001=55/v7001=153:F?i;            [get last acting monster flags if devil]
 !!VRi|v7001=54/v7001=55/v7001=153:&16777216;          [check for morale]
@@ -808,20 +720,6 @@ ZVSE
 !!FU7066&y5=54/v7011=0:P1/v7009;                      [boost speed - devils]
 !!FU7066&y5=55/v7011=0:P7/v7009;                      [boost speed - arch devils]
 !!FU7066&y5=153/v7011=0:P8/v7009;                     [boost speed - hell barons]
-
-
-*!VRy11|y5=110/y5=111/y5=157:S1;       [if any hydra, set to 1]
-*!BMv7009&y11=1:L?y9;       [if any hydra, get health lost]
-*!VRy10&y5=110/y9>0:Sy9 -10;                         [if hydra, reduce damage by 10 (heal)]
-*!VRy10&y5=111/y9>0:Sy9 -20;                         [if chaos hydra, reduce damage by 20 (heal)]
-*!VRy10&y5=157/y9>0:Sy9 -30;                         [if hell hydra, reduce damage by 30 (heal)]
-*!VRy10&y10<0/y9>0:S0;                               [if less than 0 set to 0]
-*!VRy12&y11=1/y9>0:Sy9 -y10;                         [calculate hit points healed]
-*!VRz2&y11=1/y9>0:S^Regeneration, %Y12 hit points healed.^;
-*!MM&y11=1/y9>0:Sz2;
-*!FU7064&y11=1/y9>0:P1/y6/0/0/0/6/0/y5/0;            [cast dummy spell (scuttle boat)]
-*!BMv7009&y11=1/y9>0:V79 Ly10;                       [if any hydra, shown animation, set health lost]
-
 
 !!VRy14:S0 R9;                 [random roll]
 !!FU7065&y14<50/y5=110:P20;  [if hydra, regenerate]
@@ -882,18 +780,6 @@ ZVSE
 
 
 !!IF&x1=2:V78/0;                              [set flag 78 to false - retaliations]
-
-
-**  horde abilities  **
-*!BMx16&x1=1:N?y3;                                [get quantity ]
-*!VRy3|y1=84/y1=85/y1=70/y1=71:+1 :50;            [divide quantity by 50]
-*!BMx16&x1=1/y1>=70/y1<=71:Ddy3;                  [give +1 defence / 50  - trog/infernal trog]
-*!BMx16&x1=1/y1>=84/y1<=85:Ady3;                  [give +1 attack / 50  - goblin/hobgoblin]
-*!VRy3|y1=98/y1=99:+1 :100;                       [divide quantity by 100]
-*!BMx16&x1=1/y1>=98/y1<=99:Ady3 Ddy3;             [give +1 attack +1 defence / 100 - gnoll/gnoll maruader]
-*!VRy3|y1=0/y1=1/y1=14/y1=15:+1 :200;             [divide quantity by 200]
-*!BMx16&x1=1/y1>=0/y1<=1:Hdy3;                    [give +1 health / 200  - pikeman/halberdier]
-*!BMx16&x1=1/y1>=14/y1<=15:Hdy3;                  [give +1 speed / 200  - centaur/centaur captain]
 
 **  find fastest monster  **
 !!BMx16:S?y2;                            [get monster's speed]
@@ -1024,7 +910,6 @@ ZVSE
 !!IF&x5=1:V75/1;                          [set flag 75 to true]
 !!BMy1&x9=0:Cx1/x2/x3/x4/1;               [have current stack cast spell]
 !!BMv7010&x9=1:Cx1/x2/x3/x4/1;            [have attacker cast spell]
-*!BMx10&x9=2:Cx1/x2/x3/x4/1;              [have target cast spell]
 !!BMx10&x9=3/y2>-1:Mx1/x4/x3;             [apply spell to target stack]
 !!BMy1&x9>0:C2/x2/0/0/0;                  [cast dummy spell to restore current stack indicator]
 !!BMx10&x5=1:Rv7004;                      [restore target's retaliations if they were removed]
@@ -1033,20 +918,6 @@ ZVSE
 
 ** function to check if creature needs cure       x1= x2=
 !?FU7065;
-*!BMv7009:L?y9;                               [see if any hitpoints are lost]
-
-*!BMv7009:G42/?y2/?y3;                        [check if target has Curse active]
-*!BMv7009&y2<1:G45/?y2/?y3;                   [check if target has Weakness active]
-*!BMv7009&y2<1:G50/?y2/?y3;                   [check if target has Sorrow active]
-*!BMv7009&y2<1:G52/?y2/?y3;                   [check if target has Misfortune active]
-*!BMv7009&y2<1:G54/?y2/?y3;                   [check if target has Slow active]
-*!BMv7009&y2<1:G59/?y2/?y3;                   [check if target has Berzerk active]
-*!BMv7009&y2<1:G60/?y2/?y3;                   [check if target has Hypnotize active]
-*!BMv7009&y2<1:G61/?y2/?y3;                   [check if target has Forgetfulness active]
-*!BMv7009&y2<1:G71/?y2/?y3;                   [check if target has Poison active]
-*!BMv7009&y2<1:G73/?y2/?y3;                   [check if target has Disease active]
-*!BMv7009&y2<1:G75/?y2/?y3;                   [check if target has Age active]
-*!FU7064|y2>0/y9>0/y4>0/y5>0/y6>0/y7>0:Px1/x2/x3/x4/x5;          [cast cure if wounded or spelled]
 
 !!BMv7009:T?y1 P?y2 L?y3;                      [get monster type, position, health lost]
 !!VRy4&y3>0:Sy3 -x1;                          [reduce damage by x1 (heal)]
@@ -1071,381 +942,200 @@ ZVSE
 ** function to add specialty text      x1=monster number  x2=Z variable index
 !?FU7067;
 
-!!VRz500:Sz150010;
-*!UN:G1/0/2/500;      [pikeman]
-!!VRz501:Sz150011;
-*!UN:G1/1/2/501;      [halberdier]
-!!VRz502:Sz150012;
-!!UN:G1/2/2/502;      [archer]
-!!VRz503:Sz150013;
-!!UN:G1/3/2/503;      [marksman]
-!!VRz504:Sz150014;
-!!UN:G1/4/2/504;      [griffin]
-!!VRz505:Sz150015;
-!!UN:G1/5/2/505;      [royal griffin]
-!!VRz506:Sz150016;
-*!UN:G1/6/2/506;      [swordsman]
-!!VRz507:Sz150017;
-*!UN:G1/7/2/507;      [crusader]
-!!VRz508:Sz150018;
-*!UN:G1/8/2/508;      [monk]
-!!VRz509:Sz150019;
-*!UN:G1/9/2/509;      [zealot]
-!!VRz510:Sz150020;
-*!UN:G1/10/2/510;      [cavalier]
-!!VRz511:Sz150021;
-!!UN:G1/11/2/511;      [champion]
-!!VRz512:Sz150022;
-!!UN:G1/12/2/512;      [angel]
-!!VRz513:Sz150023;
-!!UN:G1/13/2/513;      [archangel]
+!!SN:H^monname^/0/2/z150010; [pikeman]
+*!SN:H^monname^/1/2/z150011; [halberdier]
+!!SN:H^monname^/2/2/z150012; [archer]
+!!SN:H^monname^/3/2/z150013; [marksman]
+!!SN:H^monname^/4/2/z150014; [griffin]
+!!SN:H^monname^/5/2/z150015; [royal griffin]
+*!SN:H^monname^/6/2/z150016; [swordsman]
+*!SN:H^monname^/7/2/z150017; [crusader]
+*!SN:H^monname^/8/2/z150018; [monk]
+*!SN:H^monname^/9/2/z150019; [zealot]
+*!SN:H^monname^/10/2/z150020; [cavalier]
+!!SN:H^monname^/11/2/z150021; [champion]
+!!SN:H^monname^/12/2/z150022; [angel]
+!!SN:H^monname^/13/2/z150023; [archangel]
 
-!!VRz514:Sz150024;
-*!UN:G1/14/2/514;      [centaur]
-!!VRz515:Sz150025;
-*!UN:G1/15/2/515;      [centaur captain]
-!!VRz516:Sz150026;
-!!UN:G1/16/2/516;      [dwarf]
-!!VRz517:Sz150027;
-!!UN:G1/17/2/517;      [battle dwarf]
-!!VRz518:Sz150028;
-*!UN:G1/18/2/518;      [wood elf]
-!!VRz519:Sz150029;
-!!UN:G1/19/2/519;      [grand elf]
-!!VRz520:Sz150030;
-*!UN:G1/20/2/520;      [pegasus]
-!!VRz521:Sz150031;
-!!UN:G1/21/2/521;      [silver pegasus]
-!!VRz522:Sz150032;
-*!UN:G1/22/2/522;      [dendroid guard]
-!!VRz523:Sz150033;
-*!UN:G1/23/2/523;      [dendroid soldier]
-!!VRz524:Sz150034;
-!!UN:G1/24/2/524;      [unicorn]
-!!VRz525:Sz150035;
-!!UN:G1/25/2/525;      [war unicorn]
-!!VRz526:Sz150036;
-!!UN:G1/26/2/526;       [green dragon]
-!!VRz527:Sz150037;
-!!UN:G1/27/2/527;       [gold dragon]
+*!SN:H^monname^/14/2/z150024; [centaur]
+*!SN:H^monname^/15/2/z150025; [centaur captain]
+!!SN:H^monname^/16/2/z150026; [dwarf]
+!!SN:H^monname^/17/2/z150027; [battle dwarf]
+*!SN:H^monname^/18/2/z150028; [wood elf]
+!!SN:H^monname^/19/2/z150029; [grand elf]
+*!SN:H^monname^/20/2/z150030; [pegasus]
+!!SN:H^monname^/21/2/z150031; [silver pegasus]
+*!SN:H^monname^/22/2/z150032; [dendroid guard]
+*!SN:H^monname^/23/2/z150033; [dendroid soldier]
+!!SN:H^monname^/24/2/z150034; [unicorn]
+!!SN:H^monname^/25/2/z150035; [war unicorn]
+!!SN:H^monname^/26/2/z150036; [green dragon]
+!!SN:H^monname^/27/2/z150037; [gold dragon]
 
-!!VRz528:Sz150038;
-*!UN:G1/28/2/528;      [gremlin]
-!!VRz529:Sz150039;
-*!UN:G1/29/2/529;      [master gremlin]
-!!VRz530:Sz150040;
-!!UN:G1/30/2/530;      [stone gargoyle]
-!!VRz531:Sz150041;
-!!UN:G1/31/2/531;      [obsidian gargoyle]
-!!VRz532:Sz150042;
-*!UN:G1/32/2/532;      [stone golem]
-!!VRz533:Sz150043;
-!!UN:G1/33/2/533;      [iron golem]
-!!VRz534:Sz150044;
-*!UN:G1/34/2/534;      [magi]
-!!VRz535:Sz150045;
-*!UN:G1/35/2/535;      [arch magi]
-!!VRz536:Sz150046;
-!!UN:G1/36/2/526;      [genie]
-!!VRz537:Sz150047;
-!!UN:G1/37/2/537;      [master genie]
-!!VRz538:Sz150048;
-*!UN:G1/38/2/538;      [naga]
-!!VRz539:Sz150049;
-*!UN:G1/39/2/539;      [naga queen]
-!!VRz540:Sz150050;
-!!UN:G1/40/2/540;      [giant]
-!!VRz541:Sz150051;
-!!UN:G1/41/2/541;      [titan]
+*!SN:H^monname^/28/2/z150038; [gremlin]
+*!SN:H^monname^/29/2/z150039; [master gremlin]
+!!SN:H^monname^/30/2/z150040; [stone gargoyle]
+!!SN:H^monname^/31/2/z150041; [obsidian gargoyle]
+*!SN:H^monname^/32/2/z150042; [stone golem]
+!!SN:H^monname^/33/2/z150043; [iron golem]
+*!SN:H^monname^/34/2/z150044; [magi]
+*!SN:H^monname^/35/2/z150045; [arch magi]
+!!SN:H^monname^/36/2/z150046; [genie]
+!!SN:H^monname^/37/2/z150047; [master genie]
+*!SN:H^monname^/38/2/z150048; [naga]
+*!SN:H^monname^/39/2/z150049; [naga queen]
+!!SN:H^monname^/40/2/z150050; [giant]
+!!SN:H^monname^/41/2/z150051; [titan]
 
-!!VRz542:Sz150052;
-!!UN:G1/42/2/542;      [imp]
-!!VRz543:Sz150053;
-!!UN:G1/43/2/543;      [familiar]
-!!VRz544:Sz150054;
-!!UN:G1/44/2/544;      [gog]
-!!VRz545:Sz150055;
-!!UN:G1/45/2/555;      [magog]
-!!VRz546:Sz150056;
-*!UN:G1/46/2/546;      [hell hound]
-!!VRz547:Sz150057;
-!!UN:G1/47/2/547;      [cerberus]
-!!VRz548:Sz150058;
-*!UN:G1/48/2/548;      [demon]
-!!VRz549:Sz150059;
-!!UN:G1/49/2/549;      [horned demon]
-!!VRz550:Sz150060;
-!!UN:G1/50/2/550;      [pit fiend]
-!!VRz551:Sz150061;
-!!UN:G1/51/2/551;      [pit lord]
-!!VRz552:Sz150062;
-*!UN:G1/52/2/552;      [efreet]
-!!VRz553:Sz150063;
-*!UN:G1/53/2/553;      [efreet sultan]
-!!VRz554:Sz150064;
-!!UN:G1/54/2/554;      [devil]
-!!VRz555:Sz150065;
-!!UN:G1/55/2/555;      [arch devil]
+!!SN:H^monname^/42/2/z150052; [imp]
+!!SN:H^monname^/43/2/z150053; [familiar]
+!!SN:H^monname^/44/2/z150054; [gog]
+!!SN:H^monname^/45/2/z150055; [magog]
+*!SN:H^monname^/46/2/z150056; [hell hound]
+!!SN:H^monname^/47/2/z150057; [cerberus]
+*!SN:H^monname^/48/2/z150058; [demon]
+!!SN:H^monname^/49/2/z150059; [horned demon]
+!!SN:H^monname^/50/2/z150060; [pit fiend]
+!!SN:H^monname^/51/2/z150061; [pit lord]
+*!SN:H^monname^/52/2/z150062; [efreet]
+*!SN:H^monname^/53/2/z150063; [efreet sultan]
+!!SN:H^monname^/54/2/z150064; [devil]
+!!SN:H^monname^/55/2/z150065; [arch devil]
 
-!!VRz556:Sz150066;
-*!UN:G1/56/2/556;      [skeleton]
-!!VRz557:Sz150067;
-*!UN:G1/57/2/557;      [skeleton warrior]
-!!VRz558:Sz150068;
-!!UN:G1/58/2/558;      [walking dead]
-!!VRz559:Sz150069;
-!!UN:G1/59/2/559;      [zombie]
-!!VRz560:Sz150070;
-!!UN:G1/60/2/560;      [wight]
-!!VRz561:Sz150071;
-!!UN:G1/61/2/561;      [waith]
-!!VRz562:Sz150072;
-*!UN:G1/62/2/562;      [vampire]
-!!VRz563:Sz150073;
-*!UN:G1/63/2/563;      [vampire lord]
-!!VRz564:Sz150074;
-*!UN:G1/64/2/564;      [lich]
-!!VRz565:Sz150075;
-*!UN:G1/65/2/565;      [power lich]
-!!VRz566:Sz150076;
-*!UN:G1/66/2/566;      [black knight]
-!!VRz567:Sz150077;
-*!UN:G1/67/2/567;      [dread knight]
-!!VRz568:Sz150078;
-!!UN:G1/68/2/568;      [bone dragon]
-!!VRz569:Sz150079;
-!!UN:G1/69/2/569;      [ghost dragon]
+*!SN:H^monname^/56/2/z150066; [skeleton]
+*!SN:H^monname^/57/2/z150067; [skeleton warrior]
+!!SN:H^monname^/58/2/z150068; [walking dead]
+!!SN:H^monname^/59/2/z150069; [zombie]
+!!SN:H^monname^/60/2/z150070; [wight]
+!!SN:H^monname^/61/2/z150071; [waith]
+*!SN:H^monname^/62/2/z150072; [vampire]
+*!SN:H^monname^/63/2/z150073; [vampire lord]
+*!SN:H^monname^/64/2/z150074; [lich]
+*!SN:H^monname^/65/2/z150075; [power lich]
+*!SN:H^monname^/66/2/z150076; [black knight]
+*!SN:H^monname^/67/2/z150077; [dread knight]
+!!SN:H^monname^/68/2/z150078; [bone dragon]
+!!SN:H^monname^/69/2/z150079; [ghost dragon]
 
-!!VRz570:Sz150080;
-*!UN:G1/70/2/570;      [troglodyte]
-!!VRz571:Sz150081;
-*!UN:G1/71/2/571;      [infernal troglodyte]
-!!VRz572:Sz150082;
-!!UN:G1/72/2/572;      [harpy]
-!!VRz573:Sz150083;
-!!UN:G1/73/2/573;      [harpy hag]
-!!VRz574:Sz150084;
-!!UN:G1/74/2/574;      [beholder]
-!!VRz575:Sz150085;
-!!UN:G1/75/2/575;      [evil eye]
-!!VRz576:Sz150086;
-!!UN:G1/76/2/576;      [medusa]
-!!VRz577:Sz150087;
-!!UN:G1/77/2/577;      [medusa queen]
-!!VRz578:Sz150088;
-*!UN:G1/78/2/578;      [minotaur]
-!!VRz579:Sz150089;
-*!UN:G1/79/2/579;      [minotaur king]
-!!VRz580:Sz150090;
-!!UN:G1/80/2/580;      [manticore]
-!!VRz581:Sz150091;
-!!UN:G1/81/2/581;      [scorpicore]
-!!VRz582:Sz150092;
-!!UN:G1/82/2/582;      [red dragon]
-!!VRz583:Sz150093;
-!!UN:G1/83/2/583;      [black dragon]
+*!SN:H^monname^/70/2/z150080; [troglodyte]
+*!SN:H^monname^/71/2/z150081; [infernal troglodyte]
+!!SN:H^monname^/72/2/z150082; [harpy]
+!!SN:H^monname^/73/2/z150083; [harpy hag]
+!!SN:H^monname^/74/2/z150084; [beholder]
+!!SN:H^monname^/75/2/z150085; [evil eye]
+!!SN:H^monname^/76/2/z150086; [medusa]
+!!SN:H^monname^/77/2/z150087; [medusa queen]
+*!SN:H^monname^/78/2/z150088; [minotaur]
+*!SN:H^monname^/79/2/z150089; [minotaur king]
+!!SN:H^monname^/80/2/z150090; [manticore]
+!!SN:H^monname^/81/2/z150091; [scorpicore]
+!!SN:H^monname^/82/2/z150092; [red dragon]
+!!SN:H^monname^/83/2/z150093; [black dragon]
 
-!!VRz584:Sz150094;
-*!UN:G1/84/2/584;      [goblin]
-!!VRz585:Sz150095;
-*!UN:G1/85/2/585;      [hobgoblin]
-!!VRz586:Sz150096;
-!!UN:G1/86/2/586;      [wolf rider]
-!!VRz587:Sz150097;
-!!UN:G1/87/2/587;      [wolf raider]
-!!VRz588:Sz150098;
-!!UN:G1/88/2/588;      [orc]
-!!VRz589:Sz150099;
-!!UN:G1/89/2/589;      [orc chieftian]
-!!VRz590:Sz150100;
-*!UN:G1/90/2/590;      [ogre]
-!!VRz591:Sz150101;
-*!UN:G1/91/2/591;      [ogre magi]
-!!VRz592:Sz150102;
-*!UN:G1/92/2/592;      [roc]
-!!VRz593:Sz150103;
-!!UN:G1/93/2/593;      [thunderbird]
-!!VRz594:Sz150104;
-*!UN:G1/94/2/594;      [cyclops]
-!!VRz595:Sz150105;
-!!UN:G1/95/2/595;      [cyclops king]
-!!VRz596:Sz150106;
-!!UN:G1/96/2/596;      [behemoth]
-!!VRz597:Sz150107;
-!!UN:G1/97/2/597;      [ancient behemoth]
+*!SN:H^monname^/84/2/z150094; [goblin]
+*!SN:H^monname^/85/2/z150095; [hobgoblin]
+!!SN:H^monname^/86/2/z150096; [wolf rider]
+!!SN:H^monname^/87/2/z150097; [wolf raider]
+!!SN:H^monname^/88/2/z150098; [orc]
+!!SN:H^monname^/89/2/z150099; [orc chieftian]
+*!SN:H^monname^/90/2/z150100; [ogre]
+*!SN:H^monname^/91/2/z150101; [ogre magi]
+*!SN:H^monname^/92/2/z150102; [roc]
+!!SN:H^monname^/93/2/z150103; [thunderbird]
+*!SN:H^monname^/94/2/z150104; [cyclops]
+!!SN:H^monname^/95/2/z150105; [cyclops king]
+!!SN:H^monname^/96/2/z150106; [behemoth]
+!!SN:H^monname^/97/2/z150107; [ancient behemoth]
 
-!!VRz598:Sz150108;
-*!UN:G1/98/2/598;      [gnoll]
-!!VRz599:Sz150109;
-!!UN:G1/99/2/599;      [gnoll marauder]
-!!VRz600:Sz150110;
-!!UN:G1/100/2/600;      [lizardman]
-!!VRz601:Sz150111;
-!!UN:G1/101/2/601;      [lizard warrior]
-!!VRz602:Sz150112;
-*!UN:G1/102/2/602;      [gorgon]
-!!VRz603:Sz150113;
-*!UN:G1/103/2/603;      [mighty gorgon]
-!!VRz604:Sz150114;
-*!UN:G1/104/2/604;      [serpent fly]
-!!VRz605:Sz150115;
-*!UN:G1/105/2/605;      [dragon fly]
-!!VRz606:Sz150116;
-!!UN:G1/106/2/606;      [basilisk]
-!!VRz607:Sz150117;
-!!UN:G1/107/2/607;      [greater basilisk]
-!!VRz608:Sz150118;
-!!UN:G1/108/2/608;      [wyvern]
-!!VRz609:Sz150119;
-!!UN:G1/109/2/609;      [wyvern monarch]
-!!VRz610:Sz150120;
-!!UN:G1/110/2/610;      [hydra]
-!!VRz611:Sz150121;
-!!UN:G1/111/2/611;      [chaos hydra]
+*!SN:H^monname^/98/2/z150108; [gnoll]
+!!SN:H^monname^/99/2/z150109; [gnoll marauder]
+!!SN:H^monname^/100/2/z150110; [lizardman]
+!!SN:H^monname^/101/2/z150111; [lizard warrior]
+*!SN:H^monname^/102/2/z150112; [gorgon]
+*!SN:H^monname^/103/2/z150113; [mighty gorgon]
+*!SN:H^monname^/104/2/z150114; [serpent fly]
+*!SN:H^monname^/105/2/z150115; [dragon fly]
+!!SN:H^monname^/106/2/z150116; [basilisk]
+!!SN:H^monname^/107/2/z150117; [greater basilisk]
+!!SN:H^monname^/108/2/z150118; [wyvern]
+!!SN:H^monname^/109/2/z150119; [wyvern monarch]
+!!SN:H^monname^/110/2/z150120; [hydra]
+!!SN:H^monname^/111/2/z150121; [chaos hydra]
 
-!!VRz612:Sz150122;
-!!UN:G1/112/2/612;      [air elemental]
-!!VRz613:Sz150123;
-!!UN:G1/113/2/613;      [earth elemental]
-!!VRz614:Sz150124;
-!!UN:G1/114/2/614;      [fire elemental]
-!!VRz615:Sz150125;
-!!UN:G1/115/2/615;      [water elemental]
+!!SN:H^monname^/112/2/z150122; [air elemental]
+!!SN:H^monname^/113/2/z150123; [earth elemental]
+!!SN:H^monname^/114/2/z150124; [fire elemental]
+!!SN:H^monname^/115/2/z150125; [water elemental]
 
-!!VRz616:Sz150126;
-*!UN:G1/116/2/616;      [gold golem]
-!!VRz617:Sz150127;
-*!UN:G1/117/2/617;      [diamond golem]
+*!SN:H^monname^/116/2/z150126; [gold golem]
+*!SN:H^monname^/117/2/z150127; [diamond golem]
 
-!!VRz618:Sz150128;
-*!UN:G1/118/2/618;      [pixie]
-!!VRz619:Sz150129;
-*!UN:G1/119/2/619;      [sprite]
-!!VRz620:Sz150130;
-!!UN:G1/120/2/620;      [psychic elemental]
-!!VRz621:Sz150131;
-!!UN:G1/121/2/621;      [magic elemental]
-!!VRz622:Sz150132;
-*!UN:G1/122/2/622;      [NU 1]
-!!VRz623:Sz150133;
-!!UN:G1/123/2/623;      [ice elemental]
-!!VRz624:Sz150134;
-*!UN:G1/124/2/624;      [NU 2]
-!!VRz625:Sz150135;
-!!UN:G1/125/2/625;      [magma elemental]
-!!VRz626:Sz150136;
-*!UN:G1/126/2/626;      [NU 3]
-!!VRz627:Sz150137;
-!!UN:G1/127/2/627;      [storm elemental]
-!!VRz628:Sz150138;
-*!UN:G1/128/2/628;      [NU 4]
-!!VRz629:Sz150139;
-!!UN:G1/129/2/629;      [energy elemental]
-!!VRz630:Sz150140;
-!!UN:G1/130/2/630;      [firebird]
-!!VRz631:Sz150141;
-!!UN:G1/131/2/631;      [phoenix]
+*!SN:H^monname^/118/2/z150128; [pixie]
+*!SN:H^monname^/119/2/z150129; [sprite]
+!!SN:H^monname^/120/2/z150130; [psychic elemental]
+!!SN:H^monname^/121/2/z150131; [magic elemental]
+*!SN:H^monname^/122/2/z150132; [NU 1]
+!!SN:H^monname^/123/2/z150133; [ice elemental]
+*!SN:H^monname^/124/2/z150134; [NU 2]
+!!SN:H^monname^/125/2/z150135; [magma elemental]
+*!SN:H^monname^/126/2/z150136; [NU 3]
+!!SN:H^monname^/127/2/z150137; [storm elemental]
+!!SN:H^monname^/128/2/z150138; [NU 4]
+!!SN:H^monname^/129/2/z150139; [energy elemental]
+!!SN:H^monname^/130/2/z150140; [firebird]
+!!SN:H^monname^/131/2/z150141; [phoenix]
 
-!!VRz632:Sz150142;
-!!UN:G1/132/2/632;      [azure dragon]
-!!VRz633:Sz150143;
-!!UN:G1/133/2/633;      [crystal dragon]
-!!VRz634:Sz150144;
-!!UN:G1/134/2/634;      [faerie dragon]
-!!VRz635:Sz150145;
-!!UN:G1/135/2/635;      [rust dragon]
-!!VRz636:Sz150146;
-!!UN:G1/136/2/636;      [enchanter]
-!!VRz637:Sz150147;
-*!UN:G1/137/2/637;      [sharpshooter]
-!!VRz638:Sz150148;
-*!UN:G1/138/2/638;      [halfling]
-!!VRz639:Sz150149;
-!!UN:G1/139/2/639;      [peasant]
-!!VRz640:Sz150150;
-!!UN:G1/140/2/640;      [boar]
-!!VRz641:Sz150151;
-!!UN:G1/141/2/641;      [mummy]
-!!VRz642:Sz150152;
-!!UN:G1/142/2/642;      [nomad]
-!!VRz643:Sz150153;
-!!UN:G1/143/2/643;      [rogue]
-!!VRz644:Sz150154;
-!!UN:G1/144/2/644;      [troll]
+!!SN:H^monname^/132/2/z150142; [azure dragon]
+!!SN:H^monname^/133/2/z150143; [crystal dragon]
+!!SN:H^monname^/134/2/z150144; [faerie dragon]
+!!SN:H^monname^/135/2/z150145; [rust dragon]
+!!SN:H^monname^/136/2/z150146; [enchanter]
+*!SN:H^monname^/137/2/z150147; [sharpshooter]
+*!SN:H^monname^/138/2/z150148; [halfling]
+!!SN:H^monname^/139/2/z150149; [peasant]
+!!SN:H^monname^/140/2/z150150; [boar]
+!!SN:H^monname^/141/2/z150151; [mummy]
+!!SN:H^monname^/142/2/z150152; [nomad]
+!!SN:H^monname^/143/2/z150153; [rogue]
+!!SN:H^monname^/144/2/z150154; [troll]
 
-!!VRz645:Sz150155;
-*!UN:G1/145/2/645;      [catapult]
-!!VRz646:Sz150156;
-*!UN:G1/146/2/646;      [ballista]
-!!VRz647:Sz150157;
-*!UN:G1/147/2/647;      [first aid tent]
-!!VRz648:Sz150158;
-*!UN:G1/148/2/648;      [ammo cart]
-!!VRz649:Sz150159;
-*!UN:G1/149/2/649;      [arrow tower]
+*!SN:H^monname^/145/2/z150155; [catapult]
+*!SN:H^monname^/146/2/z150156; [ballista]
+*!SN:H^monname^/147/2/z150157; [first aid tent]
+*!SN:H^monname^/148/2/z150158; [ammo cart]
+*!SN:H^monname^/149/2/z150159; [arrow tower]
 
-!!VRz650:Sz150160;
-!!UN:G1/150/2/650;      [supreme archangel]
-!!VRz651:Sz150161;
-!!UN:G1/151/2/651;      [diamond dragon]
-!!VRz652:Sz150162;
-!!UN:G1/152/2/652;      [lord of thunder]
-!!VRz653:Sz150163;
-!!UN:G1/153/2/653;      [hell baron]
-!!VRz654:Sz150164;
-!!UN:G1/154/2/654;      [blood dragon]
-!!VRz655:Sz150165;
-!!UN:G1/155/2/655;      [darkness dragon]
-!!VRz656:Sz150166;
-!!UN:G1/156/2/656;      [eldest behemoth]
-!!VRz657:Sz150167;
-!!UN:G1/157/2/657;      [hell hydra]
-!!VRz658:Sz150168;
-!!UN:G1/158/2/658;      [sacred phoenix]
+!!SN:H^monname^/150/2/z150160; [supreme archangel]
+!!SN:H^monname^/150/2/z150161; [diamond dragon]
+!!SN:H^monname^/152/2/z150162; [lord of thunder]
+!!SN:H^monname^/153/2/z150163; [hell baron]
+!!SN:H^monname^/154/2/z150164; [blood dragon]
+!!SN:H^monname^/155/2/z150165; [darkness dragon]
+!!SN:H^monname^/156/2/z150166; [eldest behemoth]
+!!SN:H^monname^/157/2/z150167; [hell hydra]
+!!SN:H^monname^/158/2/z150168; [sacred phoenix]
 
-!!VRz659:Sz150169;
-!!UN:G1/159/2/659;      [ghost]
-!!VRz660:Sz150170;
-*!UN:G1/160/2/660;      [emissary of war]
-!!VRz661:Sz150171;
-*!UN:G1/161/2/661;      [emissary of peace]
-!!VRz662:Sz150172;
-*!UN:G1/162/2/662;      [emissary of mana]
-!!VRz663:Sz150173;
-*!UN:G1/163/2/663;      [emissary of lore]
-!!VRz664:Sz150174;
-!!UN:G1/164/2/664;      [fire messenger]
-!!VRz665:Sz150175;
-!!UN:G1/165/2/665;      [earth messenger]
-!!VRz666:Sz150176;
-!!UN:G1/166/2/666;      [air messenger]
-!!VRz667:Sz150177;
-!!UN:G1/167/2/667;      [water messenger]
-!!VRz668:Sz150178;
-!!UN:G1/168/2/668;      [gorynych]
-!!VRz669:Sz150179;
-!!UN:G1/169/2/669;      [war zealot]
-!!VRz670:Sz150180;
-!!UN:G1/170/2/670;      [arctic sharpshooter]
-!!VRz671:Sz150181;
-!!UN:G1/171/2/671;      [lava sharpshooter]
-!!VRz672:Sz150182;
-!!UN:G1/172/2/672;      [nightmare]
-!!VRz673:Sz150183;
-*!UN:G1/173/2/673;      [santa gremlin]
+!!SN:H^monname^/159/2/z150169; [ghost]
+*!SN:H^monname^/160/2/z150170; [emissary of war]
+*!SN:H^monname^/161/2/z150171; [emissary of peace]
+*!SN:H^monname^/162/2/z150172; [emissary of mana]
+*!SN:H^monname^/163/2/z150173; [emissary of lore]
+!!SN:H^monname^/164/2/z150174; [fire messenger]
+!!SN:H^monname^/165/2/z150175; [earth messenger]
+!!SN:H^monname^/166/2/z150176; [air messenger]
+!!SN:H^monname^/167/2/z150177; [water messenger]
+!!SN:H^monname^/168/2/z150178; [gorynych]
+!!SN:H^monname^/169/2/z150179; [war zealot]
+!!SN:H^monname^/170/2/z150180; [arctic sharpshooter]
+!!SN:H^monname^/171/2/z150181; [lava sharpshooter]
+!!SN:H^monname^/172/2/z150182; [nightmare]
+*!SN:H^monname^/173/2/z150183; [santa gremlin]
 
-!!VRz674:Sz150184;
-!!UN:G1/192/2/674;      [sylvan centaur]
-!!VRz675:Sz150185;
-*!UN:G1/193/2/675;      [sorceress]
-!!VRz676:Sz150186;
-*!UN:G1/194/2/676;      [werewolf]
-!!VRz677:Sz150187;
-*!UN:G1/195/2/677;      [hell steed]
-!!VRz678:Sz150189;
-*!UN:G1/196/2/678;      [dracolich]
-!!VRz679:Sz150190;
-*!UN:G1/197/2/679;      [?]
+!!SN:H^monname^/192/2/z150184; [sylvan centaur]
+*!SN:H^monname^/193/2/z150185; [sorceress]
+*!SN:H^monname^/194/2/z150186; [werewolf]
+*!SN:H^monname^/195/2/z150187; [hell steed]
+*!SN:H^monname^/196/2/z150189; [dracolich]
 
 ** end of function **
 !#FU7067&v7183=1:P;   [add specialty text]
@@ -1504,4 +1194,3 @@ ZVSE
 !!CA0/x1&y2=159/y3>10:M2/x16/y2/y5;    [if more than 10, reduce quantity]
 
 ** end of function
-

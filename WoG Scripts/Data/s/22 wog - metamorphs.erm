@@ -26,10 +26,9 @@ Functions used:  FU9600-FU9603
 !#UN:P56/?v1;
 
  [Set Name and Description for Metamorph (Earth Messenger)]
-!#VRz206&v1=1:Sz156000;
-!#VRz207&v1=1:Sz156001;
-!#VRz208&v1=1:Sz156002;
-!#UN&v1=1:G1/165/0/206 G1/165/1/207 G1/165/2/208;
+!#SN&v1=1:H^monname^/165/0/z156000;
+!#SN&v1=1:H^monname^/165/1/z156001;
+!#SN&v1=1:H^monname^/165/2/z156002;
 !#VRv4542&v1=1:S-1; [Initialize v4542 to -1]
 
  [Set new bonus lines for Metamorphs (but only when in Metamorph form)]
@@ -330,4 +329,3 @@ Functions used:  FU9600-FU9603
 !!BA:Hy11/?y16; [Hero number: y16]
 !!HEy16&y16>0/y15>0:C0/y3/d/d/y15/3; [Add back any experience from before the battle]
 !!UN:R1; [Redraw screen]
-
