@@ -53,11 +53,6 @@ Functions used:  FU9600-FU9603
 !!VRy-3:Sv999;   [updated by rennyo 26..02.2012]
 !!VRy-4:Sv1000;  [updated by rennyo 26..02.2012]
 
-
-
-
-
-
 !!TRy-2/y-3/y-4:G?y-5; [Check for special terrian type: y-5]
 !!VRv4603:S0; [Initialize v4603 to 0]
 !!VRv4603&y-5=21:S1; [Set v4603 to 21 if battle is on Cursed Ground: v4603]
@@ -98,7 +93,7 @@ Functions used:  FU9600-FU9603
 --------------------------------------------------------------------------------------------------------------------
 
  [Determine if victorious Metamorphed stack transforms again]
-!?BG1&v4542>=0/v4603=0/1000/-998;
+!?BG1&v4542>=0/v4603=0/1000/-998; 
 !!UN:P56/?y-1; [Check if script is enabled: y-1]
 !!BU:C?y-3; [Check if battle is ending this turn: y-3=1 if yes]
 !!FU|y-1<>1/y-3=1:E; [Exit if script isn't enabled or battle is ending]
@@ -222,7 +217,7 @@ Functions used:  FU9600-FU9603
 !?BG1&v4603=0/1000/-998;
 !!UN:P56/?y-1; [Check if script is enabled: y-1]
 !!FU&y-1<>1:E; [Exit if script isn't enabled]
-
+!!BU:T?y1;  !!FU&y1=1:E; [Exit if the tactical phase]
 !!BG:N?v1; [Current stack number: v1]
 !!BMv1:T?v2 N?v5; [Type of monster: v2, Number in stack: v5]
 !!FU9603&v2=165/v5>=1:P; [Initial Transformation of Metamorph]
