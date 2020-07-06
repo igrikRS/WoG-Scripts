@@ -469,8 +469,8 @@ ZVSE
 
 !?OB98;
 
-!!UN:P102/?y-1; [Check if Artifact Boost script is enabled in WoGify Options]
-!!FU&y-1<>1:E;     [Exit if it isn't]
+!!UN:P102/?y1; [Check if Artifact Boost script is enabled in WoGify Options]
+!!FU&y1<>1:E;     [Exit if it isn't]
 
 !!HE-1:A2/66/0/?v628; [check for Statesman's Medal]
 !!IF:V2/0; [AI won't give medal]
@@ -490,20 +490,22 @@ ZVSE
 !!CAx1/x2/x3:B3/37; [check for upgraded dwelling 1]
 !!VRy1:S0;
 !!VRy1&-1:S1; [y1=1 means we built upgraded dwelling 1]
-!!CAx1/x2/x3:B3/30; [check for basic dwelling 1 - to see if we should add creatures]
-!!CAx1/x2/x3&-1:B6/30; [build basic dwelling if needed]
-!!CAx1/x2/x3:B6/37; [build upgraded dwelling 1]
-!!VRy8:Sy7;
-!!VRy8:*14; [get number of 1st level creature]
-!!VRy8:+1; [upgraded]
-!!VRy8&y8=113:S119; [sprites]
-!!MA:Gy8/?y9; [get growth rate of that creature]
-!!CAx1/x2/x3&-1:M1/0/d/y9; [add creatures (0 = 1st level) if dwelling 1 wasn't there before]
-!!UN:N2/326/y7/37; [name of upgrade building]
+!!if&y1=1:;
+  !!CAx1/x2/x3:B3/30; [check for basic dwelling 1 - to see if we should add creatures]
+  !!CAx1/x2/x3&-1:B6/30; [build basic dwelling if needed]
+  !!CAx1/x2/x3:B6/37; [build upgraded dwelling 1]
+  !!VRy8:Sy7;
+  !!VRy8:*14; [get number of 1st level creature]
+  !!VRy8:+1;  [upgraded]
+  !!VRy8&y8=113:S119; [sprites]
+  !!MA:Gy8/?y9; [get growth rate of that creature]
+  !!CAx1/x2/x3&-1:M1/0/d/y9; [add creatures (0 = 1st level) if dwelling 1 wasn't there before]
+  !!UN:N2/326/y7/37; [name of upgrade building]
+!!en;
 
-!!VRv640:C21/17/21/21/17/22/21/21/21; [look-up table of special building numbers by town]
-!!VRv600:Sy7;
-!!VRv600:+640; [now vv600 = special building number]
+
+!!VRy4:S21; [look-up table of special building numbers by town]
+!!VRy4|y4=1/y4=4:S17; [look-up table of special building numbers by town]
 !!VRk:S1; [assume we met requirements to build it]
 !!CAx1/x2/x3:B3/33; [check for dwelling 4 (barracks)]
 !!VRk&-1/y7=0:S0; [needed for castle's stables]
@@ -515,13 +517,13 @@ ZVSE
 !!CAx1/x2/x3:B3/14; [check for market]
 !!VRk&-1/y7=6:S0; [needed for stronghold's freelancer's guild]
 !!VRk&y7=8:S0; [conflux gets no special building]
-!!CAx1/x2/x3:B3/vv600; [check for special building]
+!!CAx1/x2/x3:B3/y4; [check for special building]
 !!VRy2:S0;
 !!VRy2&-1/k=1:S1; [y2=1 means we built special building]
-!!CAx1/x2/x3&-1/k=1:B6/vv600; [build special building if requirements met and not there]
-!!UN:N2/327/y7/vv600; [name of special building]
-!!HE-1&y2=1/y7=2:O?v602; [get hero owner]
-!!UN&y2=1/y7=2:Sv604/v605/v606/v602/20; [reveal area for lookout tower]
+!!CAx1/x2/x3&-1/k=1:B6/y4; [build special building if requirements met and not there]
+!!UN:N2/327/y7/y4; [name of special building]
+!!HE-1&y2=1/y7=2:O?y5; [get hero owner]
+!!UN&y2=1/y7=2:Sx1/x2/x3/y5/20; [reveal area for lookout tower]
 !!UN&y2=1/y7=2:R1; [redraw screen]
 
 !!VRy3:S0; [assume nothing built]
