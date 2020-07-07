@@ -55,23 +55,24 @@ ZVSE
 **    emerald - gives either +1 to Magic skill or Speed skill
 
 ** initialization
-!#UN:P51/?v7185;                                 [check if Enhanced Commanders is enabled in WoGify Options]
-!#UN:P3/?v1;                                     [check if Commanders are enabled]
-!#VRv7185&v1=1:S0;                               [disable if Commanders aren't enabled]
-
-!#CO-2&v7185=1:P1;                               [enable custom primary skill control]
-
-!#UN:B6/1;                                       [set new chest 6 to advanced setting (disabled)]
-
+!?PI;
+!!UN:P51/?y1;                                    [check if Enhanced Commanders is enabled in WoGify Options]
+!!FU&y1<>1:E;                                    [exit if not enabled]
+!!VRv7185:S1;                                    [set var v7185 is true]
+!!UN:P3/?v1;                                     [check if Commanders are enabled]
+!!VRv7185&v1=1:S0;                               [disable if Commanders aren't enabled]
+!!CO-2&v7185=1:P1;                               [enable custom primary skill control]
+!!UN:B6/1;                                       [set new chest 6 to advanced setting (disabled)]
 
 ** function to make commanders alive
-!#DO(WOG27_SetNPC_Alive)/174/191/1&v7185=1:P;    [iterate through all commander types and make alive]
+!!DO(WOG27_SetNPC_Alive)/174/191/1&v7185=1:P;    [iterate through all commander types and make alive]
 
 !?FU(WOG27_SetNPC_Alive);
 !!MA:Xx16/?y1;                                   [get flags]
 !!VRy1:|16;                                      [add alive bit]
-!!VRy1|x16=178/x16=187:-16;                      [remove alive bit if soul eater]
+!!VRy1|x16=178/x16=187/x16=182:-16;
 !!MA:Xx16/y1;                                    [reset flags]
+!!IF:M^%X16^;
 
 
 ** commander screen open trigger
