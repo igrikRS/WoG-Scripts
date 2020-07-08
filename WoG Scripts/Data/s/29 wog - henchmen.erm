@@ -132,7 +132,7 @@ ZVSE
   !!MA:Ay6/?y50 Dy6/?y51;
   !!VRy60:Sy50+y5*y4:100-y50;
   !!VRy61:Sy51+y5*y4:100-y51;
-  !!BMx1:Ayd60 Ddy61;
+  !!BMx1:Ady60 Ddy61;
 
   !!BMx1:H?y4;
   !!VRy5:Sy4 *y99:100 + 50 -1;
