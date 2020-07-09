@@ -13,7 +13,7 @@ Expert- if the player right-clicks on an enemy hero whithin a hero with Mysticis
 the hero with Mysticism is selected, the hero may pay 5 Spell Points to learn all enemy hero skills,
 spells, equipped artifacts, creatures, and how much experience, primary skills, luck, morale and spell
 points that hero has.
-It also lets heroes regenerate 10%, 20% or 30% of their normal maximum spell points each day, depending
+It also lets heroes regenerate 5%, 10% or 15% of their normal maximum spell points each day, depending
 on their level of Mysticism, double amount for AI heroes.
 
 Variables used:
@@ -22,68 +22,91 @@ v1-v10
 Flags:
 (1-10), 56, 172, 412
 Functions:
-FU8150-FU8164, FU8230-FU8231
+FU(WOG43_GetCountSkills)-FU(WOG43_CheckWhithCreatures), FU(WOG43_MistAdv)-FU(WOG43_MistExp)
 Timers:
 TM30;
 
+!#UN:P35/?v1; (check for WoG option)
+!#TM30&v1<>0/56:S2/999/7/255; (setup timer)
 
 *************
 *** Basic ***
 *************
 
-!#UN:P35/?v1; (check for WoG option)
-!#TM30&v1<>0:S1/999/1/255; (setup timer)
-!?TM30;
-!!IF:V10/0;
-!!UN:P35/?v1;
-!!IF&v1=0:V10/1; (Abort if script is deactived)
-!!VRv1:Sc0;
-!!IF:V9/0;
-!!DO8160/0/155/1&-10/v1<>1:P;(loop through all heroes if not day 1)
-!!IF:V9/0;
+!?FU(WOG_OnNewDay);
+!!UN:P35/?y1;  
+!!FU&y1<>1:E;
 
-!?FU8160;
+!!VRy1:Sc0 %7;       (Get day of week)  
+!!if&56/y1=2:;       (Week of Monsters script is enabled, on tuesday)
+  !!re y2/0/7:;      (loop for all players)
+    !!SN:W^WOG43_HeroID_%Y2^/-1; (reset var)
+  !!en;
+!!en;
 
-*** Spell Point bonus ***
-!!HEx16:O?y2; (Check hero owner)
-!!OW:C?y3; (Check current player)
-!!FU&y2<>y3:E; (Abort if not the same)
+!!DO(WOG43_LoopAllHeroes_AddSpellPoints)/0/155/1:P;
 
-!!HEx16:S8/?y1; (Check level of Mysticism)
-!!FU&y1=0:E; (Abort if none)
-!!HEx16:Fd0/d0/d0/?y5; (get knowledge of hero)
-!!VRy5:*10; (multiply with 10)
-!!HEx16:S24/?y6; (Get Intelligence level)
-!!VRy5&y6=3:*2; (Double if Expert Intelligence is present)
-!!VRy5&y6=2:*3; (Triple if advanced level)
-!!VRy5&y6=2::2; (Divide by 2 if advanced to get 1.5 normal)
-!!VRy5&y6=1:*5; (Multiply with 5 if basic level)
-!!VRy5&y6=1::4; (Divide by 4 if basic to get 1.25 normal)
-!!HEx16:I?y7; (get current spell points)
 
-!!VRy8:Sy5; (copy to be used to calc how much to add)
-!!VRy8:*y1 :10 -y1 -1; (Spell points are mysticism level/10 of normal, -level of mysticism -1, for normal regeneration)
-!!VRy8&-1000:*2; (Double bonus for AI)
-!!VRy9:Sy8;
-!!VRy8:+y7; (add current spell points)
-!!VRy9&y8>y5:Sy5 -y7;(if under normal max now, but over after, set to normal after)
-!!VRy9&y7>=y5|y8<0:S0; (if result is normal max, or negative, set to zero)
-!!HEx16:Idy9; (Add hero spell points)
+!?FU(WOG_Hero_GetFullSpellPoints);
+; x1 - hero id
+!!HEx1:Z?y1;         (get hero structure)
+!!UN:Cy1/1145/1/?y2; (get hero knowledge)
+!!SN:E5131040/6/y1;  (get Intelligence power)
+!!VRe1:*10 *y2;      (emul to get max SP)
+!!VRx2:Se1;          (return max hero SP)
 
+!?FU(WOG43_LoopAllHeroes_AddSpellPoints);
+; x16 - hero id
+!!HEx16:O?y1 S8/?y2; (Check hero owner and level of Mysticism)
+!!FU|y1=-1/y2<1:E;   (Abort if not the same)
+
+!!OW:Iy1/?y4;        (owner is AI?) 
+!!VRy3:Sc0 %7;       (Get day of week)  
+!!FU(WOG43_GetHeroID_KnowWeekOfMonstre)&56/y3=2/y4=0:Px16/y1; (Week of Monsters script is enabled, on tuesday and not AI)
+
+!!FU(WOG_Hero_GetFullSpellPoints):Px16/?y3;
+!!HEx16:I?y5/1;      (get current spell points)
+!!FU&y5>=y3:E;       (exit if current spell points >= maximum)
+
+!!VRy6:Sy3 *y2 :20 -1 -y2; (Spell points are mysticism level/10 of normal, -level of mysticism -1, for normal regeneration)
+!!HEx16:X0/?y9/d/d/d/d/d ;
+!!if&y9=8:; (if Hero is a spec Mysticism)
+  !!HEx16:Ed/?y11/1;
+  !!VRy10:Sy3 *y11 :207; (spec mysticism: +0.5% for lvl of max SP hero)
+  !!VRy6:+y10;
+!!en:;
+
+!!VRy6&y4=1:*2;      (double bonus for AI)
+!!VRy5:+y6;          (add current spell points)
+!!VRy5&y5<1:S1;      (check for negative SP)
+!!VRy5&y5>y3:Sy3;    (check for add SP > max)
+!!HEx16:Iy5/1;       (set hero spell points)
+
+
+!?FU(WOG43_GetHeroID_KnowWeekOfMonstre);
+; x1 - hero id
+; x2 - player color
+!!SN:W^WOG43_HeroID_%X2^/?y1; (check player hero id)
+!!SN&y1=-1:W^WOG43_HeroID_%X2^/x1; (save player hero id)
+
+
+!?TM30&56;
 *** Linked to Week of Monster Script ***
-!!VRy1:Sc0; (Get date)
-!!VRy10:Sy1; (Copy date to y10)
-!!VRy1%7; (Get day of week)
-!!FU|y1<>2/9/-56/-1000:E; (abort if not tuesday, week of script isn't enabled, this already has been done or current player is A)
+!!UN:P35/?y1;  
+!!FU&y1<>1:E;
 
-!!HEx16:B0/?z1; (get hero name)
-!!HEx16:R2/?y2;
+!!OW:C?y1;   (get active player)
+!!SN:W^WOG43_HeroID_%Y1^/?y16; (check player hero id)
+!!FU&y16=-1:E;
+
+!!HEy16:B0/?z1; (get hero name)
+!!HEy16:R2/?y2;
 !!VRz7&y2=0:Sz135000;
 !!VRz7&y2=1:Sz135001;
 !!VRz2&y2=0:Sz135002;
 !!VRz2&y2=1:Sz135003; (Get hero sex)
-!!FU8163:P1/x16; (get creature with description and way to predict)
-!!FU181&y10=2:P; (call Function 181 from Week of Monsters to see if it's "Week of the Imp" at start of game)
+!!FU(WOG43_DrawCreaturesDesc):P1/y16; (get creature with description and way to predict)
+!!FU181:P; (call Function 181 from Week of Monsters to see if it's "Week of the Imp" at start of game)
 !!UN&v180>=0/-172:N3/z3/v180/0; (get monster Type)
 !!VRz3&v180=-1:Sz135004;
 !!VRz3&v180=-2:Sz135005;
@@ -104,12 +127,13 @@ TM30;
 ****************
 
 !?CM1; (tigger on right-click in town screen)
-!!FU8230:P;
+!!UN:P35/?y1; 
+!!FU(WOG43_MistAdv)&y1=1:P;
 
-!?FU8230;
-!!IF:V10/0; (Flag 10 is on/off switch)
+!?FU(WOG43_MistAdv);
 !!UN:P35/?y1;
-!!IF&y1=0:V10/1; (Abort if script is deactived)
+!!FU&y1<>1:E;
+!!IF:V10/0; (Flag 10 is on/off switch)
 
 !!IF&-1000:V10/1; (Disable if AI(fat chance it rightclicks though))
 
@@ -245,10 +269,10 @@ TM30;
 !!VRz-2:S^ ^;
 !!VRz3&z3=z-2:Sz135055; (If no spells, set to "(none)")
 
-!!FU8163&-10:P2;                              (get creature with description and way to predict)
+!!FU(WOG43_DrawCreaturesDesc)&-10:P2;                              (get creature with description and way to predict)
 !!IF&-10:M1/z135020; (Display Text)
 
-!?FU8163;                    (Draw creature with description and way to predict)
+!?FU(WOG43_DrawCreaturesDesc);                    (Draw creature with description and way to predict)
 !!VRy3&-10:T4;               (Draw to decide what kind of method is used)
 !!VRy4&-10:R160;             (Draw to get creature)
 !!VRy4&-10/y4=>122:+1;
@@ -287,12 +311,13 @@ TM30;
 **************
 
 !?CM;
-!!FU8231:P;
+!!UN:P35/?y1; 
+!!FU(WOG43_MistExp)&y1=1:P;
 
-!?FU8231;
-!!IF:V10/0;
+!?FU(WOG43_MistExp);
 !!UN:P35/?y1;
-!!IF&y1=0:V10/1;           (Abort if script is deactived)
+!!FU&y1<>1:E;
+!!IF:V10/0;
 
 !!IF&-1000:V10/1;      (check if it's AI)
 !!CM:I?y1;
@@ -338,7 +363,7 @@ TM30;
 !!VRy21&-10:+1;
 !!VRy20&-10:*y21;            (If within base radius*(base radius+1), it is normally visible)
 !!IF&-10/y9>=y20:V10/1;      (Check if close enough)
-!!HEy52&-10:I?y2;
+!!HEy52&-10:I?y2/1;
 !!IF&-10/y2<5:V10/1;         (Check if enough spell points)
 !!HEy52&-10:B0/?z1;          (Get Hero name)
 !!HEy52&-10:R2/?y1;
@@ -361,7 +386,7 @@ TM30;
 
 !!HEv1&-10:F?y1/?y2/?y3/?y4; (Get primary skills)
 !!HEv1&-10:E?y5;             (Get XP points)
-!!HEv1&-10:I?y6;             (get spell points)
+!!HEv1&-10:I?y6/1;             (get spell points)
 !!HEv1&-10:R0/?y7;           (get morale)
 !!HEv1&-10:R1/?y8;           (get luck)
 
@@ -370,73 +395,73 @@ TM30;
 !!HEy52&-10:B0/?z1;          (Get Hero name)
 
 !!VRv2&-10:S0;
-!!DO8150/0/27/1&-10:P;       (Count number of Sec Skills)
+!!DO(WOG43_GetCountSkills)/0/27/1&-10:P;       (Count number of Sec Skills)
 !!IF&-10/v2=0:M1/z135161;
-!!FU8151&-10/v2>0:P;         (Display skills)
+!!FU(WOG43_CheckSkills)&-10/v2>0:P;         (Display skills)
 !!VRv2&-10:S0;
 
-!!DO8155/0/18/1&-10:P;       (Count number of Artifacts equipped)
+!!DO(WOG43_GetCountArts)/0/18/1&-10:P;       (Count number of Artifacts equipped)
 !!IF&-10/v2=0:M1/z135162;
-!!FU8156&-10/v2>0:P;         (Display Artifacts)
+!!FU(WOG43_DisplayArts)&-10/v2>0:P;         (Display Artifacts)
 !!VRv2&-10:S0;
 
-!!DO8153/0/69/1&-10:P;       (Count number of Spells)
+!!DO(WOG43_GetCountSpells)/0/69/1&-10:P;       (Count number of Spells)
 !!IF&-10/v2=0:M1/z135163;
-!!FU8154&-10/v2>0:P;         (Display spells)
+!!FU(WOG43_DisplaySpells)&-10/v2>0:P;         (Display spells)
 !!VRv2&-10:S0;
 
-!!DO8158/0/6/1&-10:P;        (count number of creatures slots occupied)
+!!DO(WOG43_GetCountStacks)/0/6/1&-10:P;        (count number of creatures slots occupied)
 !!IF&-10/v2=0:M1/z135164;
-!!FU8159&-10/v2>0:P;         (Display Creatures)
+!!FU(WOG43_DisplayCreatures)&-10/v2>0:P;         (Display Creatures)
 
-!?FU8151;                    (check skills)
+!?FU(WOG43_CheckSkills);                    (check skills)
 !!VRz5&-10:S^ ^;             (Initialise empty variable)
-!!DO8161/0/27/1:P;           (Cycle through skills)
+!!DO(WOG43_ThroughSkills)/0/27/1:P;           (Cycle through skills)
 !!IF:M1/z135165;
 !!IF:V10/0;
 
-!?FU8150;                    (count number of skills)
+!?FU(WOG43_GetCountSkills);                    (count number of skills)
 !!HEv1:Sx16/?y1;
 !!VRv2&y1<>0:+1;
 
-!?FU8161;                    (cycle through skills)
+!?FU(WOG43_ThroughSkills);                    (cycle through skills)
 !!HEv1:Sx16/?v3;
 !!UN&v3<>0:N4/z3/x16;
 !!VRz5&v3=3:+z135166+^ %Z3^;
 !!VRz5&v3=2:+z135167+^ %Z3^;
 !!VRz5&v3=1:+z135168+^ %Z3^;   (add skillname and level)
-!!FU8152&-10/v3<>0:P;
+!!FU(WOG43_TextAddAnd)&-10/v3<>0:P;
 
-!?FU8155;                    (count number of artifacts equipped)
+!?FU(WOG43_GetCountArts);                    (count number of artifacts equipped)
 !!VRx16&x16=13:S18;          (Don't count spell books and War Machine slots)
 !!HEv1:A1/?y1/x16;
 !!VRv2&y1>6/y1<144:+1;
 
-!?FU8156;                    (Display Artifacts)
+!?FU(WOG43_DisplayArts);                    (Display Artifacts)
 !!VRz5&-10:S^ ^;             (Initialise empty variable)
-!!DO8157/0/18/1&-10:P;
+!!DO(WOG43_CheckHeroSlots)/0/18/1&-10:P;
 !!IF:M1/z135169;
 !!IF:V10/0;
 
-!?FU8157;                     (Function for checking slots)
+!?FU(WOG43_CheckHeroSlots);                     (Function for checking slots)
 !!VRv3:S-1;                   (reinitisalize variable)
 !!VRx16&x16=13/-10:S18;       (No spell book or War Machine)
 !!HEv1&-10:A1/?v3/x16;        (check slot x16)
 !!UN&v3>6/v3<144/-10:N0/z3/v3;  (get artifact name)
 !!VRz5&-10/v3>6/v3<144:+^ %Z3^; (add Artifact name)
-!!FU8152&-10/v3>6/v3<144:P;
+!!FU(WOG43_TextAddAnd)&-10/v3>6/v3<144:P;
 
-!?FU8158;                    (check number of creatures sacks)
+!?FU(WOG43_GetCountStacks);                    (check number of creatures stacks)
 !!HEv1:C0/x16/d0/?y1;
 !!VRv2&y1>0:+1;              (add 1 if stack is occupied)
 
-!?FU8159;                    (Check creature slots)
+!?FU(WOG43_DisplayCreatures);                    (Check creature slots)
 !!VRz5:Sz135170;                 (initialize empty variable)
-!!DO8164/0/6/1:P;
+!!DO(WOG43_CheckWhithCreatures)/0/6/1:P;
 !!IF:M1/z135171;
 !!IF:V10/0;
 
-!?FU8164;                    (Check which creatures)
+!?FU(WOG43_CheckWhithCreatures);                    (Check which creatures)
 !!HEv1&-10:C0/x16/?y1/?y10;  (check slot x16 for creatures)
 !!UN&-10/y10>1:N3/z3/y1/1;   (If more than one creature, get name in plural)
 !!UN&-10/y10=1:N3/z3/y1/0;   (if one creature, get name in singular)
@@ -444,28 +469,27 @@ TM30;
  %Y10 %Z3^;                  (add number and name to dialogue)
 !!VRv3&-10:S0;
 !!VRv3&-10/y10<>0:S1;
-!!FU8152&-10/v3<>0/y1<>-1:P; (add "," or "and", depending on number of stacks left)
+!!FU(WOG43_TextAddAnd)&-10/v3<>0/y1<>-1:P; (add "," or "and", depending on number of stacks left)
 
-!?FU8153;                    (count number of spells)
+!?FU(WOG43_GetCountSpells);                    (count number of spells)
 !!HEv1:Mx16/?y1;
 !!VRv2&y1=1:+1;              (If spell is present, add 1 to total number)
 
-!?FU8154;                    (Display spells)
+!?FU(WOG43_DisplaySpells);                    (Display spells)
 !!VRz5:S^ ^;                 (Initialise empty variable)
-!!DO8162/0/69/1:P;
+!!DO(WOG43_ThroughSpells)/0/69/1:P;
 !!IF:M1/z135172;
 !!IF:V10/0;
 
-!?FU8162;                    (Cycle through spells)
+!?FU(WOG43_ThroughSpells);                    (Cycle through spells)
 !!HEv1:Mx16/?v3;
 !!UN&v3=1:N1/z3/x16;         (Get spell Name)
 !!VRz5&v3=1:+^ %Z3^;         (add spell name)
-!!FU8152&-10/v3=1:P;
+!!FU(WOG43_TextAddAnd)&-10/v3=1:P;
 
-!?FU8152;                    (adds a comma, an "and" or a period depending on how many of that kind is left)
+!?FU(WOG43_TextAddAnd);                    (adds a comma, an "and" or a period depending on how many of that kind is left)
 !!VRv2&v3>0:-1;
 !!VRz5&v2>1:+^,^;
 !!VRz5&v2=1:+z135173;
 !!VRz5&v2=0:+^.^;
 !!IF&v2=0:V10/1;             (abort other checks if everything is accounted for)
-

@@ -1,4 +1,4 @@
-175000	{Eagle} {Eye}	EE I 	Last updated
+175000	{Eagle} {Eye}	EE I	Last updated
 175001	{Basic} {Eagle} {Eye}
 
 Basic Eagle Eye gives your hero a 40%% chance to learn any 1st or 2nd level spells used in combat and the hero will gain a bonus 1st or 2nd level spell when gaining a level.	EE I	October 22 2004
@@ -223,22 +223,22 @@ Advanced Armorer reduces all physical damage inflicted against the hero's troops
 Expert Armorer reduces all physical damage inflicted against the hero's troops by 20%%.		
 175084	{Basic} {Mysticism}
 
-Basic Mysticism allows your hero to regenerate up to 10%% of the normal maximum spell points per day and learn what the next "Week of" will be on day 2 of each week.		
+Basic Mysticism allows your hero to regenerate up to 5%% of the normal maximum spell points per day and learn what the next "Week of" will be on day 2 of each week.		
 175085	{Advanced} {Mysticism}
 
-Advanced Mysticism allows your hero to regenerate up to 20%% of the normal maximum spell points per day, learn what the next "Week of" will be on day 2 of each week, and learn which spells a Mage guild will contain when fully built (by right-clicking on it).		
+Advanced Mysticism allows your hero to regenerate up to 10%% of the normal maximum spell points per day, learn what the next "Week of" will be on day 2 of each week, and learn which spells a Mage guild will contain when fully built (by right-clicking on it).		
 175086	{Expert} {Mysticism}
 
-Expert Mysticism allows your hero to regenerate up to 30%% of the normal maximum spell points per day, learn what the next "Week of" will be on day 2 of each week, learn which spells a Mage guild will contain when fully built (by right-clicking on it), and learn all about an enemy hero's skills, artifacts, troops and more by right-clicking on the hero.		
+Expert Mysticism allows your hero to regenerate up to 15%% of the normal maximum spell points per day, learn what the next "Week of" will be on day 2 of each week, learn which spells a Mage guild will contain when fully built (by right-clicking on it), and learn all about an enemy hero's skills, artifacts, troops and more by right-clicking on the hero.		
 175087	{Basic} {Mysticism}
 
-Basic Mysticism allows your hero to regenerate up to 10%% of the normal maximum spell points per day and learn what the next "Week of" will be on day 2 of each week. It also reduces an opponent's spell points by 20%% for the duration of the battle.		
+Basic Mysticism allows your hero to regenerate up to 15%% of the normal maximum spell points per day and learn what the next "Week of" will be on day 2 of each week. It also reduces an opponent's spell points by 20%% for the duration of the battle.		
 175088	{Advanced} {Mysticism}
 
-Advanced Mysticism allows your hero to regenerate up to 20%% of the normal maximum spell points per day, learn what the next "Week of" will be on day 2 of each week, and learn which spells a Mage guild will contain when fully built (by right-clicking on it). It also reduces an opponent's spell points by 30%% for the duration of the battle.		
+Advanced Mysticism allows your hero to regenerate up to 10%% of the normal maximum spell points per day, learn what the next "Week of" will be on day 2 of each week, and learn which spells a Mage guild will contain when fully built (by right-clicking on it). It also reduces an opponent's spell points by 30%% for the duration of the battle.		
 175089	{Expert} {Mysticism}
 
-Expert Mysticism allows your hero to regenerate up to 30%% of the normal maximum spell points per day, learn what the next "Week of" will be on day 2 of each week, learn which spells a Mage guild will contain when fully built (by right-clicking on it), and learn all about an enemy hero's skills, artifacts, troops and more by right-clicking on the hero. It also reduces an opponent's spell points by 40%% for the duration of the battle.		
+Expert Mysticism allows your hero to regenerate up to 15%% of the normal maximum spell points per day, learn what the next "Week of" will be on day 2 of each week, learn which spells a Mage guild will contain when fully built (by right-clicking on it), and learn all about an enemy hero's skills, artifacts, troops and more by right-clicking on the hero. It also reduces an opponent's spell points by 40%% for the duration of the battle.		
 175090	{Basic} {Sorcery}
 
 Basic Sorcery causes a hero's spells to inflict an additional 5%% damage in combat, and lets the hero learn additional information when right-clicking on many objects that give resources, artifacts, teach skills or spells. Object range is hero's level + 4.		
@@ -432,14 +432,14 @@ Expert First Aid gives control of the first aid tent to the hero, healing up to 
 
 {»} Regain 4 spell points per day		
 175149	
-{»} Regain 10% of maximum spell points daily
+{»} Regain 5% of maximum spell points daily
 {»} Learn next "week of" week on day 2		
 175150	
-{»} Regain 20% of maximum spell points daily
+{»} Regain 10% of maximum spell points daily
 {»} Learn next "week of" week on day 2
 {»} Learn future mage guild spells		
 175151	
-{»} Regain 30% of maximum spell points daily
+{»} Regain 15% of maximum spell points daily
 {»} Learn next "week of" week on day 2
 {»} Learn future mage guild spells
 {»} Learn enemy hero details		
