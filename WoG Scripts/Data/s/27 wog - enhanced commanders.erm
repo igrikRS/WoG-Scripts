@@ -72,7 +72,6 @@ ZVSE
 !!VRy1:|16;                                      [add alive bit]
 !!VRy1|x16=178/x16=187/x16=182:-16;
 !!MA:Xx16/y1;                                    [reset flags]
-!!IF:M^%X16^;
 
 
 ** commander screen open trigger
