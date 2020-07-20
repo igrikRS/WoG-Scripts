@@ -56,6 +56,7 @@ ZVSE
 
 ** initialization
 !?PI;
+!!VRv7185:S0;
 !!UN:P51/?y1;                                    [check if Enhanced Commanders is enabled in WoGify Options]
 !!FU&y1<>1:E;                                    [exit if not enabled]
 !!VRv7185:S1;                                    [set var v7185 is true]

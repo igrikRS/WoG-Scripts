@@ -601,8 +601,9 @@ entrance squares. Do not use this with another script that might do the same
 !!IF&9:Q1/7/1/2/z136032;
 
 !!FU&-1:E;
-!!IF&-9:G1/1/0/z136042/z136033/z136034/z136035/z136036/z136037/z136038/z136039/z136040/z136041/0/0/0;
-!!IF&9:G1/1/0/z136042/z136033/z136034/z136035/z136036/z136037/z136038/z136039/0/0/0/0/0; (variables are taken from ERT file)
+!!IF&-9:G1/1/512/z136042/z136033/z136034/z136035/z136036/z136037/z136038/z136039/z136040/z136041/z136090/0/0;
+!!IF&9:G1/1/512/z136042/z136033/z136034/z136035/z136036/z136037/z136038/z136039/0/0/z136090/0/0; (variables are taken from ERT file)
+!!FU&v1=512:E; (No thanks)
 !!OW&v1<65:R-1/7/d-1;
 !!OW&v1>64:R-1/7/d-3; (take Mithril)
 !!VRy5&v1=1:S227;
@@ -858,4 +859,3 @@ entrance squares. Do not use this with another script that might do the same
 
 !!VRx16&-9/y2<10/y2>2:Rv5;
 !!VRx16&9:Rv5; (distance between piles is random between 1 and 30. If resource and not replaced, move to next)
-

@@ -1,4 +1,4 @@
-#	Text resource for "SCRIPT36.ERM" document 		
+#	Text resource for "SCRIPT36.ERM" document		
 136000	Upgraded Water Wheel		09/02/03
 136001	Upgraded Windmill		09/02/03
 136002	Upgraded Water Wheel (Visited)		09/02/03
@@ -130,14 +130,14 @@ You have %Y2 %Z-5 of Mithril.
 
 Do you wish to hire the Enchanter?		09/02/03
 136033	Holy Ground     (1 Mithril)		09/02/03
-136034	Clover Field      (1 Mithril)		09/02/03
-136035	Evil Fog            (1 Mithril)		09/02/03
+136034	Clover Field       (1 Mithril)		09/02/03
+136035	Evil Fog             (1 Mithril)		09/02/03
 136036	Fiery Fields       (1 Mithril)		09/02/03
-136037	Lucid Pools      (1 Mithril)		09/02/03
-136038	Magic Clouds   (1 Mithril)		09/02/03
-136039	Rocklands        (1 Mithril)		09/02/03
-136040	Magic Plains     (3 Mithril)		09/02/03
-136041	Cursed Ground (3 Mithril)		09/02/03
+136037	Lucid Pools       (1 Mithril)		09/02/03
+136038	Magic Clouds    (1 Mithril)		09/02/03
+136039	Rocklands          (1 Mithril)		09/02/03
+136040	Magic Plains      (3 Mithril)		09/02/03
+136041	Cursed Ground  (3 Mithril)		09/02/03
 136042	Choose which special terrain you want:		09/02/03
 136043	{Witch Hut} 
  
@@ -258,3 +258,4 @@ must have a hero standing adjacent to the structure when you right-click.
   - Gem, Crystal, Mercury & Sulfur: 3 Mithril
   - Gold: 5 Mithril
 11. Upgrade University - May improve a hero's Basic skills: 4 Mithril		
+136090	No thanks.		

@@ -25,7 +25,8 @@ Timers:
 TM30;
 
 !#UN:P35/?v1; (check for WoG option)
-!#TM30&v1=1/56:S2/999/7/255; (setup timer)
+!#TM30&v1=1/56:S1/999/1/255; (setup timer)
+
 
 *************
 *** Basic ***
@@ -93,8 +94,12 @@ TM30;
 !!UN:P35/?y1;
 !!FU&y1<>1:E;
 
+!!VRy2:Sc0 %7;       (Get day of week)
+!!FU&y2<>2:E;
+
 !!OW:C?y1 Iy1/?y2;   (get active player)
 !!SN:W^WOG43_HeroID_%Y1^/?y16; (check player hero id)
+!!SN:W^WOG43_HeroID_%Y1^/-1;   (reset player hero id)
 !!FU|y16=-1/y2=1:E;
 
 !!HEy16:O?y1 S8/?y2;   (Check hero owner and level of Mysticism)
@@ -494,4 +499,3 @@ TM30;
 !!VRz5&v2=1:+z135173;
 !!VRz5&v2=0:+^.^;
 !!IF&v2=0:V10/1;             (abort other checks if everything is accounted for)
-
