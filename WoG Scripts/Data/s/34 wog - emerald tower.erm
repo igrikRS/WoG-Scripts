@@ -35,8 +35,7 @@ ZVSE
 Permanent Variables: z816-z841, v1240-v1252, v1270-v1271
 Temporary Variables: v1-v7, v360-v369, z1-z9, z480-z490
 Temporary Flags: 1-5
-Functions: FU10900-FU10912
-Timers: TM38
+Functions: Only named functions
 Dialogues: 3
 
 -----------------------------------------------------------------------
@@ -69,13 +68,13 @@ Dialogues: 3
 
 !!UN:U63/65/?y1; [Number of Emerald Towers: v1]
 !!VRv1:S-1; [Initialize v1 to -1 to work with new faster UN:U syntax]
-!!DO10910/1/y1/1&y1>0:P; [Loop through all Emerald Towers]
+!!DO(WOG34_ResetObjectStatus)/1/y1/1&y1>0:P; [Loop through all Emerald Towers]
 
 -----------------------------------------------------------------------
 
  [Reset non-visited status for each Emerald Tower]
 
-!?FU10910;
+!?FU(WOG34_ResetObjectStatus);
 
 !!UN:U63/65/-1/1; [Coordinates of next tower in v1/v2/v3]
 !!POv1/v2/v3:N0; [Set PO:N to 0 to reset hint text]
@@ -128,17 +127,17 @@ Dialogues: 3
 !!IF&2/1000/1:E1/3; [Display dialogue box]
 !!IF&2/1000/-1:M^%Z-1^; [Display alternative standard dialogue if image file is missing]
 
-!!FU10900&2:P; [Choose species to improve]
+!!FU(WOG34_ChooseSpeciesMain)&2:P; [Choose species to improve]
 
 !!IF&-2/1000:M1/z144008;
 
 -----------------------------------------------------------------------
 
-!?FU10900;
+!?FU(WOG34_ChooseSpeciesMain);
 
   [Build a listing of different creature types in hero's army (v360-v366), v1=total number]
   [Store creature names in z480-z486 - skip this if AI]
-!!FU10901&1000:P;
+!!FU(WOG34_StoreUniqueCreatureID)&1000:P;
 
 !!VRz1:Sz144009;
 !!VRz2:Sz144010;
@@ -158,7 +157,7 @@ Dialogues: 3
 !!VRv2&v367=64:Sv366;
 !!VRv2&v367=128:S-1;
 
-!!DO10912/0/6/1&-1000:P; [Choose creature for AI to buy a bonus for: v2]
+!!DO(WOG34_AIChooseCreatureBonus)/0/6/1&-1000:P; [Choose creature for AI to buy a bonus for: v2]
 
 !!IF:V4/1; [Set flag 4 to true]
 !!IF&v2=-1/1000:Q4/z144012;
@@ -174,14 +173,14 @@ Dialogues: 3
   [Check if this is a new creature (if it is and if v1240>12, set v2 to -1)]
   [If this is a new creature, set v6 to -1, if not new, set v6 to loop index number]
 !!VRv6:S-1;
-!!DO10908/1/v1240/1&v2>=0/v1240>0:P;
+!!DO(WOG34_IsNewCreatureSpecies)/1/v1240/1&v2>=0/v1240>0:P;
 !!IF&v1240>=12/v6<0/v2>=0/1000:Q4/z144014;
 
 !!VRv2&v1240>=12/v6<0:S-1; [Set v2 to -1 if v1240 = 12 and creature isn't new]
 
-!!FU10902&v2>=0:P; [Display improvement options]
+!!FU(WOG34_ChooseTypeImprovement)&v2>=0:P; [Display improvement options]
 
-!!FU10900&v2=-1/-4/1000:P; [Choose another species to improve]
+!!FU(WOG34_ChooseSpeciesMain)&v2=-1/-4/1000:P; [Choose another species to improve]
 
  [If player didn't buy a bonus]
 !!IF&4/-5/v1270=0/v1270<>100/1000:Q1/5/6/1/z144015;
@@ -198,7 +197,7 @@ Dialogues: 3
  [Store unique creature numbers in v360-v366 (-1 equals no creature)]
  [v1=number of unique creature numbers in hero's army]
 
-!?FU10901;
+!?FU(WOG34_StoreUniqueCreatureID);
 
 !!VRv1:S0;
 !!VRv360:C-1/-1/-1/-1/-1/-1/-1;
@@ -288,7 +287,7 @@ Dialogues: 3
 
  [Choose the type of improvement]
 
-!?FU10902;
+!?FU(WOG34_ChooseTypeImprovement);
 
 !!UN:N3/3/v2/0;
 
@@ -362,25 +361,25 @@ Dialogues: 3
 !!VRv3&-1000/v3=8:S10; [For AI, if v3=8, set ot to 10]
 
 !!VRv5:S0;
-!!FU10906&v3=10:P; [Give choice of Special Bonus]
+!!FU(WOG34_ChooseSpecialAbility)&v3=10:P; [Give choice of Special Bonus]
 
 !!VRv4:S0;
-!!FU10903&v3>1/1000:Py15;  [Ask player to pay for Bonus: v4=1 if player pays]
+!!FU(WOG34_PlayerPaysForBonus)&v3>1/1000:Py15;  [Ask player to pay for Bonus: v4=1 if player pays]
 !!VRv4&-1000:S1; [Set v4 to 1 if AI]
 
 !!VRy9&v3>=2/v3<=7:Syv3; [Bonus amount: y9]
 
-!!FU10905&v4=1:Py9; [Add bonus to creature type if player paid for it]
+!!FU(WOG34_AddBonusByCreatureType)&v4=1:Py9; [Add bonus to creature type if player paid for it]
 
 !!VRv1240&v4=1/v6<0:+1; [Increment Changed Creature Counter if v4=1 and v6<0]
-!!FU10909&v4=1:P; [Change species name to reflect ability/bonus just gained]
+!!FU(WOG34_ChangeCreatureName)&v4=1:P; [Change species name to reflect ability/bonus just gained]
 
 !!PO998&v4=1:N1; [Set hint text to "visited"]
 
 !!IF&v3=-1/1000:Q4/z144028;
 
 !!VRv3&v3>1/v4=0/-4/1000:S-1; [Set v3 to -1 if player can't pay but doesn't leave]
-!!FU10900&v3=-1/-4/1000:P; [Choose another species to improve]
+!!FU(WOG34_ChooseSpeciesMain)&v3=-1/-4/1000:P; [Choose another species to improve]
 
 !!OW:C?y11;        [Store current player in y11]
 !!VRy12:S550 +y11; [y12 is index for v variable with bit number for current player]
@@ -391,7 +390,7 @@ Dialogues: 3
  [Player pays for bonus in resources plus creatures]
  [v2=creature type, v3=bonus type]
 
-!?FU10903;
+!?FU(WOG34_PlayerPaysForBonus);
 
  [Determine resource type and cost: y1=resource type, y2=resource amount]
 !!VRy1&v3=2:S3;  [Attack]
@@ -456,8 +455,8 @@ Dialogues: 3
 !!VRv3&-3/y3>=y2:S-1; [If the player doesn't agree, set v3 to -1]
 
 !!VRv7:S0;
-!!DO10904/0/6/1&3:P; [See if hero has enough creatures of the type to be enchanted]
-!!DO10911/0/6/1&v7>=y7/3:Py7; [Remove the creatures (if enough)]
+!!DO(WOG34_CheckIsHeroHasEnoughCreature)/0/6/1&3:P; [See if hero has enough creatures of the type to be enchanted]
+!!DO(WOG34_RemoveCreatures)/0/6/1&v7>=y7/3:Py7; [Remove the creatures (if enough)]
 
 !!IF&v7<y7/3/1000:Q4/21/y5/2/z144040;  [If not enough creatures, display this]
 
@@ -477,7 +476,7 @@ Dialogues: 3
  [v2=creature type, x16=slot number]
  [At end of loop, v7=total creatures of type v2 in hero's army]
 
-!?FU10904;
+!?FU(WOG34_CheckIsHeroHasEnoughCreature);
 
 !!HE-1:C0/x16/?y1/?y2; [y1=type, y2=number]
 !!VRv7&y1=v2/y2>0:+y2; [Add number of creatures of right type in slot to v7 total]
@@ -487,7 +486,7 @@ Dialogues: 3
  [Add bonus to creature type]
  [v2=creature type, v3=bonus type, x1=bonus amount]
 
-!?FU10905;
+!?FU(WOG34_AddBonusByCreatureType);
 
 !!MA&v3=2:Av2/dx1; [Attack bonus]
 !!MA&v3=3:Dv2/dx1; [Defense bonus]
@@ -499,13 +498,13 @@ Dialogues: 3
 !!MA&v3=8:Nv2/24;  [Shots bonus]
 !!MA&v3=9:Bv2/d1;  [Spell casting bonus]
 
-!!FU10907&v3=10:P; [Special]
+!!FU(WOG34_AddSpesialAbility)&v3=10:P; [Special]
 
 -----------------------------------------------------------------------
 
  [Choose Special Ability: v2=creature number]
 
-!?FU10906;
+!?FU(WOG34_ChooseSpecialAbility);
 
 !!VRz480:S^^; !!VRz481:S^^; !!VRz482:S^^; !!VRz483:S^^; !!VRz484:S^^;
 !!VRz485:S^^; !!VRz486:S^^; !!VRz487:S^^; !!VRz488:S^^; !!VRz489:S^^; !!VRz490:S^^;
@@ -608,7 +607,7 @@ Dialogues: 3
 
  [Add Special Ability: v2=creature number, v5=bonus number]
 
-!?FU10907&v5>=1/v5<=10;
+!?FU(WOG34_AddSpesialAbility)&v5>=1/v5<=10;
 
 !!VRy2&v5=1:S2;       [Flying: y2]
 !!VRy2&v5=2:S8;       [Extended Attack: y2]
@@ -630,7 +629,7 @@ Dialogues: 3
  [Check if this is a new creature species to be enchanted]
  [If new, v6=-1, if not new, set v6 to loop index number (x16)]
 
-!?FU10908;
+!?FU(WOG34_IsNewCreatureSpecies);
 
 !!VRy1:S1240 +x16;  [Index of v variable, holding creature numbers]
 !!VRv6&vy1=v2:Sx16; [If not new, set v6 to loop index number (x16)]
@@ -642,7 +641,7 @@ Dialogues: 3
  [v2=creature number, v3=standard bonus type, v5=special bonus type (if v3=10 or v5>0)]
  [v6=loop index number, v1240=changed creature counter]
 
-!?FU10909;
+!?FU(WOG34_ChangeCreatureName);
 
 !!VRy1:S1 R3;   [y1=random number from 1 to 4]
 !!UN:G1/v2/0/0; [Restore original singular name of species]
@@ -764,7 +763,7 @@ Dialogues: 3
  [Remove creatures of specified type from hero's army for "payment"]
  [v2=creature type, x1=number of creatures needed, x16=slot number]
 
-!?FU10911;
+!?FU(WOG34_RemoveCreatures);
 
 !!HE-1:C0/x16/?y1/?y2; [y1=type, y2=number]
 
@@ -783,7 +782,7 @@ Dialogues: 3
  [Select a creature type for AI to buy a bonus for]
  [based on highest AI value of a given stack: v2]
 
-!?FU10912;
+!?FU(WOG34_AIChooseCreatureBonus);
 
 !!HE-1:C0/x16/?y1/?y2;   [Slot x16: y1=creature type, y2=number of creatures]
 !!VRy3:S0; [Initialize y3 to 0]
@@ -793,4 +792,6 @@ Dialogues: 3
 !!VRx1&y4>x1:Sy4; [Highest AI value: x1]
 
 ** End of Script **
-
+
+
+!?FU(WOG34_);

@@ -668,18 +668,11 @@ Dialogue Box numbers used: 17
    Universal Creature Upgrades
 ********************************************************************************
 
-Variables Used: v3300-v3302, v3310-v3312
-Functions Used: FU3300-FU3303
-
-------------------------------------------------------------------------------------------------------------------
-
-!#VRv3300:S-1; [Initialize v3300 to -1]
-
-------------------------------------------------------------------------------------------------------------------
+; edit by igrik
 
 !?FU(OnGameEnter);
 !!UN:P174/?y1;  !!FU&y1<>1:E;
-; включаем универсальные улучшения
+; Enable Universal Creature Upgrades
 !!UN:C5007752/4/75648139;
 !!UN:C5007756/4/2206336139;
 !!UN:C5007760/2/7873;
@@ -688,11 +681,12 @@ Functions Used: FU3300-FU3303
 !!UN:C5007770/2/37008;
 !!UN:C5007792/1/206;
 !!UN:C5007793/4/2425367669;
+
 !?FU(OnGameLeave);
 !!UN:P174/?y1;
 !!UN:C5007752/4/?y2;
 !!if&y1=1|y2<>260179083:;
-; отключаем универсальные улучшения
+; Disable Universal Creature Upgrades
 !!UN:C5007752/4/260179083;
 !!UN:C5007756/4/990136766;
 !!UN:C5007760/2/4032;
@@ -715,13 +709,13 @@ Functions Used: FU3300-FU3303
 !!CA998:T?v2; [Town type: v2]
 
  [Check each creature in AI hero's army]
-!!DO3303/0/6/1:Pv1/v2;
+!!DO(WOG53_P174_AIInTown)/0/6/1:Pv1/v2;
 
 ------------------------------------------------------------------------------------------------------------------
 
  [Check each creature in AI hero's army]
  [x1=hero number, x2=town type]
-!?FU3303;
+!?FU(WOG53_P174_AIInTown);
 
 !!HEx1:C0/x16/?y1/?y7; [Type of creature: y1, Number: y7]
 
@@ -2448,4 +2442,3 @@ Flags used: (999)
  [End of Hero List Reordering]
 
 ** End of Script **
-

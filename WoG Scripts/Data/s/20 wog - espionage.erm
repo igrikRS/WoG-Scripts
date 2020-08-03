@@ -98,7 +98,7 @@ ZVSE
 ****w vars used:w50-51,w55-59
 ****quick vars used:f-q
 ****flags used:32-36
-****fu used:FU(WOG20_TheftInit)-481
+****fn used:only named functions
 ****tm used:NONE
 ****dialogue used:11
 ****PO:N for the square over the town entrance (red square)
@@ -420,7 +420,7 @@ ZVSE
 !!VRv2102&z200=z1:S1;         if town name match v2102=1
 !!VRx1&v2101>x1/v2102<>1:+1;      if no match, check next town
    <>       <>       <>       <>       <>       <>       <>       <>       <>
-!?FU(WOG20_TheftOperation); 
+!?FU(WOG20_TheftOperation);
 !!IF:V32/0;
 !!CAw57/w58/w59:O?y1; get owner of town infiltrated by current hero's spy  (in o)
 !!OW:Ry1/x1/?y2;
@@ -492,7 +492,6 @@ ZVSE
 !?FU(WOG20_SabotageInit); sabotage init
 !!VRv2109:+1;
 !!VRv2105:S0R32;
-!!IF:M^first %V2105^;
 !!VRv2105&v2105=7:+4;
 !!VRv2105&v2105=8:+4;
 !!VRv2105&v2105=9:+4;
@@ -503,7 +502,6 @@ ZVSE
 !!VRv2105&v2105=27:+4;
 !!VRv2105&v2105=28:+4;
 !!VRv2105&v2105=29:+4;
-!!IF:M^second %V2105^;
 !!FU(WOG20_GetChance):P;
 !!IF&v2106>90:M1/z158059;
 !!VRw51&v2106>90:S0; kill spy
@@ -532,7 +530,7 @@ ZVSE
 !!IF&-1/v2109>20:M1/z158062;
 !!FU(WOG20_SabotageInit)&-1/v2109<21:P;
    <>       <>       <>       <>       <>       <>       <>       <>       <>
-!?FU(WOG20_StatusReport); 
+!?FU(WOG20_StatusReport);
 !!VRy3:S0;
 !!CAw57/w58/w59:O?oN?z775;
 !!VRv2200&o=-1:C0/0/0/0/0/0/0/0;
@@ -549,7 +547,7 @@ ZVSE
 !!FU(WOG20_ShowEnemySpells)&y1>-1:Py1/y3;
 !!FU(WOG20_ShowEnemyHeroStatus):P;
    <>       <>       <>       <>       <>       <>       <>       <>       <>
-!?FU(WOG20_GetResourceStatus); resource status; 
+!?FU(WOG20_GetResourceStatus); resource status;
 !!OW:Ro/x16/?j;
 !!VRvx1:Sj;
 !!VRx1:+1;
@@ -563,7 +561,7 @@ ZVSE
 !!IF&j>-1:M1/z158068;
 !!DO(WOG20_ShowEnemyHeroArtsEquip)/0/143/1&j>-1:Pj;
 
-!!FU(WOG20_ShowEnemyHeroFunc)&k>-1:Pk; 
+!!FU(WOG20_ShowEnemyHeroFunc)&k>-1:Pk;
 !!IF&k>-1:M1/z158069;
 !!IF&k>-1:M1/z158070;
 !!DO(WOG20_ShowEnemyHeroSS)/0/27/1&k>-1:Pk;
@@ -585,7 +583,7 @@ ZVSE
 !!HEx1:A2/x16/d0/?l;
 !!IF&l>0:Q100/8/x16/1^^;
    <>       <>       <>       <>       <>       <>       <>       <>       <>
-!?FU(WOG20_GetBuildingsStatus); 
+!?FU(WOG20_GetBuildingsStatus);
 !!CAw57/w58/w59&x16<>20/x16<>27/x16<>28/x16<>29:B3/x16T?j;
 !!VRj:+22;
 !!VRz1:Sz158064;
@@ -634,7 +632,7 @@ ZVSE
 !!IF&x1>3/x2<>1:M1/z158083;
 !!IF&x1>3/x2=1:M1/z158084;
    <>       <>       <>       <>       <>       <>       <>       <>       <>
-!?FU(WOG20_StealSpells); spells  
+!?FU(WOG20_StealSpells); spells
 !!CAw57/w58/w59&x1>-1:G0/0/?v2114;
 !!CAw57/w58/w59&x1>-1:G0/1/?v2115;
 !!CAw57/w58/w59&x1>-1:G0/2/?v2116;
@@ -660,7 +658,7 @@ ZVSE
 !!VRz1:H35; chk for empty string
 !!FU(WOG20_StealSpellName)&35:P2114/x2;
    <>       <>       <>       <>       <>       <>       <>       <>       <>
-!?FU(WOG20_StealSpellName); 
+!?FU(WOG20_StealSpellName);
 !!IF:V36/0;
 !!VRy5:S0;  !!VRy6:S0;
 !!VRx1&x1=2119/x2<>1:+1; !!VRx1&x1=2124/x2<>1:+1; !!VRx1&x1=2128/x2<>1:+1;
@@ -690,3 +688,4 @@ ZVSE
 !!UN&36:R3/-1;
 !!VRw55&36/y6=1:+1; add successful mission
 !!FU(WOG20_StealSpellName)&-36/x1<2134:Px1/x2;
+
