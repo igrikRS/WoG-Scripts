@@ -341,7 +341,7 @@ ZVSE
 !!MR&y-3=1/y-1<21/v7133>100:Dy-2;                   [set new damage - attacker cast]
 
 !!VRy-2&y-3=1/y-1>20/v7134>100:*v7134 :100;         [calculate new damage - defender cast]
-!!MR&y-4=1/3-1>20/v7134>100:Dy-2;                   [set new damage - defender cast]
+!!MR&y-3=1/y-1>20/v7133>100:Dy-2;                   [set new damage - defender cast]
 
 
 ** end of magic resist trigger
