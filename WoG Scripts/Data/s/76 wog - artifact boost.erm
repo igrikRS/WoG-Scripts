@@ -470,7 +470,11 @@ ZVSE
 !?OB98;
 
 !!UN:P102/?y1; [Check if Artifact Boost script is enabled in WoGify Options]
-!!FU&y1<>1:E;     [Exit if it isn't]
+!!FU&y1<>1:E;  [Exit if it isn't]
+
+!!CA998:O?y2;  [Check town player id]
+!!HE-1:O?y3;   [Check hero player id]
+!!FU&y2<>y3:E; [Exit if different]
 
 !!HE-1:A2/66/0/?v628; [check for Statesman's Medal]
 !!IF:V2/0; [AI won't give medal]

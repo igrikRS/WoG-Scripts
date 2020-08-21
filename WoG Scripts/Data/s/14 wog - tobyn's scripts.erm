@@ -425,6 +425,7 @@ ZVSE
 
 !?CM2&v2363=1;                       hero screen click (if script active)
 !!CM:I?y-1;                            get right-click number (y-1) (79..102 is skill area)
+!!FU|y-1<79/y-1>102:E;                 exit if not clicked on SS skill area
 !!CM:S?y-2;                            check left/right-click (=12 left click, =14 right click)
 !!FU2345:Py-1/-1/?y-3/?y-4/?y-5;       call skill click function (in: click number and hero number, out: skill (y-3), area (y-4) and slot (y-5))
 !!VRy-6|v2368=1/v2360=1:S1;            set "flag" if Estates I (script48) or short skill descriptions (script75) enabled
@@ -713,6 +714,7 @@ ZVSE
 
 !?CM2&v2365=1;                       right-clicked at hero screen
 !!CM:I?y-1;                            get right-click number (y-1) (79..102 is skill area)
+!!FU|y-1<79/y-1>102:E;                 exit if not clicked on SS skill area
 !!CM:S?y-2;                            check left/right-click (=12 left click, =14 right click)
 !!FU2345:Py-1/-1/?y-3/?y-4/?y-5;       call skill click function (in: click number and hero number, out: skill (y-3), area (y-4) and slot (y-5))
 !!VRy-6|y-3=10/y-3=20/y-3=27:S1;       y-6 = 1 means either Bal, Art or FA was clicked
@@ -846,3 +848,4 @@ ZVSE
 !!CAv2325/v2326/v2327&y1=8/v2367=1:M1/6/d-1/d-1; subtract one lvl 7 if OK and Conflux options active
 
 **================ END OF SCRIPT ==================**
+
