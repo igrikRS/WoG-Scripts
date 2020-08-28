@@ -117,27 +117,28 @@ ZVSE
 !!VRz326&x1=26:Sz166013;
 !!VRz326&x1=27:Sz166014;
 
-!!CO-1:B0/?y1; [get bonuses]
+!!CO-1:B0/?y1;  [get bonuses]
 !!VRy2:Sy1 &x2; [check for bit already set]
 
-!!VRz-1:Sz166015;
-!!VRz-2&x1=1:S^..\data\zvs\lib1.res\_AT_SP_0.bmp^;
-!!VRz-2&x1=2:S^..\data\zvs\lib1.res\_DM_SP_0.bmp^;
-!!VRz-2&x1=6:S^..\data\zvs\lib1.res\_AT_HP_0.bmp^;
-!!VRz-2&x1=9:S^..\data\zvs\lib1.res\_DF_SP_0.bmp^;
-!!VRz-2&x1=12:S^..\data\zvs\lib1.res\_DM_MP_0.bmp^;
-!!VRz-2&x1=14:S^..\data\zvs\lib1.res\_HP_MP_0.bmp^;
-!!VRz-2&x1=15:S^..\data\zvs\lib1.res\_MP_SP_0.bmp^;
-!!VRz-2&x1=17:S^..\data\zvs\lib1.res\_DF_MP_0.bmp^;
-!!VRz-2&x1=19:S^..\data\zvs\lib1.res\_DF_DM_0.bmp^;
-!!VRz-2&x1=20:S^..\data\zvs\lib1.res\_AT_MP_0.bmp^;
-!!VRz-2&x1=22:S^..\data\zvs\lib1.res\_AT_DM_0.bmp^;
-!!VRz-2&x1=23:S^..\data\zvs\lib1.res\_DF_HP_0.bmp^;
-!!VRz-2&x1=25:S^..\data\zvs\lib1.res\_DM_HP_0.bmp^;
-!!VRz-2&x1=26:S^..\data\zvs\lib1.res\_AT_DF_0.bmp^;
-!!VRz-2&x1=27:S^..\data\zvs\lib1.res\_HP_SP_0.bmp^;
+!!VRz1:Sz166015;
 
-!!IF&1000/y2=0:D10/-1/0/0/-2/0/0/0/326/0/0/0/0/0/0/0;     [Set up message box]
+!!VRz2&x1=1:S^../data/zvs/lib1.res/_AT_SP_0.bmp^;
+!!VRz2&x1=2:S^../data/zvs/lib1.res/_DM_SP_0.bmp^;
+!!VRz2&x1=6:S^../data/zvs/lib1.res/_AT_HP_0.bmp^;
+!!VRz2&x1=9:S^../data/zvs/lib1.res/_DF_SP_0.bmp^;
+!!VRz2&x1=12:S^../data/zvs/lib1.res/_DM_MP_0.bmp^;
+!!VRz2&x1=14:S^../data/zvs/lib1.res/_HP_MP_0.bmp^;
+!!VRz2&x1=15:S^../data/zvs/lib1.res/_MP_SP_0.bmp^;
+!!VRz2&x1=17:S^../data/zvs/lib1.res/_DF_MP_0.bmp^;
+!!VRz2&x1=19:S^../data/zvs/lib1.res/_DF_DM_0.bmp^;
+!!VRz2&x1=20:S^../data/zvs/lib1.res/_AT_MP_0.bmp^;
+!!VRz2&x1=22:S^../data/zvs/lib1.res/_AT_DM_0.bmp^;
+!!VRz2&x1=23:S^../data/zvs/lib1.res/_DF_HP_0.bmp^;
+!!VRz2&x1=25:S^../data/zvs/lib1.res/_DM_HP_0.bmp^;
+!!VRz2&x1=26:S^../data/zvs/lib1.res/_AT_DF_0.bmp^;
+!!VRz2&x1=27:S^../data/zvs/lib1.res/_HP_SP_0.bmp^;
+
+!!IF&1000/y2=0:D10/z1/0/0/z2/0/0/0/326/0/0/0/0/0/0/0;     [Set up message box]
 !!IF&1000/y2=0:F10/0/0/0/0/0;     [Disable cancel button]
 !!IF&1000/y2=0:E1/10;     [Display message box]
 
@@ -175,17 +176,16 @@ ZVSE
 !!VRz326&x2=4:Sz166020;
 !!VRz326&x2=5:Sz166021;
 
-!!VRz-1:Sz166022;
-!!VRz-2&x2=0:S^..\data\zvs\lib1.res\_AT4.bmp^;
-!!VRz-2&x2=1:S^..\data\zvs\lib1.res\_DF4.bmp^;
-!!VRz-2&x2=2:S^..\data\zvs\lib1.res\_HP4.bmp^;
-!!VRz-2&x2=3:S^..\data\zvs\lib1.res\_DM4.bmp^;
-!!VRz-2&x2=4:S^..\data\zvs\lib1.res\_MP4.bmp^;
-!!VRz-2&x2=5:S^..\data\zvs\lib1.res\_SP4.bmp^;
+!!VRz1:Sz166022;
+!!VRz2&x2=0:S^../data/zvs/lib1.res/_AT4.bmp^;
+!!VRz2&x2=1:S^../data/zvs/lib1.res/_DF4.bmp^;
+!!VRz2&x2=2:S^../data/zvs/lib1.res/_HP4.bmp^;
+!!VRz2&x2=3:S^../data/zvs/lib1.res/_DM4.bmp^;
+!!VRz2&x2=4:S^../data/zvs/lib1.res/_MP4.bmp^;
+!!VRz2&x2=5:S^../data/zvs/lib1.res/_SP4.bmp^;
 
-!!IF&1000/y4=0/y1<5:D10/-1/0/0/-2/0/0/0/326/0/0/0/0/0/0/0;     [Set up message box]
+!!IF&1000/y4=0/y1<5:D10/z1/0/0/z2/0/0/0/326/0/0/0/0/0/0/0;     [Set up message box]
 !!IF&1000/y4=0/y1<5:F10/0/0/0/0/0;     [Disable cancel button]
 !!IF&1000/y4=0/y1<5:E1/10;     [Display message box]
 
 ** end of function
-
