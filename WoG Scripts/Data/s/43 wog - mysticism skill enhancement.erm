@@ -68,8 +68,8 @@ TM30;
 !!FU&y5>=y3:E;       (exit if current spell points >= maximum)
 
 !!VRy6:Sy3 *y2 :20 -1 -y2; (Spell points are mysticism level/10 of normal, -level of mysticism -1, for normal regeneration)
-!!HEx16:X0/?y9/d/d/d/d/d ;
-!!if&y9=8:; (if Hero is a spec Mysticism)
+!!HEx16:X?y8/?y9/d/d/d/d/d;
+!!if&y8=0/y9=8:; (if Hero is a spec Mysticism)
   !!HEx16:Ed/?y11/1;
   !!VRy10:Sy3 *y11 :207; (spec mysticism: +0.5% for lvl of max SP hero)
   !!VRy6:+y10;
