@@ -271,14 +271,14 @@ ZVSE
 !!IF&5/v615>0:Q1/17/y1/1/z102034;
 !!HEv600&v615>0:Edy1; [give 1000 experience]
 
-!!VRk:S0; [0 counted]
+!!VRv24:S0; [0 counted]
 !!DO606/0/6/1&v616>0:P; [count number of creatures Hero has]
-!!VRj:S15;
-!!VRj:*v631; [Surcoat factor]
-!!VRk&v616>0:*j; [15 gold per creature per Emblem]
-!!VRk&v616>0:*v616;
-!!IF&5/v616>0/k>0:Q1/6/k/1/z102035; fix [k>0], only if hero has creatures, which may not be always true
-!!OW&v616>0/k>0:Rv602/6/dk; [give the gold]
+!!VRv27:S15;
+!!VRv27:*v631; [Surcoat factor]
+!!VRv24&v616>0:*v27; [15 gold per creature per Emblem]
+!!VRv24&v616>0:*v616;
+!!IF&5/v616>0/v24>0:Q1/6/v24/1/z102035; fix [k>0], only if hero has creatures, which may not be always true
+!!OW&v616>0/v24>0:Rv602/6/dv24; [give the gold]
 
 !!IF&5/v617>0:M1/z102036;
 !!VRy1:S30; [area]
@@ -306,16 +306,16 @@ ZVSE
 !!HEv600&5/v620>0/2:Wdy1; [add movement]
 !!HEv600&5/v620>0/2:A3/59/1/1; [remove Boots Of Polarity]
 
-!!VRi&5/v621>0:S14 R3; [pick a random magic skill]
-!!UN&5/v621>0:N4/z329/i; [get name of skill]
+!!VRv26&5/v621>0:S14 R3; [pick a random magic skill]
+!!UN&5/v621>0:N4/z329/v26; [get name of skill]
 !!IF&5/v621>0:Q2/z102043;
 !!IF&5/v621>0/-2:M1/z102044;
-!!HEv600&5/v621>0/2:Si/?j; [get level in that skill]
-!!IF&5/v621>0/2/j=3:M1/z102045;
-!!VRk&5/v621>0/2/j<3:Si *3 +3 +j; [get picture number of skill at level given]
-!!IF&5/v621>0/2/j<3:Q1/20/k/1/z102046;
-!!HEv600&5/v621>0/2/j<3:A3/57/1/1; [remove Garniture Of Interference]
-!!HEv600&5/v621>0/2/j<3:Si/d1; [give skill]
+!!HEv600&5/v621>0/2:Sv26/?v27; [get level in that skill]
+!!IF&5/v621>0/2/v27=3:M1/z102045;
+!!VRv24&5/v621>0/2/v27<3:Sv26 *3 +3 +v27; [get picture number of skill at level given]
+!!IF&5/v621>0/2/v27<3:Q1/20/v24/1/z102046;
+!!HEv600&5/v621>0/2/v27<3:A3/57/1/1; [remove Garniture Of Interference]
+!!HEv600&5/v621>0/2/v27<3:Sv26/d1; [give skill]
 
 !!IF&5/v622>0:Q1/34/v631/1/z102047;
 !!HEv600&v622>0:Fd/d/d/dv631; [+1 knowledge]
@@ -328,33 +328,33 @@ ZVSE
 !!HEv600&v623>0/v625>0:C1/116/117/d; [turn gold golems to diamond golems, again for Surcoat]
 !!HEv600&v623>0/v625>0:C1/33/116/d; [turn iron golems to gold golems, again for Surcoat]
 
-!!VRk:S0; [0 counted]
+!!VRv24:S0; [0 counted]
 !!DO607/0/6/1:P; [count number of first level troop stacks into k]
-!!IF&5/v624>0/k>0:Q2/z102049;
-!!IF&5/v624>0/k>0/2:M1/z102050;
-!!IF&5/v624>0/k>0/-2:M1/z102051;
+!!IF&5/v624>0/v24>0:Q2/z102049;
+!!IF&5/v624>0/v24>0/2:M1/z102050;
+!!IF&5/v624>0/v24>0/-2:M1/z102051;
 !!IF&-5:V2/0; [AI just says no]
-!!DO608/0/6/1&v624>0/k>0/2:P; [double qty in first level stacks]
-!!HEv600&5/v624>0/k>0/2:A3/67/1/1; [remove a Diplomat's Ring]
+!!DO608/0/6/1&v624>0/v24>0/2:P; [double qty in first level stacks]
+!!HEv600&5/v624>0/v24>0/2:A3/67/1/1; [remove a Diplomat's Ring]
 !!UN&v624>0/2:R1; [redraw screen]
 
-!!VRk:S0 R6; [random slot # to start from]
+!!VRv24:S0 R6; [random slot # to start from]
 !!DO599/0/6/1:P; [find a slot with a creature - we always will]
-!!HEv600:C0/l/?j/?i; [get j type i qty of our random slot creature]
-!!UN&j>=0/i>0:N3/330/j/1; [get plural name of creature into z330]
+!!HEv600:C0/v25/?v27/?v26; [get j type i qty of our random slot creature]
+!!UN&v27>=0/v26>0:N3/330/v27/1; [get plural name of creature into z330]
 !!VRy1:S0 R1; [pick no-retaliation or attack-twice to offer]
 !!VRz331&y1=0:Sz102052;
 !!VRz331&y1=1:Sz102053;
-!!IF&5/v628>0/j>=0/i>0:Q2/z102054;
-!!IF|j<0/i=0:V2/0; [If no creatures, don't do anything]
+!!IF&5/v628>0/v27>=0/v26>0:Q2/z102054;
+!!IF|v27<0/v26=0:V2/0; [If no creatures, don't do anything]
 !!IF&-5:V2/0; [AI doesn't do it]
 !!IF&5/v628>0/2:M1/z102055;
-!!IF&5/v628>0/-2/j>=0/i>0:M1/z102056;
+!!IF&5/v628>0/-2/v27>=0/v26>0:M1/z102056;
 !!HEv600&v628>0/2:A3/126/1/1; [remove an Orb Of Inhibition]
-!!MA&v628>0/2:Xj/?y2; [read current creature flags]
+!!MA&v628>0/2:Xv27/?y2; [read current creature flags]
 !!VRy2&v628>0/2/y1=0:|32768; [attack twice bit]
 !!VRy2&v628>0/2/y1=1:|65536; [no retaliation bit]
-!!MA&v628>0/2:Xj/y2; [set creature flags!]
+!!MA&v628>0/2:Xv27/y2; [set creature flags!]
 
 !!IF&5/v613>0:M1/z102057;
 !!VRy1:S30;
@@ -371,9 +371,9 @@ ZVSE
 
 !!VRv609:S0 -1; [-1 indicates no slot found]
 !!DO604/0/6/1:Px1; [iterate through slots]
-!!HEv600&v609>=0:C0/v609/?i/d; [see what's in the slot we found]
-!!HEv600&v609>=0/i=x1:C0/v609/x1/dx2; [gain creatures in existing slot]
-!!HEv600&v609>=0/i=-1:C0/v609/x1/x2; [set creatures in empty slot]
+!!HEv600&v609>=0:C0/v609/?v26/d; [see what's in the slot we found]
+!!HEv600&v609>=0/v26=x1:C0/v609/x1/dx2; [gain creatures in existing slot]
+!!HEv600&v609>=0/v26=-1:C0/v609/x1/x2; [set creatures in empty slot]
 
 ** end of function
 
@@ -384,9 +384,9 @@ ZVSE
 
 !?FU604;
 
-!!HEv600:C0/x16/?i/d; [check creature type without modifying]
-!!VRv609&i=-1:Sx16; [it's empty!]
-!!VRv609&i=x1:Sx16; [it's our type!]
+!!HEv600:C0/x16/?v26/d; [check creature type without modifying]
+!!VRv609&v26=-1:Sx16; [it's empty!]
+!!VRv609&v26=x1:Sx16; [it's our type!]
 
 ** end of function
 
@@ -396,8 +396,8 @@ ZVSE
 
 !?FU606;
 
-!!HEv600:C0/x16/d/?i; [get # of troops in slot x16]
-!!VRk:+i; [add them up]
+!!HEv600:C0/x16/d/?v26; [get # of troops in slot x16]
+!!VRv24:+v26; [add them up]
 
 ** end of function
 
@@ -409,7 +409,7 @@ ZVSE
 
 !!HEv600:C0/x16/?y1/?y2; [get y1 creature type y2 qty]
 !!FU609&y2>0:Py1; [check creature type for being first level]
-!!VRk&y2>0/j=1:+1; [count it]
+!!VRv24&y2>0/v27=1:+1; [count it]
 
 ** end of function
 
@@ -423,7 +423,7 @@ ZVSE
 !!FU609&y2>0:Py1; [check creature type for being first level]
 !!VRy2:*2; [double qty]
 !!VRy2&v625>0:*2; [again for Surcoat]
-!!HEv600&y2>0/j=1:C0/x16/y1/y2; [double the stack]
+!!HEv600&y2>0/v27=1:C0/x16/y1/y2; [double the stack]
 
 ** end of function
 
@@ -433,20 +433,20 @@ ZVSE
 
 !?FU609;
 
-!!VRj:S0;
-!!VRj&x1=138:S1; [halflings]
-!!VRj&x1=139:S1; [peasants]
-!!VRj&x1=143:S1; [rogues]
+!!VRv27:S0;
+!!VRv27&x1=138:S1; [halflings]
+!!VRv27&x1=139:S1; [peasants]
+!!VRv27&x1=143:S1; [rogues]
 !!VRx1::2; [now normal and upgraded are same number]
-!!VRj&x1=0:S1; [pikemen]
-!!VRj&x1=7:S1; [centaurs]
-!!VRj&x1=14:S1; [gremlins]
-!!VRj&x1=21:S1; [imps]
-!!VRj&x1=28:S1; [skeletons]
-!!VRj&x1=35:S1; [troglodytes]
-!!VRj&x1=42:S1; [goblins]
-!!VRj&x1=49:S1; [gnolls]
-!!VRj&x1=59:S1; [pixies]
+!!VRv27&x1=0:S1; [pikemen]
+!!VRv27&x1=7:S1; [centaurs]
+!!VRv27&x1=14:S1; [gremlins]
+!!VRv27&x1=21:S1; [imps]
+!!VRv27&x1=28:S1; [skeletons]
+!!VRv27&x1=35:S1; [troglodytes]
+!!VRv27&x1=42:S1; [goblins]
+!!VRv27&x1=49:S1; [gnolls]
+!!VRv27&x1=59:S1; [pixies]
 
 ** end of function
 
@@ -456,11 +456,11 @@ ZVSE
 
 !?FU599;
 
-!!VRy1:Sk;
+!!VRy1:Sv24;
 !!VRy1:%7; [now we have a usable slot number]
-!!HEv600:C0/y1/?i/?j; [get i type j qty]
-!!VRl&i<>-1/j>0:Sy1; [it's got something!]
-!!VRk:+1; [next slot]
+!!HEv600:C0/y1/?v26/?v27; [get i type j qty]
+!!VRv25&v26<>-1/v27>0:Sy1; [it's got something!]
+!!VRv24:+1; [next slot]
 
 ** end of function
 
@@ -510,21 +510,21 @@ ZVSE
 
 !!VRy4:S21; [look-up table of special building numbers by town]
 !!VRy4|y4=1/y4=4:S17; [look-up table of special building numbers by town]
-!!VRk:S1; [assume we met requirements to build it]
+!!VRv24:S1; [assume we met requirements to build it]
 !!CAx1/x2/x3:B3/33; [check for dwelling 4 (barracks)]
-!!VRk&-1/y7=0:S0; [needed for castle's stables]
+!!VRv24&-1/y7=0:S0; [needed for castle's stables]
 !!CAx1/x2/x3:B3/7; [check for fort]
-!!VRk&-1/y7=2:S0; [needed for tower's lookout tower]
-!!VRk&-1/y7=7:S0; [and for fortress's glyphs]
-!!VRk&-1/y7=4:S0; [and for necropolis's cover of darkness]
-!!VRk&-1/y7=3:S0; [and for inferno's brimstone stormclouds]
+!!VRv24&-1/y7=2:S0; [needed for tower's lookout tower]
+!!VRv24&-1/y7=7:S0; [and for fortress's glyphs]
+!!VRv24&-1/y7=4:S0; [and for necropolis's cover of darkness]
+!!VRv24&-1/y7=3:S0; [and for inferno's brimstone stormclouds]
 !!CAx1/x2/x3:B3/14; [check for market]
-!!VRk&-1/y7=6:S0; [needed for stronghold's freelancer's guild]
-!!VRk&y7=8:S0; [conflux gets no special building]
+!!VRv24&-1/y7=6:S0; [needed for stronghold's freelancer's guild]
+!!VRv24&y7=8:S0; [conflux gets no special building]
 !!CAx1/x2/x3:B3/y4; [check for special building]
 !!VRy2:S0;
-!!VRy2&-1/k=1:S1; [y2=1 means we built special building]
-!!CAx1/x2/x3&-1/k=1:B6/y4; [build special building if requirements met and not there]
+!!VRy2&-1/v24=1:S1; [y2=1 means we built special building]
+!!CAx1/x2/x3&-1/v24=1:B6/y4; [build special building if requirements met and not there]
 !!UN:N2/327/y7/y4; [name of special building]
 !!HE-1&y2=1/y7=2:O?y5; [get hero owner]
 !!UN&y2=1/y7=2:Sx1/x2/x3/y5/20; [reveal area for lookout tower]
@@ -551,9 +551,9 @@ ZVSE
 
 !?FU612;     [Function for Pendant of Holiness]
 
-!!HEv600:A2/0/?k/?l; [check for spell book]
-!!IF&5/l=0:Q1/8/102/1/z102038;     [Message if no spell book]
-!!FU&l=0:E;     [Exit if no spell book]
+!!HEv600:A2/0/?v24/?v25; [check for spell book]
+!!IF&5/v25=0:Q1/8/102/1/z102038;     [Message if no spell book]
+!!FU&v25=0:E;     [Exit if no spell book]
 
 !!IF:V1/0;     [Init flag for counting spells]
 !!VRv1:S0;     [Init v var that carries spell number]
@@ -597,4 +597,4 @@ ZVSE
 !!VRvx1&x2=1/-1/x3=1:Sx16;
 !!VRx16&x2=1/-1/x3=1:S999;
 !!VRx2&x2>1/-1:-1;
-
+ 

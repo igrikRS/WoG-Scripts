@@ -1,6 +1,6 @@
 ZVSE
 
-** Bank, Transfer all resources button and Resource trading post
+** Bank, Transfer all resources button and Resource trading post 
 ** by Donald X. Vaccarino, Timothy E. Pulver and Hermann the Weird
 ** Updated August 6 2004 by Hermann the Weird
 
@@ -25,21 +25,21 @@ ZVSE
 !#UN:P105/?v1;     [Check for WoG option]
 
 !#VRv592&v1=1:S0; [zero gold depts]
-!#VRv593&v1=1:S0;
-!#VRv594&v1=1:S0;
-!#VRv595&v1=1:S0;
-!#VRv596&v1=1:S0;
-!#VRv597&v1=1:S0;
-!#VRv598&v1=1:S0;
+!#VRv593&v1=1:S0; 
+!#VRv594&v1=1:S0; 
+!#VRv595&v1=1:S0; 
+!#VRv596&v1=1:S0; 
+!#VRv597&v1=1:S0; 
+!#VRv598&v1=1:S0; 
 !#VRv599&v1=1:S0;
 
 !#VRv493&v1=1:S0; [zero resource depts]
-!#VRv494&v1=1:S0;
-!#VRv495&v1=1:S0;
-!#VRv496&v1=1:S0;
-!#VRv497&v1=1:S0;
-!#VRv498&v1=1:S0;
-!#VRv499&v1=1:S0;
+!#VRv494&v1=1:S0; 
+!#VRv495&v1=1:S0; 
+!#VRv496&v1=1:S0; 
+!#VRv497&v1=1:S0; 
+!#VRv498&v1=1:S0; 
+!#VRv499&v1=1:S0; 
 !#VRv500&v1=1:S0;
 
 !#TM75&v1=1:S1/999/1/255; [new timer, all players, once/day]
@@ -107,7 +107,7 @@ ZVSE
 !!UN:P181/?y-2; [Check for transfer all resources enabled]
 !!UN:P225/?y-3; [Check for resource trading enabled]
 !!FU&y-1=0/y-2=0/y-3=0:E; [Exit if none enabled]
-!!CM:A?y-4/?y-5; [Get x/y position of mouse pointer]
+!!CM:A?y-4/?y-5; [Get x/y position of mouse pointer] 
 
 ** prepare strings for hint text **
 !!VRz-1:S^^;
@@ -151,6 +151,7 @@ ZVSE
 !!VRz-1:Sz105012;
 !!VRz-2:Sz105013;
 
+!!VRz8:Sz-1; !!VRz9:Sz-2;
 !!DO636/1/1/1:Py3; [repeat input until correct parameters are entered]
 
 !!IF&v1=0:M1/z105014;
@@ -161,8 +162,6 @@ ZVSE
 !!OW:R-1/6/dv1; [give current player gold]
 !!VRy2:Sv1 *30 :100 +v1; [calculate interest]
 !!VRvy1:Sy2; [set payback value]
-
-!!UN&1000:R4; redraw town screen
 
 ** End of function for borrowing gold **
 
@@ -205,6 +204,7 @@ ZVSE
 !!VRz-1:Sz105025;
 !!VRz-2:Sz105026;
 
+!!VRz8:Sz-1; !!VRz9:Sz-2;
 !!DO637/1/1/1:Py4/y2; [repeat input until correct parameters are entered]
 
 !!IF&v1=0:M1/z105027;
@@ -221,8 +221,6 @@ ZVSE
 !!VRvy1&y2=3:Sy3 +3000;
 !!VRvy1&y2=4:Sy3 +4000;
 !!VRvy1&y2=5:Sy3 +5000;
-
-!!UN&1000:R4; redraw town screen
 
 ** End of function for borrowing gold **
 
@@ -307,7 +305,9 @@ ZVSE
 
 !?FU636; [Function for repeating input - gold]
 
-!!IF:D4/-1/-2/////////////;     [Set up input box]
+!_!IF:D4/-1/-2/////////////;     [Set up input box]
+!_!VRz8:Sz-1; !_!VRz9:Sz-2;
+!!IF:D4/8/9/0/0/0/0/0/0/0/0/0/0/0/0/0;     [Set up input box]
 !!IF:F4/////0;
 !!IF:E1/4;
 
@@ -322,8 +322,8 @@ ZVSE
 
 
 !?FU637; [Function for repeating input - resources]
-
-!!IF:D4/-1/-2/////////////;     [Set up input box]
+!_!IF:D4/-1/-2/////////////;     [Set up input box]
+!!IF:D4/8/9/////////////;     [Set up input box]
 !!IF:F4/////0;
 !!IF:E1/4;
 
@@ -350,7 +350,7 @@ ZVSE
 !!FU&y11=0:E; [exit if no resources]
 
 ** Set strings for resource choosing **
-!!VRz-1:S^^; !!VRz-2:S^^; !!VRz-3:S^^; !!VRz-4:S^^;
+!!VRz-1:S^^; !!VRz-2:S^^; !!VRz-3:S^^; !!VRz-4:S^^; 
 !!VRz-5:S^^; !!VRz-6:S^^; !!VRz-7:S^^; !!VRz-8:S^^;
 
 !!VRz-1&y12>0:Sz105018;
@@ -382,8 +382,8 @@ ZVSE
 !!OW:I0/d/?y1 I1/d/?y2 I2/d/?y3 I3/d/?y4 I4/d/?y5 I5/d/?y6 I6/d/?y7 I7/d/?y8; [Check which players are in game]
 
 ** Set strings for box **
-!!VRz-1:S^^; !!VRz-2:S^^; !!VRz-3:S^^; !!VRz-4:S^^;
-!!VRz-5:S^^; !!VRz-6:S^^; !!VRz-7:S^^; !!VRz-8:S^^;
+!!VRz-1:S^^; !!VRz-2:S^^; !!VRz-3:S^^; !!VRz-4:S^^; 
+!!VRz-5:S^^; !!VRz-6:S^^; !!VRz-7:S^^; !!VRz-8:S^^; 
 
 !!VRz-1&y1=0/y10<>0:Sz105042;
 !!VRz-2&y2=0/y10<>1:Sz105043;
@@ -495,8 +495,8 @@ ZVSE
  [Check which players are in game]
 !!OW:I0/d/?y1 I1/d/?y2 I2/d/?y3 I3/d/?y4 I4/d/?y5 I5/d/?y6 I6/d/?y7 I7/d/?y8;
 
-!!VRz-1:S^^; !!VRz-2:S^^; !!VRz-3:S^^; !!VRz-4:S^^;
-!!VRz-5:S^^; !!VRz-6:S^^; !!VRz-7:S^^; !!VRz-8:S^^;
+!!VRz-1:S^^; !!VRz-2:S^^; !!VRz-3:S^^; !!VRz-4:S^^; 
+!!VRz-5:S^^; !!VRz-6:S^^; !!VRz-7:S^^; !!VRz-8:S^^; 
 
 !!VRz-1&y1=0/y10<>0:Sz105042;
 !!VRz-2&y2=0/y10<>1:Sz105043;
@@ -546,4 +546,3 @@ ZVSE
 ** End of Transfer all resources section **
 
 --------------------------------------------------------------------------------
-
