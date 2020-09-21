@@ -93,9 +93,9 @@
 150068	Undead. {Disease.}	<!!S>	22.10.2004
 150069	Undead. Disease.
 {at+ de+}	<!!S>	22.10.2004
-150070	Undead.  Regenerating. 
+150070	Undead. Regenerating. 
 {Paralyzing attack. hp+}	<!!S>	22.10.2004
-150071	Undead.  Regenerating.
+150071	Undead. Regenerating. Drains enemy mana.
 {Paralyzing attack. hp+}	<!!S>	22.10.2004
 150072		<!!S>	22.10.2004
 150073		<!!S>	22.10.2004
@@ -184,7 +184,7 @@
 150138		<!!S>	22.10.2004
 150139	Fire immune. Ice:x2.
 {Autocaster. dl+ dh+}	<!!S>	22.10.2004
-150140	Breath attack.  Fire spell immunity.  {Fire Shield.	<!!S>	22.10.2004
+150140	Breath attack.  Fire spell immunity.  {Fire Shield.}	<!!S>	22.10.2004
 150141	Breath attack.  Fire spell immunity.  Rebirth. {Fire Shield. sp-}	<!!S>	22.10.2004
 150142	Immune to spell levels 1-3. Fear.
 {Ice Bolt attack.}	<!!S>	22.10.2004
