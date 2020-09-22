@@ -148,8 +148,8 @@ entrance squares. Do not use this with another script that might do the same
 !!IF&y-1=1:Q2/7/y-5/2/z136006; [Display Mithril and offer to display price list: Flag 2]
 !!CM:R0; [Disable standard right-click info. for Kingdom Overview button]
 
-!!VRz-2:S^mithril_price_list.gif^; [Store name of price list file in z-2]
-!!VRz-3:S^..\data\s\%Z-2^;  [File and path name for Mithril Price List gif: z-3]
+!!VRz-2:S^mithril_price_list.bmp^; [Store name of price list file in z-2]
+!!VRz-3:S^..\data\s\pic\%Z-2^;  [File and path name for Mithril Price List gif: z-3]
 !!UN:J8/5/-2; [Check if Mithril Price List image is there: Flag 1=True if yes]
 !!IF&y-1=1/2/1:B1/-3/0; [Set up dialogue box for displaying Mithril price list]
 !!IF&y-1=1/2/1:P1; [Display Mithril price list]
