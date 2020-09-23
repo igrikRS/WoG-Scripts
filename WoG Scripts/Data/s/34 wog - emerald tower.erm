@@ -119,11 +119,11 @@ Dialogues: 3
 !!OW&2/1000:R-1/5/d-7; [Remove seven gems from human player's total]
 !!VRz1:Sz144005;
 !!VRz-1:Sz144006;
-!!VRz2:S^../data/s/pic/emerald.bmp^;
+!!VRz2:S^..\data\s\pic\emerald.bmp^;
 !!VRz3:Sz144007;
-!!UN:J8/5/^emerald.bmp^; [Check if image file exists: Flag 1=True if yes]
+!!UN:J8/2/2; [Check if image file exists: Flag 1=True if yes]
 !!IF&1000/1:D3/1/0/0/2/0/0/0/3/0/0/0/0/0/0/0;
-!!IF&1000/1:F3/0/0/0/0/0; [Remove cancel button]
+!!IF:F3/0/0/0/0/0; [Remove cancel button]
 !!IF&2/1000/1:E1/3; [Display dialogue box]
 !!IF&2/1000/-1:M^%Z-1^; [Display alternative standard dialogue if image file is missing]
 
