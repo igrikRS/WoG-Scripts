@@ -39,7 +39,7 @@ ZVSE
 
 ;---------------------Function that sets W28, W29, W30--------------------------
 ;if 0<w28<1000 then hero is spell-caster
-;w28 = number of spell
+;w28 = number of spell                  
 ;w29 = chance to cast (1 of w29)
 ;w30 = to ally (0) or to enemy (1)
 ;w31 = chance  improver
@@ -80,7 +80,7 @@ ZVSE
 ;w28=2204 - Gelu Sharpshooter spec
 ;w28=2205 - Dracon Enchanter spec
 
-TOBYN SUGGESTS:
+; TOBYN SUGGESTS:
 ; w28= -1 init
 ; w28= xxx with xxx = creature (and w29 att/def bonus, w30 damage bonus then)
 ; w28=10xx with  xx = spell
@@ -99,8 +99,8 @@ TOBYN SUGGESTS:
 
  [Check for network battle: sets v9001 to 1 or 2 if it's a network battle]
  [and sets v9001 to 0 if it's not a network battle]
+ 
 !?BA52;
-
 !!BA:E?v9001;
 
 --------------------------------------------------------------------------------
@@ -204,8 +204,7 @@ TOBYN SUGGESTS:
 !!FU836:P-1/0/0/76/0;  MOD:+ Thant gets nothing from HSB, leaves standard description (script37 may give him Skel Upgr instead)
 !!FU836:P46/7/0/77/17;       Xsi really has Stone Skin (1 of 7, ally, earth)
 !!FU836:P2016/0/0/78/0;      Vidomina - Necromancy
-*!FU836:P2001/0/0/79/0;      Nagash - Darkness
-!!FU836:P2106/350/0/79/0;    Nagash - 350 Gold
+!!FU836:P2001/0/0/79/0;      Nagash - Darkness
 
 ;Dungeon
 !!FU836:P1002/72/2/80/0;     Lorelei - Harpies +2
@@ -325,20 +324,13 @@ TOBYN SUGGESTS:
 
 ---------------------------Hero level increasing--------------------------------
 !?HL-1&429;
-*!UN:P39/?v3925;             check if HSB active    [DISABLED BY TOBYN: unnecessary IMO]
-*!HE-1:N?v3926;              get hero number
-*!HL:S?v3927/?v3928/?v3929;               //next level check    [TOBYN: check for v3928 unnecessary here]
-*!VRv3928:S0;
-*!VRv3928&v3927=0:S1;
-*!VRv3928&v3927=1:S2;
-*!FU803:Pv3926/v3928;
 
-!!HE-1:N?y-1;               get hero number
-!!HL:S?y-2/d/d;             check if next level gave attack or defense
-!!FU803&y-2=0:Py-1/1;       if attack
-!!FU803&y-2=1:Py-1/2;       if defense
+!!HE-1:N?y1;               get hero number
+!!HL:S?y2/d/d;             check if next level gave attack or defense
+!!FU803&y2=0:Py1/1;        if attack
+!!FU803&y2=1:Py1/2;        if defense
 
-!!IF:Wy-1;                //Mysticism and Resistance
+!!IF:Wy1;                  Mysticism and Resistance
 !!VRw29&w28=2013:+3;
 !!VRw29&w28=2014:+3;
 
@@ -351,13 +343,16 @@ TOBYN SUGGESTS:
 !!VRv3930&x2=1:+1;                      //take account of next level advances
 !!VRv3931&x2=2:+1;
 
+!!VRv3930&v3930<1|v3930>128:S1;  igrik fix (check to negative attack)
+!!VRv3931&v3931<1|v3931>128:S1;  igrik fix (check to negative defence)
+
 !!HEx1:E?v3929/?v3928;                   //v3928=level of hero             TOBYN: this v3929 is useless
 
 !!VRw30:Sv3928*3+12;                    //Additional percent to HP = 12+3*level of hero
 !!VRw30|w29=62/w29=56:S0;   [TOBYN: Skeleton and Vampire specialists dont give health bonus]
 !!VRw31:Sv3930;
 !!VRw32:Sv3931;
-!!MA:Lw29/?v3930;                                                        TOBYN: new local 430
+!!MA:Lw29/?v3930;                                                         TOBYN: new local 430
 !!VRv3929:S8-v3930;                                                       TOBYN: new local 429
 !!VRw28:Sv3928:v3929+1;                                                   TOBYN: w28 set here
 !!VRw28|w29=62/w29=56:S0;
@@ -402,14 +397,14 @@ Hero #%X1 gave negative attack bonus to the creatures, now compensated.^;
 
 !!IF&v3926>=0:Wv3926;
 !!DO851/0/19/1&w28=2011/v3926>=0:P0/v3926; //eagle eye
-!!DO837/0/19/1&w28>=1000/w28<2000/v3926>=0:P0/v3926/0; //monster specs add bonuses
+!!DO837/0/19/1&w28>=1000/w28<2000/v3926>=0:P0/v3926/0/404; //monster specs add bonuses
 !!COv3926&w28=2012/v3926>=0:B1/12/1;     //commanders of Intelligence heroes have DeathStare
 !!COv3926&w28=2008/v3926>=0:B1/4/1;      //commanders of Ballista heroes can shoot
 !!COv3926&w28=2002/v3926>=0:B1/14/1;     //commanders of Navigation heroes can fly
 
 !!IF&v3927>=0:Wv3927;
 !!DO851/20/40/1&w28=2011/v3927>=0:P1/v3927;
-!!DO837/20/40/1&w28>=1000/w28<2000/v3927>=0:P1/v3927/0;
+!!DO837/20/40/1&w28>=1000/w28<2000/v3927>=0:P1/v3927/0/411;
 !!COv3927&w28=2012/v3927>=0:B1/12/1;
 !!COv3927&w28=2008/v3927>=0:B1/4/1;
 !!COv3927&w28=2002/v3927>=0:B1/14/1;
@@ -487,16 +482,6 @@ Hero #%X1 gave negative attack bonus to the creatures, now compensated.^;
 !!BG&v3925=37:E?v3929;
 !!BG:Q?v3936;
 
-----------------------------When Cure spell was cast----------------------------
-;After action
-!?BG1&429/v3925=37/v9001=0/-998;
-
-;IF:M^debugging Cure spell: v3929=%V429 v3936=%V436^;
-!!DO837/v3929/v3929/1&v3936=0/v3929>=0:P0/v3926/1;
-!!DO837/0/20/1&v3936=0/v3929=-1:P0/v3926/1;
-!!DO837/v3929/v3929/1&v3936=1/v3929>=0:P1/v3927/1;
-!!DO837/21/41/1&v3936=1/v3929=-1:P1/v3927/1;
-
 -------------------------------Spell Casters------------------------------------
 !?FU805;
 !!VRv3928&v3925=0/w30=0:S0;              //v3928 is side which will under spell
@@ -566,11 +551,22 @@ Hero #%X1 gave negative attack bonus to the creatures, now compensated.^;
 !!VRv3933&v3935>=0/x1=v3931/v3935<=1/v3934>=0:Sv3930|2;
 !!BMx16&v3935>=0/x1=v3931/v3935<=1/v3934>=0:Fv3933;
 
+----------------------------When Cure spell was cast----------------------------
+;After action
+!?BG1&429/v3925=37/v9001=0/-998;
+!!IF:Wv3926; !!FU&w28<1000|w28>2000:E; igrik: this function only to monster specs
+
+!!DO837/v3929/v3929/1&v3936=0/v3929>=0:P0/v3926/1/559; igrik: line 559 to DEBUG
+!!DO837/0/20/1&v3936=0/v3929=-1:P0/v3926/1/560;
+!!DO837/v3929/v3929/1&v3936=1/v3929>=0:P1/v3927/1/561;
+!!DO837/21/41/1&v3936=1/v3929=-1:P1/v3927/1/562;
+
 -------------------------Monster specs add bonuses------------------------------
 ;do not change v3932
 ;x1=side
-;x2=number of hero
+;x2=number of hero (or v3926)
 ;x3=1 if non first call of the function
+;x4=line calling in script for debug (by igrik)
 !?FU837;
 !!VRv3930&x1=0:Sv3938;                   //restore hero parameters      TOBYN: new local 430
 !!VRv3931&x1=0:Sv3939;                                                     |
@@ -578,34 +574,38 @@ Hero #%X1 gave negative attack bonus to the creatures, now compensated.^;
 !!VRv3931&x1=1:Sv3941;
 !!BMx16:T?v3934;                        //v3934=type of creature
 !!BMx16:I?v3935;                        //v3935=left or right
-
+!!IF&w31<0:M^DEBUG FU837 (call in line %x4)
+; Hero #%X1 gave negative attack bonus {%w31} to the creatures!^;
 ;Standard
-!!FU852&w29=v3934/x1=v3935:Px16/v3934/v3930/v3931/x3;
+!!FU852&w29=v3934/x1=v3935:Px16/v3934/v3930/v3931/x3/587;
 ;Non-confluxers upgraded creatures
 !!VRv3933:Sv3934-1;
-!!FU852&w29=v3933/x1=v3935/w29<>112/w29<>113/w29<>114/w29<>115:Px16/v3934/v3930/v3931/x3;
+!!FU852&w29=v3933/x1=v3935/w29<>112/w29<>113/w29<>114/w29<>115:Px16/v3934/v3930/v3931/x3/590;
 ;Conflux upgraded
-!!FU852&w29=112/v3934=127/x1=v3935:Px16/v3934/v3930/v3931/x3;
-!!FU852&w29=113/v3934=125/x1=v3935:Px16/v3934/v3930/v3931/x3;
-!!FU852&w29=114/v3934=129/x1=v3935:Px16/v3934/v3930/v3931/x3;
-!!FU852&w29=115/v3934=123/x1=v3935:Px16/v3934/v3930/v3931/x3;
+!!FU852&w29=112/v3934=127/x1=v3935:Px16/v3934/v3930/v3931/x3/585;    igrik: line 585 to DEBUG
+!!FU852&w29=113/v3934=125/x1=v3935:Px16/v3934/v3930/v3931/x3/586;
+!!FU852&w29=114/v3934=129/x1=v3935:Px16/v3934/v3930/v3931/x3/587;
+!!FU852&w29=115/v3934=123/x1=v3935:Px16/v3934/v3930/v3931/x3/588;
+
 
 !?FU852;
-;x1=monster place ID
+;x1=monster stack ID
 ;x2=monster type
-;x3=hero attack skill
-;x4=hero defense skill
+;x3=hero attack skill (or v3930)
+;x4=hero defense skill  (or v3931)
 ;x5=1 if non first call of the function
+;x6=line in script for debug (by igrik)
+;v3935=side 
+;v3926=hero id
 !!BMx1&x5<>1:Sd1;                      //speed +1
-!!MA:Px2/?v3933;                        //hitpoints bonus percentage = 12 + 3 * herolevel
-!!VRv3933:*w30:100;
+!!MA:Px2/?v3933;                       //hitpoints bonus percentage = 12 + 3 * herolevel
+!!VRv3933:*w30:100;   !!VRy96:Sv3933;
 !!BMx1:Hdv3933;
 !!MA:Ax2/?v3933;                        //attack for each specified monster = Standard+HeroBonus+CleanHeroBonus
-!!HEx1&w31<0:F?y10/d/d/d/1; get hero's  basic  attack [DEBUGGING]
-!!HEx1&w31<0:F?y11/d/d/d;   get hero's current attack [DEBUGGING]
-!!IF&w31<0:M^{DEBUG INFORMATION - FU852}
-Hero #%X1 gave negative attack bonus to the creatures, now compensated.^;
-!!VRw31&w31<0:Sy10 +y11;    set correct w31 instead   [DEBUGGING]
+!!BA:H0/?y97 H1/?y98;
+!!IF&w31<0:M^{DEBUG  INFORMATION - FU852 (line: %x6)}
+Hero #%v3926 gave negative attack bonus {%w31} to the creatures {%x2}, now compensated.^;
+!!VRw31&w31<0:Sv3930 +v3931;    set correct w31 instead   [DEBUGGING]
 !!VRv3933:+x3+w31;
 !!BMx1:Av3933;
 !!MA:Dx2/?v3933;                        //defense
@@ -631,11 +631,11 @@ Hero #%X1 gave negative attack bonus to the creatures, now compensated.^;
 
 -----------------------Hero screen specialization click-------------------------
 !?CM2&429;                                                       [SECTION EDITED by Tobyn]
-!!HE-1:N?y-1;
-!!IF:Wy-1;            check if w28>=0 (circumvent HSB with w28<0)
-!!CM:I?y-2;
-!!FU806&y-1>=0/y-2=118:Py-1/0;
-!!UN&w28>=0/y-1>=0/y-2=118:G2/y-1/2/405;   //reset spec description
+!!HE-1:N?y1;
+!!IF:Wy1;            check if w28>=0 (circumvent HSB with w28<0)
+!!CM:I?y2;
+!!FU806&y1>=0/y-2=118:Py1/0;
+!!UN&w28>=0/y1>=0/y2=118:G2/y1/2/405;   //reset spec description
 
 -----------------------------Setting heroes info--------------------------------
 ;sets to z405 text for hero's info
@@ -644,7 +644,6 @@ Hero #%X1 gave negative attack bonus to the creatures, now compensated.^;
 !?FU806;
 !!IF:Wx1;
 !!FU&w28<0:E;      just exit if lead var w28 is negative (this might be useful for custom specialty descriptions)
-*!UN:P198/?y1;     check if Rebalanced Hero script37 is active
 
 !!HEx1:B0/?z-1; ?z406;
 !!VRz405:Sz139087;
