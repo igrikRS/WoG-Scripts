@@ -670,7 +670,7 @@ Dialogue Box numbers used: 17
 
 ; edit by igrik
 
-!?FU(OnGameEnter);
+!?FU(WOG_StartGame);
 !!UN:P174/?y1;  !!FU&y1<>1:E;
 ; Enable Universal Creature Upgrades
 !!UN:C5007752/4/75648139;
@@ -682,10 +682,10 @@ Dialogue Box numbers used: 17
 !!UN:C5007792/1/206;
 !!UN:C5007793/4/2425367669;
 
-!?FU(OnGameLeave);
+!?FU(WOG_StartGame);
 !!UN:P174/?y1;
 !!UN:C5007752/4/?y2;
-!!if&y1=1|y2<>260179083:;
+!!if&y1<>1/y2<>260179083:;
 ; Disable Universal Creature Upgrades
 !!UN:C5007752/4/260179083;
 !!UN:C5007756/4/990136766;
