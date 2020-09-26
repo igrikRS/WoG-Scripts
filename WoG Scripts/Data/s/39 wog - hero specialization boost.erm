@@ -204,7 +204,7 @@ ZVSE
 !!FU836:P-1/0/0/76/0;  MOD:+ Thant gets nothing from HSB, leaves standard description (script37 may give him Skel Upgr instead)
 !!FU836:P46/7/0/77/17;       Xsi really has Stone Skin (1 of 7, ally, earth)
 !!FU836:P2016/0/0/78/0;      Vidomina - Necromancy
--!FU836:P2001/0/0/79/0;      Nagash - Darkness
+*!FU836:P2001/0/0/79/0;      Nagash - Darkness
 !!FU836:P2106/350/0/79/0;    Nagash - 350 Gold
 
 ;Dungeon
@@ -635,7 +635,7 @@ Hero #%v3926 gave negative attack bonus {%w31} to the creatures {%x2}, now compe
 !!HE-1:N?y1;
 !!IF:Wy1;            check if w28>=0 (circumvent HSB with w28<0)
 !!CM:I?y2;
-!!FU806&y1>=0/y-2=118:Py1/0;
+!!FU806&y1>=0/y2=118:Py1/0;
 !!UN&w28>=0/y1>=0/y2=118:G2/y1/2/405;   //reset spec description
 
 -----------------------------Setting heroes info--------------------------------
